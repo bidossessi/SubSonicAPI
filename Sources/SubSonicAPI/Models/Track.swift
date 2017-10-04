@@ -1,11 +1,3 @@
-//
-//  Track.swift
-//  SubTrack
-//
-//  Created by Stanislas Sodonon on 6/5/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Foundation
 
 

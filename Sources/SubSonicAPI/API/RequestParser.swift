@@ -1,11 +1,3 @@
-//
-//  ParserMaestro.swift
-//  SubTrack
-//
-//  Created by Stanislas Sodonon on 9/23/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Foundation
 
 protocol RequestParser: class {

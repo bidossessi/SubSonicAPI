@@ -1,11 +1,3 @@
-//
-//  Album.swift
-//  SubTrack
-//
-//  Created by Stanislas Sodonon on 6/5/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Foundation
 
 class Album: Hashable {
@@ -43,7 +35,7 @@ class Album: Hashable {
         mo.genre = data["genre"] as? String
         mo.coverArt = data["coverArt"] as? String
         mo.title = data["title"] as? String
-        if let tracks = data[Constants.SubSonicAPI.Results.Song] as? [[String: Any]] {
+        if let tracks = data[Constants.SubSonicAPI.Results.Track] as? [[String: Any]] {
             mo.tracks = Track.populate(tracks)
         }
         return mo

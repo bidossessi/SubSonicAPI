@@ -1,0 +1,796 @@
+{
+    "subsonic-response": {
+        "type": "ampache",
+        "version": "1.11.0",
+        "status": "ok",
+        "genres": {
+            "genre": [
+                {
+                    "songCount": "",
+                    "albumCount": "",
+                    "value": "Tango"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "tanguillo"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "Soleá"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "soleá de Triana"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "fandangos de Corruco"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "guajira"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "fandangos valientes de Alosno"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "canción rumba"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": "",
+                    "value": "seguiriyas"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Gothic Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Slow"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Orchestra"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Pop Music"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Breakbeat"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Highlife"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Indietronica"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "World"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Electric Blues"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Techno"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Qawwali"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Emo"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Black Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Uk Garage"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Electroclash"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Ethnic"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Thrash Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Electropop"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Latin Pop"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Pop latino"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Tropical House"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Schlager"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Lo-Fi"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Surf Rock"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Electro House"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Island"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Doom Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Bachata"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Fre"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Free Jazz"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Gnawi"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Industrial Metal"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Quiet Storm"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Soca"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "K-Pop"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Indie Folk"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 1,
+                    "value": "Visual Kei"
+                },
+                {
+                    "songCount": 1,
+                    "albumCount": 1,
+                    "value": "Pop Punk"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Electronica"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 1,
+                    "value": "High Life"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 1,
+                    "value": "Jazz-Funk"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Samba"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Soft Rock"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Drum And Bass"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Trip-Hop"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 2,
+                    "value": "Orchestral"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Punk Rock"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Makossa"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Ballad"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "New Wave"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Ziglibithy"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 2,
+                    "value": "Cool Jazz"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 2,
+                    "value": "Arabic Pop"
+                },
+                {
+                    "songCount": 2,
+                    "albumCount": 2,
+                    "value": "Alt. Rock"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 3,
+                    "value": "Nu Jazz"
+                },
+                {
+                    "songCount": 6,
+                    "albumCount": 1,
+                    "value": "Wadaiko"
+                },
+                {
+                    "songCount": 4,
+                    "albumCount": 3,
+                    "value": "Desi"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 2,
+                    "value": "Southern Rock"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 3,
+                    "value": "Deep House"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 3,
+                    "value": "Latin Jazz"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 3,
+                    "value": "Reggaeton"
+                },
+                {
+                    "songCount": 4,
+                    "albumCount": 2,
+                    "value": "Trance"
+                },
+                {
+                    "songCount": 3,
+                    "albumCount": 3,
+                    "value": "Downtempo"
+                },
+                {
+                    "songCount": 9,
+                    "albumCount": 1,
+                    "value": "Vocal jazz"
+                },
+                {
+                    "songCount": 9,
+                    "albumCount": 1,
+                    "value": "Meditation"
+                },
+                {
+                    "songCount": 9,
+                    "albumCount": 1,
+                    "value": "Avant-Garde Jazz"
+                },
+                {
+                    "songCount": 10,
+                    "albumCount": 1,
+                    "value": "Dance & DJ"
+                },
+                {
+                    "songCount": 4,
+                    "albumCount": 4,
+                    "value": "Easy Listening"
+                },
+                {
+                    "songCount": 4,
+                    "albumCount": 4,
+                    "value": "Acid Jazz"
+                },
+                {
+                    "songCount": 5,
+                    "albumCount": 3,
+                    "value": "Indie Rock"
+                },
+                {
+                    "songCount": 12,
+                    "albumCount": 1,
+                    "value": "Grunge"
+                },
+                {
+                    "songCount": 12,
+                    "albumCount": 1,
+                    "value": "Piano Rock"
+                },
+                {
+                    "songCount": 11,
+                    "albumCount": 2,
+                    "value": "Roots Reggae"
+                },
+                {
+                    "songCount": 5,
+                    "albumCount": 5,
+                    "value": "Arabic"
+                },
+                {
+                    "songCount": 13,
+                    "albumCount": 2,
+                    "value": "Dub"
+                },
+                {
+                    "songCount": 6,
+                    "albumCount": 5,
+                    "value": "Indie Pop"
+                },
+                {
+                    "songCount": 12,
+                    "albumCount": 4,
+                    "value": "Heavy Metal"
+                },
+                {
+                    "songCount": 16,
+                    "albumCount": 1,
+                    "value": "Disco"
+                },
+                {
+                    "songCount": 15,
+                    "albumCount": 1,
+                    "value": "tangos"
+                },
+                {
+                    "songCount": 14,
+                    "albumCount": 2,
+                    "value": "Vocal"
+                },
+                {
+                    "songCount": 15,
+                    "albumCount": 2,
+                    "value": "Jazz Fusion"
+                },
+                {
+                    "songCount": 13,
+                    "albumCount": 3,
+                    "value": "Acappella"
+                },
+                {
+                    "songCount": 8,
+                    "albumCount": 7,
+                    "value": "Grime"
+                },
+                {
+                    "songCount": 17,
+                    "albumCount": 1,
+                    "value": "Singer-Songwriter"
+                },
+                {
+                    "songCount": 15,
+                    "albumCount": 1,
+                    "value": "Musiques Du monde"
+                },
+                {
+                    "songCount": 21,
+                    "albumCount": "",
+                    "value": "bulerías"
+                },
+                {
+                    "songCount": 19,
+                    "albumCount": 2,
+                    "value": "Alternative"
+                },
+                {
+                    "songCount": 22,
+                    "albumCount": 1,
+                    "value": "Spa"
+                },
+                {
+                    "songCount": 22,
+                    "albumCount": 1,
+                    "value": "Relax"
+                },
+                {
+                    "songCount": 21,
+                    "albumCount": 2,
+                    "value": "Post-Grunge"
+                },
+                {
+                    "songCount": 9,
+                    "albumCount": 9,
+                    "value": "Oldies"
+                },
+                {
+                    "songCount": 13,
+                    "albumCount": 1,
+                    "value": "Instrumental"
+                },
+                {
+                    "songCount": 18,
+                    "albumCount": 6,
+                    "value": "Folk Rock"
+                },
+                {
+                    "songCount": 22,
+                    "albumCount": 3,
+                    "value": "Gnawa"
+                },
+                {
+                    "songCount": 10,
+                    "albumCount": 9,
+                    "value": "House"
+                },
+                {
+                    "songCount": 10,
+                    "albumCount": 9,
+                    "value": "French Pop"
+                },
+                {
+                    "songCount": 27,
+                    "albumCount": 2,
+                    "value": "Humor"
+                },
+                {
+                    "songCount": 20,
+                    "albumCount": 5,
+                    "value": "Latin"
+                },
+                {
+                    "songCount": 29,
+                    "albumCount": 4,
+                    "value": "Britpop"
+                },
+                {
+                    "songCount": 32,
+                    "albumCount": 4,
+                    "value": "Nu Metal"
+                },
+                {
+                    "songCount": 39,
+                    "albumCount": 2,
+                    "value": "New Age"
+                },
+                {
+                    "songCount": 42,
+                    "albumCount": 2,
+                    "value": "Unknown"
+                },
+                {
+                    "songCount": 47,
+                    "albumCount": 1,
+                    "value": "Cha3bi"
+                },
+                {
+                    "songCount": 26,
+                    "albumCount": 14,
+                    "value": "Dance Hall"
+                },
+                {
+                    "songCount": 39,
+                    "albumCount": 7,
+                    "value": "Hard Rock"
+                },
+                {
+                    "songCount": 44,
+                    "albumCount": 8,
+                    "value": "Progressive Rock"
+                },
+                {
+                    "songCount": 41,
+                    "albumCount": 6,
+                    "value": "Other"
+                },
+                {
+                    "songCount": 33,
+                    "albumCount": 19,
+                    "value": "Rai"
+                },
+                {
+                    "songCount": 45,
+                    "albumCount": 7,
+                    "value": "Alternative Rock"
+                },
+                {
+                    "songCount": 52,
+                    "albumCount": 11,
+                    "value": "Classic Rock"
+                },
+                {
+                    "songCount": 55,
+                    "albumCount": 11,
+                    "value": "Pop Rock"
+                },
+                {
+                    "songCount": 37,
+                    "albumCount": 25,
+                    "value": "Soukous"
+                },
+                {
+                    "songCount": 81,
+                    "albumCount": 5,
+                    "value": "Rumba"
+                },
+                {
+                    "songCount": 65,
+                    "albumCount": 10,
+                    "value": "Ambient"
+                },
+                {
+                    "songCount": 71,
+                    "albumCount": 17,
+                    "value": "Zouglou"
+                },
+                {
+                    "songCount": 63,
+                    "albumCount": 10,
+                    "value": "Chillout"
+                },
+                {
+                    "songCount": 114,
+                    "albumCount": "",
+                    "value": "www.TvQuran.com"
+                },
+                {
+                    "songCount": 52,
+                    "albumCount": 27,
+                    "value": "Rap"
+                },
+                {
+                    "songCount": 85,
+                    "albumCount": 23,
+                    "value": "Naija"
+                },
+                {
+                    "songCount": 81,
+                    "albumCount": 10,
+                    "value": "Coupé-Décalé"
+                },
+                {
+                    "songCount": 77,
+                    "albumCount": 37,
+                    "value": "Electronic"
+                },
+                {
+                    "songCount": 119,
+                    "albumCount": 25,
+                    "value": "Chanson"
+                },
+                {
+                    "songCount": 94,
+                    "albumCount": 8,
+                    "value": "Acoustic"
+                },
+                {
+                    "songCount": 98,
+                    "albumCount": 9,
+                    "value": "Kizomba"
+                },
+                {
+                    "songCount": 121,
+                    "albumCount": 27,
+                    "value": "Blues"
+                },
+                {
+                    "songCount": 100,
+                    "albumCount": 25,
+                    "value": "Funk"
+                },
+                {
+                    "songCount": 106,
+                    "albumCount": 25,
+                    "value": "Bossa Nova"
+                },
+                {
+                    "songCount": 105,
+                    "albumCount": 60,
+                    "value": "Hindi"
+                },
+                {
+                    "songCount": 164,
+                    "albumCount": 38,
+                    "value": "World Music"
+                },
+                {
+                    "songCount": 154,
+                    "albumCount": 78,
+                    "value": "Smooth Jazz"
+                },
+                {
+                    "songCount": 169,
+                    "albumCount": 81,
+                    "value": "Country"
+                },
+                {
+                    "songCount": 292,
+                    "albumCount": 35,
+                    "value": "Classical"
+                },
+                {
+                    "songCount": 184,
+                    "albumCount": 62,
+                    "value": "Dance"
+                },
+                {
+                    "songCount": 232,
+                    "albumCount": 39,
+                    "value": "Zouk"
+                },
+                {
+                    "songCount": 344,
+                    "albumCount": 56,
+                    "value": "R&B"
+                },
+                {
+                    "songCount": 329,
+                    "albumCount": 53,
+                    "value": "Dancehall"
+                },
+                {
+                    "songCount": 377,
+                    "albumCount": 53,
+                    "value": "Flamenco"
+                },
+                {
+                    "songCount": 392,
+                    "albumCount": 76,
+                    "value": "Reggae"
+                },
+                {
+                    "songCount": 347,
+                    "albumCount": 73,
+                    "value": "Salsa"
+                },
+                {
+                    "songCount": 438,
+                    "albumCount": 103,
+                    "value": "Rock"
+                },
+                {
+                    "songCount": 514,
+                    "albumCount": 53,
+                    "value": "French"
+                },
+                {
+                    "songCount": 515,
+                    "albumCount": 86,
+                    "value": "JPop"
+                },
+                {
+                    "songCount": 448,
+                    "albumCount": 119,
+                    "value": "Jazz"
+                },
+                {
+                    "songCount": 721,
+                    "albumCount": 60,
+                    "value": "Soundtrack"
+                },
+                {
+                    "songCount": 697,
+                    "albumCount": 220,
+                    "value": "Hip Hop"
+                },
+                {
+                    "songCount": 1139,
+                    "albumCount": 135,
+                    "value": "Soul"
+                },
+                {
+                    "songCount": 1247,
+                    "albumCount": 357,
+                    "value": "Pop"
+                }
+            ]
+        }
+    }
+}

@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  SubTrack
-//
-//  Created by Stanislas Sodonon on 6/5/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Foundation
 
 struct Constants {
@@ -23,7 +15,7 @@ struct Constants {
             static let Genre = "getSongsByGenre"
             static let Playlists = "getPlaylists"
             static let Playlist = "getPlaylist"
-            static let Song = "getSong"
+            static let Track = "getSong"
             static let Bookmarks = "getBookmarks"
             static let Download = "download"
             static let Stream = "stream"
@@ -44,7 +36,7 @@ struct Constants {
             static let Genre = "genre"
             static let Playlists = "playlists"
             static let Playlist = "playlist"
-            static let Song = "song"
+            static let Track = "song"
             static let Entry = "entry"
             static let Bookmarks = "bookmarks"
 
@@ -53,7 +45,7 @@ struct Constants {
     struct SubSonicInfo {
         static let apiResponse = "subsonic-response"
         static let apiVersion = "1.11.0"
-        static let apiName = "SubTrack"
+        static let apiName = "SubSonicAPI"
         static let apiFormat = "json"
         static let APIVersionAttr = "version"
         static let RequestStatusAttr = "status"

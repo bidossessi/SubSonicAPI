@@ -1,15 +1,6 @@
-//
-//  DataMonitor.swift
-//  SubMaestro
-//
-//  Created by Stanislas Sodonon on 6/17/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Foundation
 
 protocol HTTPClient: class, URLSessionDelegate {
-    static var shared: HTTPMaestro { get }
     var taskDataMap: [URLSessionTask: Data] { get set }
     weak var delegate: QueryDelegate? { get set }
     func query(_ url: URL)
@@ -22,7 +13,6 @@ protocol QueryDelegate: class {
 
 
 class NetClient: NSObject, HTTPClient {
-    static let shared: HTTPMaestro = HTTPClient()
     weak var delegate: QueryDelegate?
     var taskDataMap: [URLSessionTask : Data] = [:]
     

@@ -1,39 +1,28 @@
-//
-//  URLMaestro.swift
-//  SubMaestro
-//
-//  Created by Stanislas Sodonon on 6/18/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
 import Cocoa
 
-protocol URLMaestro: class {
-    var defaults: UserDefaults { get }
+protocol URLBuilder: class {
     static var shared: URLMaestro { get }
     func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL
 }
 
 
 
-class URLMonitor: URLMaestro {
+class URLMaker: URLBuilder {
 
-    // My job is to return properly formatted URLs
-    static let shared: URLMaestro = URLMonitor()
-
-    let defaults: UserDefaults = UserDefaults.standard
+    // My job is to return properly formatted SubSonic URLs
+    static let shared: URLBuilder = URLMonitor()
     
     private init() {
         print("URLMonitor started")
     }
 
-    private func getUrlString(config: SubSonicConfig, endpoint: String) -> String {
+    private func makeBaseUrl(config: SubSonicConfig, endpoint: String) -> String {
         let serverUrl = config.serverUrl
         return "\(serverUrl)/rest/\(endpoint).view"
     }
     
     func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL {
-        let baseUrl: String = self.getUrlString(config: config, endpoint: endpoint)
+        let baseUrl: String = self.makeBaseUrl(config: config, endpoint: endpoint)
         
         let defaultParams: [String: String] = [
             "u": config.username,
