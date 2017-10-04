@@ -1,3 +1,3 @@
-struct SubSonicAPI {
-    var text = "Hello, World!"
-}
+import Foundation
+
+protocol SubSonicAPI {}
