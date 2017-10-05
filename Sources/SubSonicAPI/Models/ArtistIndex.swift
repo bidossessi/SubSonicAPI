@@ -1,8 +1,8 @@
 import Foundation
 
-class ArtistIndex: Hashable {
+class ArtistIndex: Hashable, SubItem {
     var name: String
-    var artists: Set<Artist>?
+    var artists: [Artist]?
 
     init(name: String) {
         self.name = name
@@ -21,9 +21,8 @@ class ArtistIndex: Hashable {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> Set<ArtistIndex> {
-        let datas = array.map { ArtistIndex.populate($0) }
-        return Set<ArtistIndex>(datas)
+    class func populate(_ array: [[String: Any]]) -> [ArtistIndex] {
+        return array.map { ArtistIndex.populate($0) }
     }
     
     // MARK: - Hashable

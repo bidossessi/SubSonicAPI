@@ -2,20 +2,15 @@ import Foundation
 
 protocol HTTPClient: class, URLSessionDelegate {
     var taskDataMap: [URLSessionTask: Data] { get set }
-    weak var delegate: QueryDelegate? { get set }
+    var onComplete: ((_ result: Data) ->())? { get set }
     func query(_ url: URL)
 }
 
 
-protocol QueryDelegate: class {
-    func api(_: HTTPMaestro, requestData data: Data)
-}
-
-
 class NetClient: NSObject, HTTPClient {
-    weak var delegate: QueryDelegate?
     var taskDataMap: [URLSessionTask : Data] = [:]
-    
+    var onComplete: ((_ result: Data) ->())?
+
     override private init() {
         super.init()
         print("DataMonitor started")
@@ -25,7 +20,7 @@ class NetClient: NSObject, HTTPClient {
     var session : URLSession {
         get {
             let config = URLSessionConfiguration.default
-            // Get this from settings
+            // TODO: Get this from config
             config.allowsCellularAccess = true
             // TODO: Below policy will need revising
             config.requestCachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
@@ -46,12 +41,12 @@ class NetClient: NSObject, HTTPClient {
         else{
             print("HTTPMaestro Request - complete!")
             let data = self.taskDataMap.removeValue(forKey: task)!
-            self.delegate?.api(self, requestData: data)
+            self.onComplete?(data)
         }
     }
 }
 
-extension HTTPClient: URLSessionDataDelegate {
+extension NetClient: URLSessionDataDelegate {
     func urlSession(_ session: URLSession,
                     dataTask: URLSessionDataTask,
                     didReceive response: URLResponse,

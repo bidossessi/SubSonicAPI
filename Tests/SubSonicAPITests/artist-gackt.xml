@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsonic-response xmlns="http://subsonic.org/restapi" type="ampache" version="1.11.0" status="ok">
+    <artist id="100000578" name="GACKT" coverArt="ar-100000578" albumCount="8">
+        <album id="200000370" album="Crescent" title="Crescent [2003] [Disk 1]" name="Crescent" isDir="true" coverArt="al-200000370" songCount="12" duration="3462" artistId="100000578" parent="100000578" artist="GACKT" year="2003" genre="JPop"/>
+        <album id="200000375" album="DIABOLOS" title="DIABOLOS [2005] [Disk 1]" name="DIABOLOS" isDir="true" coverArt="al-200000375" songCount="11" duration="2742" artistId="100000578" parent="100000578" artist="GACKT" year="2005" genre="JPop"/>
+        <album id="200000372" album="Love Letter" title="Love Letter [2005] [Disk 1]" name="Love Letter" isDir="true" coverArt="al-200000372" songCount="10" duration="3091" artistId="100000578" parent="100000578" artist="GACKT" year="2005" genre="JPop"/>
+        <album id="200000369" album="MARS" title="MARS [2000] [Disk 1]" name="MARS" isDir="true" coverArt="al-200000369" songCount="11" duration="2906" artistId="100000578" parent="100000578" artist="GACKT" year="2000" genre="JPop"/>
+        <album id="200000368" album="Mizérable" title="Mizérable [1999] [Disk 1]" name="Mizérable" isDir="true" coverArt="al-200000368" songCount="4" duration="1212" artistId="100000578" parent="100000578" artist="GACKT" year="1999" genre="JPop"/>
+        <album id="200000373" album="MOON" title="MOON [2002] [Disk 1]" name="MOON" isDir="true" coverArt="al-200000373" songCount="12" duration="3207" artistId="100000578" parent="100000578" artist="GACKT" year="2002" genre="JPop"/>
+        <album id="200000374" album="Rebirth" title="Rebirth [2001] [Disk 1]" name="Rebirth" isDir="true" coverArt="al-200000374" songCount="11" duration="2933" artistId="100000578" parent="100000578" artist="GACKT" year="2001" genre="JPop"/>
+        <album id="200000371" album="REDEMPTION" title="REDEMPTION [2006] [Disk 1]" name="REDEMPTION" isDir="true" coverArt="al-200000371" songCount="4" duration="975" artistId="100000578" parent="100000578" artist="GACKT" year="2006" genre="JPop"/>
+    </artist>
+</subsonic-response>

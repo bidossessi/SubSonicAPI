@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsonic-response xmlns="http://subsonic.org/restapi" type="ampache" version="1.11.0" status="ok">
+    <genres>
+        <genre songCount="" albumCount="">Tango</genre>
+        <genre songCount="1" albumCount="">tanguillo</genre>
+        <genre songCount="1" albumCount="">Soleá</genre>
+        <genre songCount="1" albumCount="">guajira</genre>
+        <genre songCount="1" albumCount="">fandangos valientes de Alosno</genre>
+        <genre songCount="1" albumCount="">canción rumba</genre>
+        <genre songCount="1" albumCount="">seguiriyas</genre>
+        <genre songCount="1" albumCount="">soleá de Triana</genre>
+        <genre songCount="1" albumCount="">fandangos de Corruco</genre>
+        <genre songCount="1" albumCount="1">Qawwali</genre>
+        <genre songCount="1" albumCount="1">Emo</genre>
+        <genre songCount="1" albumCount="1">Black Metal</genre>
+        <genre songCount="1" albumCount="1">Uk Garage</genre>
+        <genre songCount="1" albumCount="1">Electroclash</genre>
+        <genre songCount="1" albumCount="1">Thrash Metal</genre>
+        <genre songCount="1" albumCount="1">Ethnic</genre>
+        <genre songCount="1" albumCount="1">Electropop</genre>
+        <genre songCount="1" albumCount="1">Latin Pop</genre>
+        <genre songCount="1" albumCount="1">Pop latino</genre>
+        <genre songCount="1" albumCount="1">Tropical House</genre>
+        <genre songCount="1" albumCount="1">Schlager</genre>
+        <genre songCount="1" albumCount="1">Lo-Fi</genre>
+        <genre songCount="1" albumCount="1">Surf Rock</genre>
+        <genre songCount="1" albumCount="1">Electro House</genre>
+        <genre songCount="1" albumCount="1">Island</genre>
+        <genre songCount="1" albumCount="1">Metal</genre>
+        <genre songCount="1" albumCount="1">Doom Metal</genre>
+        <genre songCount="1" albumCount="1">Bachata</genre>
+        <genre songCount="1" albumCount="1">Fre</genre>
+        <genre songCount="1" albumCount="1">Free Jazz</genre>
+        <genre songCount="1" albumCount="1">Gnawi</genre>
+        <genre songCount="1" albumCount="1">Industrial Metal</genre>
+        <genre songCount="1" albumCount="1">Quiet Storm</genre>
+        <genre songCount="1" albumCount="1">Soca</genre>
+        <genre songCount="1" albumCount="1">K-Pop</genre>
+        <genre songCount="1" albumCount="1">Gothic Metal</genre>
+        <genre songCount="1" albumCount="1">Slow</genre>
+        <genre songCount="1" albumCount="1">Orchestra</genre>
+        <genre songCount="1" albumCount="1">Pop Music</genre>
+        <genre songCount="1" albumCount="1">Breakbeat</genre>
+        <genre songCount="1" albumCount="1">Highlife</genre>
+        <genre songCount="1" albumCount="1">Indietronica</genre>
+        <genre songCount="1" albumCount="1">World</genre>
+        <genre songCount="1" albumCount="1">Electric Blues</genre>
+        <genre songCount="1" albumCount="1">Techno</genre>
+        <genre songCount="1" albumCount="1">Indie Folk</genre>
+        <genre songCount="2" albumCount="1">Visual Kei</genre>
+        <genre songCount="1" albumCount="1">Pop Punk</genre>
+        <genre songCount="2" albumCount="1">High Life</genre>
+        <genre songCount="3" albumCount="1">Jazz-Funk</genre>
+        <genre songCount="2" albumCount="2">Electronica</genre>
+        <genre songCount="2" albumCount="2">Punk Rock</genre>
+        <genre songCount="2" albumCount="2">Makossa</genre>
+        <genre songCount="2" albumCount="2">Ballad</genre>
+        <genre songCount="2" albumCount="2">New Wave</genre>
+        <genre songCount="2" albumCount="2">Ziglibithy</genre>
+        <genre songCount="2" albumCount="2">Samba</genre>
+        <genre songCount="2" albumCount="2">Soft Rock</genre>
+        <genre songCount="2" albumCount="2">Drum And Bass</genre>
+        <genre songCount="2" albumCount="2">Trip-Hop</genre>
+        <genre songCount="3" albumCount="2">Orchestral</genre>
+        <genre songCount="2" albumCount="2">Alt. Rock</genre>
+        <genre songCount="3" albumCount="2">Cool Jazz</genre>
+        <genre songCount="3" albumCount="2">Arabic Pop</genre>
+        <genre songCount="4" albumCount="3">Desi</genre>
+        <genre songCount="3" albumCount="2">Southern Rock</genre>
+        <genre songCount="3" albumCount="3">Deep House</genre>
+        <genre songCount="3" albumCount="3">Nu Jazz</genre>
+        <genre songCount="6" albumCount="1">Wadaiko</genre>
+        <genre songCount="3" albumCount="3">Reggaeton</genre>
+        <genre songCount="4" albumCount="2">Trance</genre>
+        <genre songCount="3" albumCount="3">Downtempo</genre>
+        <genre songCount="3" albumCount="3">Latin Jazz</genre>
+        <genre songCount="9" albumCount="1">Meditation</genre>
+        <genre songCount="9" albumCount="1">Avant-Garde Jazz</genre>
+        <genre songCount="9" albumCount="1">Vocal jazz</genre>
+        <genre songCount="10" albumCount="1">Dance &amp; DJ</genre>
+        <genre songCount="4" albumCount="4">Easy Listening</genre>
+        <genre songCount="4" albumCount="4">Acid Jazz</genre>
+        <genre songCount="5" albumCount="3">Indie Rock</genre>
+        <genre songCount="12" albumCount="1">Grunge</genre>
+        <genre songCount="12" albumCount="1">Piano Rock</genre>
+        <genre songCount="11" albumCount="2">Roots Reggae</genre>
+        <genre songCount="5" albumCount="5">Arabic</genre>
+        <genre songCount="6" albumCount="5">Indie Pop</genre>
+        <genre songCount="12" albumCount="4">Heavy Metal</genre>
+        <genre songCount="13" albumCount="2">Dub</genre>
+        <genre songCount="15" albumCount="1">tangos</genre>
+        <genre songCount="14" albumCount="2">Vocal</genre>
+        <genre songCount="16" albumCount="1">Disco</genre>
+        <genre songCount="8" albumCount="7">Grime</genre>
+        <genre songCount="17" albumCount="1">Singer-Songwriter</genre>
+        <genre songCount="15" albumCount="1">Musiques Du monde</genre>
+        <genre songCount="15" albumCount="2">Jazz Fusion</genre>
+        <genre songCount="13" albumCount="3">Acappella</genre>
+        <genre songCount="21" albumCount="">bulerías</genre>
+        <genre songCount="19" albumCount="2">Alternative</genre>
+        <genre songCount="22" albumCount="1">Spa</genre>
+        <genre songCount="22" albumCount="1">Relax</genre>
+        <genre songCount="21" albumCount="2">Post-Grunge</genre>
+        <genre songCount="9" albumCount="9">Oldies</genre>
+        <genre songCount="13" albumCount="1">Instrumental</genre>
+        <genre songCount="18" albumCount="6">Folk Rock</genre>
+        <genre songCount="10" albumCount="9">House</genre>
+        <genre songCount="10" albumCount="9">French Pop</genre>
+        <genre songCount="22" albumCount="3">Gnawa</genre>
+        <genre songCount="27" albumCount="2">Humor</genre>
+        <genre songCount="20" albumCount="5">Latin</genre>
+        <genre songCount="29" albumCount="4">Britpop</genre>
+        <genre songCount="32" albumCount="4">Nu Metal</genre>
+        <genre songCount="39" albumCount="2">New Age</genre>
+        <genre songCount="42" albumCount="2">Unknown</genre>
+        <genre songCount="47" albumCount="1">Cha3bi</genre>
+        <genre songCount="26" albumCount="14">Dance Hall</genre>
+        <genre songCount="39" albumCount="7">Hard Rock</genre>
+        <genre songCount="44" albumCount="8">Progressive Rock</genre>
+        <genre songCount="41" albumCount="6">Other</genre>
+        <genre songCount="33" albumCount="19">Rai</genre>
+        <genre songCount="45" albumCount="7">Alternative Rock</genre>
+        <genre songCount="52" albumCount="11">Classic Rock</genre>
+        <genre songCount="55" albumCount="11">Pop Rock</genre>
+        <genre songCount="37" albumCount="25">Soukous</genre>
+        <genre songCount="81" albumCount="5">Rumba</genre>
+        <genre songCount="65" albumCount="10">Ambient</genre>
+        <genre songCount="71" albumCount="17">Zouglou</genre>
+        <genre songCount="63" albumCount="10">Chillout</genre>
+        <genre songCount="114" albumCount="">www.TvQuran.com</genre>
+        <genre songCount="52" albumCount="27">Rap</genre>
+        <genre songCount="85" albumCount="23">Naija</genre>
+        <genre songCount="81" albumCount="10">Coupé-Décalé</genre>
+        <genre songCount="77" albumCount="37">Electronic</genre>
+        <genre songCount="119" albumCount="25">Chanson</genre>
+        <genre songCount="94" albumCount="8">Acoustic</genre>
+        <genre songCount="98" albumCount="9">Kizomba</genre>
+        <genre songCount="121" albumCount="27">Blues</genre>
+        <genre songCount="100" albumCount="25">Funk</genre>
+        <genre songCount="106" albumCount="25">Bossa Nova</genre>
+        <genre songCount="105" albumCount="60">Hindi</genre>
+        <genre songCount="164" albumCount="38">World Music</genre>
+        <genre songCount="154" albumCount="78">Smooth Jazz</genre>
+        <genre songCount="169" albumCount="81">Country</genre>
+        <genre songCount="292" albumCount="35">Classical</genre>
+        <genre songCount="184" albumCount="62">Dance</genre>
+        <genre songCount="232" albumCount="39">Zouk</genre>
+        <genre songCount="344" albumCount="56">R&amp;B</genre>
+        <genre songCount="329" albumCount="53">Dancehall</genre>
+        <genre songCount="377" albumCount="53">Flamenco</genre>
+        <genre songCount="392" albumCount="76">Reggae</genre>
+        <genre songCount="347" albumCount="73">Salsa</genre>
+        <genre songCount="438" albumCount="103">Rock</genre>
+        <genre songCount="514" albumCount="53">French</genre>
+        <genre songCount="515" albumCount="86">JPop</genre>
+        <genre songCount="448" albumCount="119">Jazz</genre>
+        <genre songCount="721" albumCount="60">Soundtrack</genre>
+        <genre songCount="697" albumCount="220">Hip Hop</genre>
+        <genre songCount="1139" albumCount="135">Soul</genre>
+        <genre songCount="1247" albumCount="357">Pop</genre>
+    </genres>
+</subsonic-response>

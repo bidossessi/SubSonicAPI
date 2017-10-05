@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Track: Hashable {
+class Track: Hashable, SubItem {
 
     let id: Int
     let title, path: String
@@ -53,9 +53,8 @@ class Track: Hashable {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> Set<Track> {
-        let datas = array.map { Track.populate($0) }
-        return Set<Track>(datas)
+    class func populate(_ array: [[String: Any]]) -> [Track] {
+        return array.map { Track.populate($0) }
     }
     
     // MARK: - Hashable

@@ -1,7 +1,7 @@
 import Cocoa
 
 protocol URLBuilder: class {
-    static var shared: URLMaestro { get }
+    static var shared: URLBuilder { get }
     func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL
 }
 
@@ -10,7 +10,7 @@ protocol URLBuilder: class {
 class URLMaker: URLBuilder {
 
     // My job is to return properly formatted SubSonic URLs
-    static let shared: URLBuilder = URLMonitor()
+    static let shared: URLBuilder = URLMaker()
     
     private init() {
         print("URLMonitor started")

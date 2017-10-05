@@ -1,11 +1,11 @@
 import Foundation
 
-class Artist: Hashable {
+class Artist: Hashable, SubItem {
     let id: Int
     var name: String
     var coverArt: String?
     var albumCount: Int?
-    var albums: Set<Album>?
+    var albums: [Album]?
     
     init(id: Int, name: String) {
         self.id = id
@@ -26,9 +26,8 @@ class Artist: Hashable {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> Set<Artist> {
-        let datas = array.map { Artist.populate($0) }
-        return Set<Artist>(datas)
+    class func populate(_ array: [[String: Any]]) -> [Artist] {
+        return array.map { Artist.populate($0) }
     }
     
     // MARK: - Hashable

@@ -1,6 +1,6 @@
 import Foundation
 
-final class Genre: Hashable {
+final class Genre: Hashable, SubItem {
     var name: String
     var songCount, albumCount: Int?
     
@@ -20,9 +20,8 @@ final class Genre: Hashable {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> Set<Genre> {
-        let datas = array.map { Genre.populate($0) }
-        return Set<Genre>(datas)
+    class func populate(_ array: [[String: Any]]) -> [Genre] {
+        return array.map { Genre.populate($0) }
     }
     
     // MARK: - Hashable

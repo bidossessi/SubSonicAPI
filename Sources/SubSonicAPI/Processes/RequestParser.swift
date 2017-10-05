@@ -4,6 +4,7 @@ protocol RequestParser: class {
     func validate(version: String) throws
     func validate(status: String) throws
     func parse(data: Data)
+    var onComplete: ((_ result: [String: [SubItem]]) ->())? { get set }
 }
 
 extension RequestParser {

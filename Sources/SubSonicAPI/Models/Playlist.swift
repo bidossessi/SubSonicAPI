@@ -1,10 +1,10 @@
 import Foundation
 
-class Playlist: Hashable {
+class Playlist: Hashable, SubItem {
     var id: Int
     var name: String
     var songCount, duration: Int?
-    var tracks: Set<Track>?
+    var tracks: [Track]?
     
     init(id: Int, name: String) {
         self.id = id
@@ -28,9 +28,8 @@ class Playlist: Hashable {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> Set<Playlist> {
-        let datas = array.map { Playlist.populate($0) }
-        return Set<Playlist>(datas)
+    class func populate(_ array: [[String: Any]]) -> [Playlist] {
+        return array.map { Playlist.populate($0) }
     }
 
     // MARK: - Hashable
