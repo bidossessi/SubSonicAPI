@@ -1,7 +1,7 @@
 import XCTest
 @testable import SubSonicAPI
 
-class AlbumParserTest: XCTestCase {
+class PlaylistParserTest: XCTestCase {
     
     let helper = TestHelper()
     
@@ -15,16 +15,16 @@ class AlbumParserTest: XCTestCase {
     
     func testJSONList() {
         let parser = JSONRequestParser()
-        let json = self.helper.getDataFromFile(fileName: "albumlist", fileExt: "json")
+        let json = self.helper.getDataFromFile(fileName: "playlists", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
-                XCTFail("Albums not found")
+            guard let playlists = results["playlists"] as? [Playlist] else {
+                XCTFail("Playlists not found")
                 return
             }
-            print("albums count: \(albums.count)")
-            XCTAssert(albums.count == 10)
+            print("playlists count: \(playlists.count)")
+            XCTAssert(playlists.count == 15)
             expect.fulfill()
         }
         
@@ -36,24 +36,24 @@ class AlbumParserTest: XCTestCase {
 
     func testJSONSingle() {
         let parser = JSONRequestParser()
-        let json = self.helper.getDataFromFile(fileName: "album-chitose", fileExt: "json")
+        let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
 
         parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
-                XCTFail("Albums not found")
+            guard let playlists = results["playlists"] as? [Playlist] else {
+                XCTFail("Playlists not found")
                 return
             }
-            print("albums count: \(albums.count)")
-            XCTAssert(albums.count == 1)
+            print("playlists count: \(playlists.count)")
+            XCTAssert(playlists.count == 1)
             
     
-            guard let tracks = albums[0].tracks else {
+            guard let tracks = playlists[0].tracks else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
-            XCTAssert(tracks.count == 11)
+            XCTAssert(tracks.count == 224)
             expect.fulfill()
         }
 
@@ -65,17 +65,17 @@ class AlbumParserTest: XCTestCase {
 
     func testXMLList() {
         let parser = XMLRequestParser()
-        // Given a list of albums query
-        let xml = self.helper.getDataFromFile(fileName: "albumlist", fileExt: "xml")
+        // Given a list of playlists query
+        let xml = self.helper.getDataFromFile(fileName: "playlists", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
-                XCTFail("Albums not found")
+            guard let playlists = results["playlists"] as? [Playlist] else {
+                XCTFail("Playlists not found")
                 return
             }
-            print("albums count: \(albums.count)")
-            XCTAssert(albums.count == 10)
+            print("playlists count: \(playlists.count)")
+            XCTAssert(playlists.count == 15)
             expect.fulfill()
         }
         
@@ -88,23 +88,23 @@ class AlbumParserTest: XCTestCase {
     
     func testXMLSingle() {
         let parser = XMLRequestParser()
-        let json = self.helper.getDataFromFile(fileName: "album-chitose", fileExt: "xml")
+        let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
-                XCTFail("Albums not found")
+            guard let playlists = results["playlists"] as? [Playlist] else {
+                XCTFail("Playlists not found")
                 return
             }
-            print("albums count: \(albums.count)")
-            XCTAssert(albums.count == 1)
+            print("playlists count: \(playlists.count)")
+            XCTAssert(playlists.count == 1)
             
-            guard let tracks = albums[0].tracks else {
+            guard let tracks = playlists[0].tracks else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
-            XCTAssert(tracks.count == 11)
+            XCTAssert(tracks.count == 224)
             expect.fulfill()
         }
         

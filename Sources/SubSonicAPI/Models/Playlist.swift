@@ -12,15 +12,11 @@ class Playlist: Hashable, SubItem {
     }
     
     class func populate(_ data: [String: Any]) -> Playlist {
-        let id = data["id"] as! NSNumber
+        let id = makeInt(data["id"])!
         let name = data["name"] as! String
-        let mo = Playlist(id: id.intValue, name: name)
-        if let songCount = data["songCount"] as? NSNumber {
-            mo.songCount = songCount.intValue
-        }
-        if let duration = data["duration"] as? NSNumber {
-            mo.duration = duration.intValue
-        }
+        let mo = Playlist(id: id, name: name)
+        mo.songCount = makeInt(data["songCount"])
+        mo.duration = makeInt(data["duration"])
         if let entries = data[Constants.SubSonicAPI.Results.Entry] as? [[String: Any]] {
             let filteredEntries = entries.filter { !($0["isVideo"] as! Bool) }
             mo.tracks = Track.populate(filteredEntries)

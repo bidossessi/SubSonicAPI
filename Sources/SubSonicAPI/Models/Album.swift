@@ -8,28 +8,28 @@ class Album: Hashable, SubItem {
     var parent, songCount, duration, artistId, year: Int?
     var tracks: [Track]?
     
+    var decription: String {
+        return "\(id): \(name)"
+    }
+    
     init(id: Int, name: String) {
         self.id = id
         self.name = name
     }
     
     class func populate(_ data: [String: Any]) -> Album {
-        let id = data["id"] as! NSNumber
-        let name = data["name"] as! String
-        let mo = Album(id: id.intValue, name: name)
         
+        let id = makeInt(data["id"])!
+        let name = data["name"] as! String
+        let mo = Album(id: id, name: name)
+
         if let parent = data["parent"] as? NSNumber {
             mo.parent = parent.intValue
         }
-        let artistId = data["artistId"] as! NSNumber
-        mo.artistId = artistId.intValue
-        let songCount = data["songCount"] as! NSNumber
-        mo.songCount = songCount.intValue
-        let duration = data["duration"] as! NSNumber
-        mo.duration = duration.intValue
-        if let year = data["year"] as? NSNumber {
-            mo.year = year.intValue
-        }
+        mo.artistId = makeInt(data["artistId"])!
+        mo.songCount = makeInt(data["songCount"])!
+        mo.duration = makeInt(data["songCount"])!
+        mo.year = makeInt(data["year"])
         mo.artist = data["artist"] as? String
         mo.album = data["album"] as? String
         mo.genre = data["genre"] as? String

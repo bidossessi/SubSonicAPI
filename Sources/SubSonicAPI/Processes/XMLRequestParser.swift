@@ -38,6 +38,11 @@ extension XMLRequestParser: XMLParserDelegate {
                 namespaceURI: String?,
                 qualifiedName qName: String?,
                 attributes attributeDict: [String: String] = [:]) {
+
+        if self.processIndex == 1 {
+            self.requestName = elementName
+        }
+
         switch elementName {
         case Constants.SubSonicInfo.apiResponse:
             // Check the response
@@ -80,9 +85,6 @@ extension XMLRequestParser: XMLParserDelegate {
                 didEndElement elementName: String,
                 namespaceURI: String?,
                 qualifiedName qName: String?) {
-        if self.processIndex == 1 {
-            self.requestName = elementName
-        }
         switch elementName {
         case Constants.SubSonicAPI.Results.Index:
             let index = self.results["artistIndexes"]?.last as! ArtistIndex

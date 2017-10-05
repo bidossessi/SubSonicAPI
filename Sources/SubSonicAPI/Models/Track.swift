@@ -19,30 +19,19 @@ class Track: Hashable, SubItem {
     }
     
     class func populate(_ data: [String: Any]) -> Track {
-        let id = data["id"] as! NSNumber
+        let id = makeInt(data["id"])!
         let title = data["title"] as! String
         let path = data["path"] as! String
-        let mo = Track(id: id.intValue, title: title, path: path)
+        let mo = Track(id: id, title: title, path: path)
 
-        if let track = data["track"] as? NSNumber {
-            mo.track = track.intValue
-        }
-        if let parent = data["parent"] as? NSNumber {
-            mo.parent = parent.intValue
-        }
-        let albumId = data["albumId"] as! NSNumber
-        mo.albumId = albumId.intValue
-        let artistId = data["artistId"] as! NSNumber
-        mo.artistId = artistId.intValue
-        let size = data["size"] as! NSNumber
-        mo.size = size.intValue
-        let bitRate = data["bitRate"] as! NSNumber
-        mo.bitRate = bitRate.intValue
-        let duration = data["duration"] as! NSNumber
-        mo.duration = duration.intValue
-        if let year = data["year"] as? NSNumber {
-            mo.year = year.intValue
-        }
+        mo.track = makeInt(data["track"])
+        mo.parent = makeInt(data["parent"])
+        mo.albumId = makeInt(data["albumId"])!
+        mo.artistId = makeInt(data["artistId"])!
+        mo.size = makeInt(data["size"])!
+        mo.bitRate = makeInt(data["bitRate"])!
+        mo.duration = makeInt(data["duration"])!
+        mo.year = makeInt(data["year"])
         
         mo.artist = data["artist"] as? String
         mo.album = data["album"] as? String

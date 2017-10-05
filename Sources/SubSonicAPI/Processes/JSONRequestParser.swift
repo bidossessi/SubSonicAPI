@@ -52,6 +52,10 @@ class JSONRequestParser: RequestParser {
                 let items = dataDict[Constants.SubSonicAPI.Results.Album] as! [[String: Any]]
                 self.results["albums"] = Album.populate(items)
 
+            case Constants.SubSonicAPI.Results.Album:
+                let dataDict = data as! [String: Any]
+                self.results["albums"]?.append(Album.populate(dataDict))
+                
             case Constants.SubSonicAPI.Results.Artists:
                 let dataDict = data as! [String: Any]
                 let items = dataDict[Constants.SubSonicAPI.Results.Index] as! [[String: Any]]

@@ -13,12 +13,10 @@ class Artist: Hashable, SubItem {
     }
     
     class func populate(_ data: [String: Any]) -> Artist {
-        let id = data["id"] as! NSNumber
+        let id = makeInt(data["id"])!
         let name = data["name"] as! String
-        let mo = Artist(id: id.intValue, name: name)
-        if let albumCount = data["albumCount"] as? NSNumber {
-            mo.albumCount = albumCount.intValue
-        }
+        let mo = Artist(id: id, name: name)
+        mo.albumCount = makeInt(data["albumCount"])
         mo.coverArt = data["coverArt"] as? String
         if let albums = data[Constants.SubSonicAPI.Results.Album] as? [[String: Any]] {
             mo.albums = Album.populate(albums)
