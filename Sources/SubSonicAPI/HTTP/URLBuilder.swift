@@ -1,28 +1,15 @@
-import Cocoa
+import Foundation
 
-protocol URLBuilder: class {
-    static var shared: URLBuilder { get }
+protocol URLBuilder {
     func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL
 }
 
 
+extension URLBuilder {
 
-class URLMaker: URLBuilder {
-
-    // My job is to return properly formatted SubSonic URLs
-    static let shared: URLBuilder = URLMaker()
-    
-    private init() {
-        print("URLMonitor started")
-    }
-
-    private func makeBaseUrl(config: SubSonicConfig, endpoint: String) -> String {
-        let serverUrl = config.serverUrl
-        return "\(serverUrl)/rest/\(endpoint).view"
-    }
-    
     func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL {
-        let baseUrl: String = self.makeBaseUrl(config: config, endpoint: endpoint)
+        let serverUrl = config.serverUrl
+        let baseUrl: String = "\(serverUrl)/rest/\(endpoint).view"
         
         let defaultParams: [String: String] = [
             "u": config.username,

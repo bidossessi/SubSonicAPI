@@ -18,8 +18,8 @@ class AlbumParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "albumlist", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
+        parser.onComplete = { (results, error) in
+            guard let albums = results?["albums"] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -39,8 +39,8 @@ class AlbumParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "album-chitose", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
 
-        parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
+        parser.onComplete = { (results, error) in
+            guard let albums = results?["albums"] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -69,8 +69,8 @@ class AlbumParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "albumlist", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
+        parser.onComplete = { (results, error) in
+            guard let albums = results?["albums"] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -91,8 +91,8 @@ class AlbumParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "album-chitose", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let albums = results["albums"] as? [Album] else {
+        parser.onComplete = { (results, error) in
+            guard let albums = results?["albums"] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }

@@ -18,13 +18,34 @@ class GenreParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "genres", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let genres = results["genres"] as? [Genre] else {
+        parser.onComplete = { (results, error) in
+            guard let genres = results?["genres"] as? [Genre] else {
                 XCTFail("Genres not found")
                 return
             }
             print("genres count: \(genres.count)")
             XCTAssert(genres.count == 157)
+            expect.fulfill()
+        }
+        
+        // Parse
+        parser.parse(data: json)
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+
+    func testJSONSingle() {
+        let parser = JSONRequestParser()
+        let json = self.helper.getDataFromFile(fileName: "genre-kizomba", fileExt: "json")
+        let expect = expectation(description: "Parsing complete")
+        
+        parser.onComplete = { (results, error) in
+            guard let tracks = results?["tracks"] as? [Track] else {
+                XCTFail("Tracks not found")
+                return
+            }
+            print("tracks count: \(tracks.count)")
+            XCTAssert(tracks.count == 98)
             expect.fulfill()
         }
         
@@ -41,8 +62,8 @@ class GenreParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "genres", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let genres = results["genres"] as? [Genre] else {
+        parser.onComplete = { (results, error) in
+            guard let genres = results?["genres"] as? [Genre] else {
                 XCTFail("Genres not found")
                 return
             }
@@ -57,4 +78,26 @@ class GenreParserTest: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    func testXMLSingle() {
+        let parser = XMLRequestParser()
+        // Given a list of tracks query
+        let xml = self.helper.getDataFromFile(fileName: "genre-kizomba", fileExt: "xml")
+        let expect = expectation(description: "Parsing complete")
+        
+        parser.onComplete = { (results, error) in
+            guard let tracks = results?["tracks"] as? [Track] else {
+                XCTFail("Tracks not found")
+                return
+            }
+            print("tracks count: \(tracks.count)")
+            XCTAssert(tracks.count == 98 )
+            expect.fulfill()
+        }
+        
+        // Parse
+        parser.parse(data: xml)
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
 }

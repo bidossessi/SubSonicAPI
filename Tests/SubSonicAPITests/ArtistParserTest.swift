@@ -18,8 +18,8 @@ class ArtistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "artists", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let indexes = results["artistIndexes"] as? [ArtistIndex] else {
+        parser.onComplete = { (results, error) in
+            guard let indexes = results?["artistIndexes"] as? [ArtistIndex] else {
                 XCTFail("ArtistIndexes not found")
                 return
             }
@@ -39,8 +39,8 @@ class ArtistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "artist-gackt", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let artists = results["artists"] as? [Artist] else {
+        parser.onComplete = { (results, error) in
+            guard let artists = results?["artists"] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
@@ -68,8 +68,8 @@ class ArtistParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "artists", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let indexes = results["artistIndexes"] as? [ArtistIndex] else {
+        parser.onComplete = { (results, error) in
+            guard let indexes = results?["artistIndexes"] as? [ArtistIndex] else {
                 XCTFail("ArtistIndexs not found")
                 return
             }
@@ -90,8 +90,8 @@ class ArtistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "artist-gackt", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let artists = results["artists"] as? [Artist] else {
+        parser.onComplete = { (results, error) in
+            guard let artists = results?["artists"] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }

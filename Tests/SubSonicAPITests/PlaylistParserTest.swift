@@ -18,8 +18,8 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlists", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let playlists = results["playlists"] as? [Playlist] else {
+        parser.onComplete = { (results, error) in
+            guard let playlists = results?["playlists"] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -39,8 +39,8 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
 
-        parser.onComplete = { results in
-            guard let playlists = results["playlists"] as? [Playlist] else {
+        parser.onComplete = { (results, error) in
+            guard let playlists = results?["playlists"] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -69,8 +69,8 @@ class PlaylistParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "playlists", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let playlists = results["playlists"] as? [Playlist] else {
+        parser.onComplete = { (results, error) in
+            guard let playlists = results?["playlists"] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -91,8 +91,8 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { results in
-            guard let playlists = results["playlists"] as? [Playlist] else {
+        parser.onComplete = { (results, error) in
+            guard let playlists = results?["playlists"] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }

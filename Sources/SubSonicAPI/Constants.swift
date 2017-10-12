@@ -39,6 +39,7 @@ struct Constants {
             static let Track = "song"
             static let Entry = "entry"
             static let Bookmarks = "bookmarks"
+            static let Error = "error"
 
         }
     }

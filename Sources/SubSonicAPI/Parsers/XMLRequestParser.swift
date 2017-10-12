@@ -4,6 +4,7 @@ class XMLRequestParser: NSObject, RequestParser {
     
     var currentString, lastTag, requestName: String?
     var processIndex: Int = 0
+    var currentError: ParsingError?
     var results: [String: [SubItem]] = [
         "artistIndexes": [ArtistIndex](),
         "artists": [Artist](),
@@ -12,8 +13,8 @@ class XMLRequestParser: NSObject, RequestParser {
         "playlists": [Playlist](),
         "tracks": [Track]()
     ]
-    var onComplete: ((_ result: [String: [SubItem]]) ->())?
-
+    var onComplete: ((_ result: [String: [SubItem]]?, _ error: ParsingError?) ->())?
+    
     override init() {
         super.init()
         print("XMLRequestParser started")
@@ -39,21 +40,30 @@ extension XMLRequestParser: XMLParserDelegate {
                 qualifiedName qName: String?,
                 attributes attributeDict: [String: String] = [:]) {
 
+        if self.processIndex == 0 && elementName != Constants.SubSonicInfo.apiResponse {
+            self.currentError = ParsingError.Envelop
+            parser.abortParsing()
+        }
+
         if self.processIndex == 1 {
             self.requestName = elementName
         }
 
         switch elementName {
         case Constants.SubSonicInfo.apiResponse:
-            // Check the response
             do {
-                try self.validate(status: attributeDict[Constants.SubSonicInfo.RequestStatusAttr] as String!)
                 try self.validate(version: attributeDict[Constants.SubSonicInfo.APIVersionAttr] as String!)
             } catch {
+                self.currentError = error as? ParsingError
                 parser.abortParsing()
-                return
             }
-            
+        
+        case Constants.SubSonicAPI.Results.Error:
+            let errorCode = Int(attributeDict["code"]!)!
+            let errorMsg = attributeDict["message"]!
+            self.currentError = ParsingError.Status(code: errorCode, message: errorMsg)
+            parser.abortParsing()
+
         case Constants.SubSonicAPI.Results.Track:
             self.results["tracks"]?.append(Track.populate(attributeDict))
         case Constants.SubSonicAPI.Results.Album:
@@ -70,7 +80,7 @@ extension XMLRequestParser: XMLParserDelegate {
             self.currentString = ""
             self.results["genres"]?.append(Genre.populate(attributeDict))
         default:
-            print(elementName)
+            print("idx: \(self.processIndex), \(elementName)")
         }
         self.processIndex += 1
     }
@@ -118,8 +128,17 @@ extension XMLRequestParser: XMLParserDelegate {
     
     // Document end
     func parserDidEndDocument(_ parser: XMLParser) {
-        self.onComplete?(self.results)
+        if parser.parserError == nil {
+            self.onComplete?(self.results, nil)
+        }
     }
 
+    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        if self.currentError != nil {
+            self.onComplete?(nil, self.currentError)
+        } else {
+            self.onComplete?(nil, ParsingError.Serialization)
+        }
+    }
 }
 
