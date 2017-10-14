@@ -69,6 +69,7 @@ class HTTPRequestClient: NSObject, HTTPRequestCLientProtocol {
     }
 
     func query(_ url: URL) {
+        print(url.absoluteString)
         let task = self.session.dataTask(with: url) { (data, response, error) -> Void in
             
             if let _ = error {

@@ -21,3 +21,10 @@ class TestHelper {
         return randomNum
     }
 }
+
+struct SubConfig: SubSonicConfig {
+    let serverUrl: String
+    let username: String
+    let password: String
+    let format: RequestFormat
+}

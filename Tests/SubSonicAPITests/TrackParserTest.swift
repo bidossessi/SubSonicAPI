@@ -1,7 +1,7 @@
 import XCTest
 @testable import SubSonicAPI
 
-class TrackParserTest: XCTestCase {
+class SongParserTest: XCTestCase {
     
     let helper = TestHelper()
     
@@ -19,8 +19,8 @@ class TrackParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")
@@ -37,13 +37,13 @@ class TrackParserTest: XCTestCase {
 
     func testXMLList() {
         let parser = XMLRequestParser()
-        // Given [.Track] list of tracks query
+        // Given [.Song] list of tracks query
         let xml = self.helper.getDataFromFile(fileName: "randomsongs", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")

@@ -11,15 +11,14 @@ extension URLBuilder {
 
     func url(config: SubSonicConfig, endpoint: Constants.SubSonicAPI.Views, params: [String: String]) -> URL {
         let serverUrl = config.serverUrl
-        let baseUrl: String = "\(serverUrl)/rest/\(endpoint).view"
+        let baseUrl: String = "\(serverUrl)/rest/\(endpoint.rawValue).view"
         
         let defaultParams: [String: String] = [
             "u": config.username,
             "p": config.password,
             "c": Constants.SubSonicInfo.apiName,
             "v": Constants.SubSonicInfo.apiVersion,
-            // Ideally, this should come from config (advanced)
-            "f": Constants.SubSonicInfo.apiFormat
+            "f": config.format.rawValue
         ]
         var queryParams: [String: String] = [:]
         for (key, value) in defaultParams {

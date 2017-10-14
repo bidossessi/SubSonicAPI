@@ -1,7 +1,7 @@
 import Foundation
 
 
-class Track: Hashable, SubItem {
+class Song: Hashable, SubItem {
 
     let id: Int
     let title, path: String
@@ -18,11 +18,11 @@ class Track: Hashable, SubItem {
         self.id = id
     }
     
-    class func populate(_ data: [String: Any]) -> Track {
+    class func populate(_ data: [String: Any]) -> Song {
         let id = makeInt(data["id"])!
         let title = data["title"] as! String
         let path = data["path"] as! String
-        let mo = Track(id: id, title: title, path: path)
+        let mo = Song(id: id, title: title, path: path)
 
         mo.track = makeInt(data["track"])
         mo.parent = makeInt(data["parent"])
@@ -42,15 +42,15 @@ class Track: Hashable, SubItem {
         return mo
     }
     
-    class func populate(_ array: [[String: Any]]) -> [Track] {
-        return array.map { Track.populate($0) }
+    class func populate(_ array: [[String: Any]]) -> [Song] {
+        return array.map { Song.populate($0) }
     }
     
     // MARK: - Hashable
     var hashValue: Int {
         return id
     }
-    static func ==(lhs: Track, rhs: Track) -> Bool {
+    static func ==(lhs: Song, rhs: Song) -> Bool {
         return lhs.id == rhs.id && lhs.path == rhs.path
     }
 

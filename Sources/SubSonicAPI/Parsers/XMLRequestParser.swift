@@ -11,7 +11,7 @@ class XMLRequestParser: NSObject, RequestParser {
         .Album: [Album](),
         .Genre: [Genre](),
         .Playlist: [Playlist](),
-        .Track: [Track]()
+        .Song: [Song]()
     ]
     var onComplete: ((_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: ParsingError?) ->())?
 
@@ -63,8 +63,8 @@ extension XMLRequestParser: XMLParserDelegate {
             let errorMsg = attributeDict["message"]!
             self.currentError = ParsingError.Status(code: errorCode, message: errorMsg)
             parser.abortParsing()
-        case Constants.SubSonicAPI.Results.Track.rawValue:
-            self.results[.Track]?.append(Track.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Song.rawValue:
+            self.results[.Song]?.append(Song.populate(attributeDict))
         case Constants.SubSonicAPI.Results.Album.rawValue:
             self.results[.Album]?.append(Album.populate(attributeDict))
         case Constants.SubSonicAPI.Results.Artist.rawValue:
@@ -74,7 +74,7 @@ extension XMLRequestParser: XMLParserDelegate {
         case Constants.SubSonicAPI.Results.Index.rawValue:
             self.results[.Index]?.append(ArtistIndex.populate(attributeDict))
         case Constants.SubSonicAPI.Results.Entry.rawValue:
-            self.results[.Track]?.append(Track.populate(attributeDict))
+            self.results[.Song]?.append(Song.populate(attributeDict))
         case Constants.SubSonicAPI.Results.Genre.rawValue:
             self.currentString = ""
             self.results[.Genre]?.append(Genre.populate(attributeDict))
@@ -101,16 +101,16 @@ extension XMLRequestParser: XMLParserDelegate {
             self.results[.Artist] = []
         case Constants.SubSonicAPI.Results.Playlist.rawValue:
             let index = self.results[.Playlist]?.last as! Playlist
-            index.tracks = self.results[.Track] as? [Track]
-            self.results[.Track] = []
+            index.tracks = self.results[.Song] as? [Song]
+            self.results[.Song] = []
         case Constants.SubSonicAPI.Results.Genre.rawValue:
             let genre = self.results[.Genre]?.last as! Genre
             genre.name = self.currentString!
         case Constants.SubSonicAPI.Results.Album.rawValue:
             if self.requestName == elementName {
                 let index = self.results[.Album]?.last as! Album
-                index.tracks = self.results[.Track] as? [Track]
-                self.results[.Track] = []
+                index.tracks = self.results[.Song] as? [Song]
+                self.results[.Song] = []
             }
         case Constants.SubSonicAPI.Results.Artist.rawValue:
             if self.requestName == elementName {

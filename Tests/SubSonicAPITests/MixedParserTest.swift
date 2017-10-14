@@ -19,8 +19,8 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")
@@ -55,8 +55,8 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")
@@ -93,8 +93,8 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")
@@ -130,8 +130,8 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Track] as? [Track] else {
-                XCTFail("Tracks not found")
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
                 return
             }
             print("tracks count: \(tracks.count)")

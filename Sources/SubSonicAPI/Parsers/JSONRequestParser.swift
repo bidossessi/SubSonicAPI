@@ -37,9 +37,9 @@ class JSONRequestParser: RequestParser {
     
     class func extract(key: Constants.SubSonicAPI.Results, data: Any?) -> [(Constants.SubSonicAPI.Results, [SubItem])] {
         switch key {
-        case .Track:
+        case .Song:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, Track.populate(items))]
+                return [(key, Song.populate(items))]
             }
 
         case .Album:
@@ -68,8 +68,8 @@ class JSONRequestParser: RequestParser {
             }
 
         case .SongsByGenre, .RandomSongs:
-            let items = self.getListFromDict(key: .Track, data: data)
-            return JSONRequestParser.extract(key: .Track, data: items)
+            let items = self.getListFromDict(key: .Song, data: data)
+            return JSONRequestParser.extract(key: .Song, data: items)
             
         case .Albums:
             let items = self.getListFromDict(key: .Album, data: data)
