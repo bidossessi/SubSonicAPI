@@ -26,7 +26,7 @@ func ==(lhs: ParsingError, rhs: ParsingError) -> Bool {
 protocol RequestParser: class {
     func validate(version: String) throws
     func parse(data: Data)
-    var onComplete: ((_ result: [String: [SubItem]]?, _ error: ParsingError?) ->())? { get set }
+    var onComplete: ((_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: ParsingError?) ->())? { get set }
 }
 
 extension RequestParser {
@@ -56,9 +56,9 @@ extension RequestParser {
         return nil
     }
 
-    static func getListFromDict(key: String, data: Any?) -> [[String: Any]]? {
+    static func getListFromDict(key: Constants.SubSonicAPI.Results, data: Any?) -> [[String: Any]]? {
         if let dataDict = getAsDict(data) {
-            return dataDict[key] as? [[String: Any]]
+            return dataDict[key.rawValue] as? [[String: Any]]
         }
         return nil
     }

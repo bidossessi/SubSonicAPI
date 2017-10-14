@@ -17,7 +17,7 @@ class Playlist: Hashable, SubItem {
         let mo = Playlist(id: id, name: name)
         mo.songCount = makeInt(data["songCount"])
         mo.duration = makeInt(data["duration"])
-        if let entries = data[Constants.SubSonicAPI.Results.Entry] as? [[String: Any]] {
+        if let entries = data[Constants.SubSonicAPI.Results.Entry.rawValue] as? [[String: Any]] {
             let filteredEntries = entries.filter { !($0["isVideo"] as! Bool) }
             mo.tracks = Track.populate(filteredEntries)
         }

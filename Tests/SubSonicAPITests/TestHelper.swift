@@ -6,6 +6,7 @@
 //
 
 import Foundation
+@testable import SubSonicAPI
 
 class TestHelper {
     func getDataFromFile(fileName name: String, fileExt ext: String) -> Data {

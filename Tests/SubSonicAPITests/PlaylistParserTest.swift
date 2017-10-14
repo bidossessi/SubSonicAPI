@@ -19,7 +19,7 @@ class PlaylistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let playlists = results?["playlists"] as? [Playlist] else {
+            guard let playlists = results?[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -40,7 +40,7 @@ class PlaylistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
 
         parser.onComplete = { (results, error) in
-            guard let playlists = results?["playlists"] as? [Playlist] else {
+            guard let playlists = results?[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -70,7 +70,7 @@ class PlaylistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let playlists = results?["playlists"] as? [Playlist] else {
+            guard let playlists = results?[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
@@ -92,7 +92,7 @@ class PlaylistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let playlists = results?["playlists"] as? [Playlist] else {
+            guard let playlists = results?[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }

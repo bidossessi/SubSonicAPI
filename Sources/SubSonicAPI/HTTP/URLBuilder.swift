@@ -1,13 +1,15 @@
 import Foundation
 
 protocol URLBuilder {
-    func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL
+    func url(config: SubSonicConfig,
+             endpoint: Constants.SubSonicAPI.Views,
+             params: [String: String]) -> URL
 }
 
 
 extension URLBuilder {
 
-    func url(config: SubSonicConfig, endpoint: String, params: [String: String]) -> URL {
+    func url(config: SubSonicConfig, endpoint: Constants.SubSonicAPI.Views, params: [String: String]) -> URL {
         let serverUrl = config.serverUrl
         let baseUrl: String = "\(serverUrl)/rest/\(endpoint).view"
         

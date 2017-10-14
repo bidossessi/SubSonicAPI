@@ -2,8 +2,7 @@ import Foundation
 
 
 class JSONRequestParser: RequestParser {
-    
-    var onComplete: ((_ result: [String: [SubItem]]?, _ error: ParsingError?) ->())?
+    var onComplete: ((_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: ParsingError?) ->())?
 
     init() {
         print("JSONRequestParser started")
@@ -22,7 +21,11 @@ class JSONRequestParser: RequestParser {
         // handle response
         do {
             try self.check(response)
-            let dups = response.map({(k: String, v: Any?) in JSONRequestParser.extract(key: k, data: v)}).flatMap{ $0 }
+            let dups = response.filter{ (k: String, _) in
+                Constants.SubSonicAPI.Results(rawValue: k) != nil
+            }.map{ (k: String, v: Any?) in
+                JSONRequestParser.extract(key: Constants.SubSonicAPI.Results(rawValue: k)!, data: v)
+            }.flatMap{ $0 }
             let results = Dictionary(uniqueKeysWithValues: dups)
             self.onComplete?(results, nil)
         } catch {
@@ -32,63 +35,65 @@ class JSONRequestParser: RequestParser {
             
     }
     
-    private static func extract(key: String, data: Any?) -> [(String, [SubItem])] {
+    class func extract(key: Constants.SubSonicAPI.Results, data: Any?) -> [(Constants.SubSonicAPI.Results, [SubItem])] {
         switch key {
-        case Constants.SubSonicAPI.Results.Track:
+        case .Track:
             if let items = JSONRequestParser.getAsList(data) {
-                return [("tracks", Track.populate(items))]
+                return [(key, Track.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.Album:
+        case .Album:
             if let items = JSONRequestParser.getAsList(data) {
-                return [("albums", Album.populate(items))]
+                return [(key, Album.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.Artist:
+        case .Artist:
             if let items = JSONRequestParser.getAsList(data) {
-                return [("artists", Artist.populate(items))]
+                return [(key, Artist.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.Index:
+        case .Index:
             if let items = JSONRequestParser.getAsList(data) {
-                return [("artistIndexes", ArtistIndex.populate(items))]
+                return [(key, ArtistIndex.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.Playlist:
+        case .Playlist:
             if let items = JSONRequestParser.getAsList(data) {
-                return [("playlists", Playlist.populate(items))]
+                return [(key, Playlist.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.Genre:
-            if let items = JSONRequestParser.getAsList(data) {
-                return [("genres", Genre.populate(items))]
+        case .Genre:
+            if let items = self.getAsList(data) {
+                return [(key, Genre.populate(items))]
             }
 
-        case Constants.SubSonicAPI.Results.SongsByGenre,
-             Constants.SubSonicAPI.Results.RandomSongs:
-            let items = JSONRequestParser.getListFromDict(key: Constants.SubSonicAPI.Results.Track, data: data)
-            return JSONRequestParser.extract(key: Constants.SubSonicAPI.Results.Track, data: items)
+        case .SongsByGenre, .RandomSongs:
+            let items = self.getListFromDict(key: .Track, data: data)
+            return JSONRequestParser.extract(key: .Track, data: items)
             
-        case Constants.SubSonicAPI.Results.Albums:
-            let items = JSONRequestParser.getListFromDict(key: Constants.SubSonicAPI.Results.Album, data: data)
-            return JSONRequestParser.extract(key: Constants.SubSonicAPI.Results.Album, data: items)
+        case .Albums:
+            let items = self.getListFromDict(key: .Album, data: data)
+            return self.extract(key: .Album, data: items)
             
-        case Constants.SubSonicAPI.Results.Artists:
-            let items = JSONRequestParser.getListFromDict(key: Constants.SubSonicAPI.Results.Index, data: data)
-            return JSONRequestParser.extract(key: Constants.SubSonicAPI.Results.Index, data: items)
+        case .Artists:
+            let items = self.getListFromDict(key: .Index, data: data)
+            return self.extract(key: .Index, data: items)
             
-        case Constants.SubSonicAPI.Results.Playlists:
-            let items = JSONRequestParser.getListFromDict(key: Constants.SubSonicAPI.Results.Playlist, data: data)
-            return JSONRequestParser.extract(key: Constants.SubSonicAPI.Results.Playlist, data: items)
+        case .Playlists:
+            let items = self.getListFromDict(key: .Playlist, data: data)
+            return self.extract(key: .Playlist, data: items)
 
-        case Constants.SubSonicAPI.Results.Genres:
-            let items = JSONRequestParser.getListFromDict(key: Constants.SubSonicAPI.Results.Genre, data: data)
-            return JSONRequestParser.extract(key: Constants.SubSonicAPI.Results.Genre, data: items)
+        case .Genres:
+            let items = self.getListFromDict(key: .Genre, data: data)
+            return self.extract(key: .Genre, data: items)
 
-        case Constants.SubSonicAPI.Results.Search,
-             Constants.SubSonicAPI.Results.Starred:
+        case .Search, .Starred:
             let dataDict = JSONRequestParser.getAsDict(data)
-            return dataDict!.map({(k: String, v: Any?) in JSONRequestParser.extract(key: k, data: v)}).flatMap{ $0 }
+            return dataDict!.filter{ (k: String, _) in
+                Constants.SubSonicAPI.Results(rawValue: k) != nil
+            }.map{ (k: String, v: Any?) in
+                self.extract(key: Constants.SubSonicAPI.Results(rawValue: k)!, data: v)
+            }.flatMap{ $0 }
         default:
             return [(key, [])]
         }
@@ -102,7 +107,7 @@ class JSONRequestParser: RequestParser {
             case Constants.SubSonicInfo.APIVersionAttr:
                 try self.validate(version: data as! String)
                 
-            case Constants.SubSonicAPI.Results.Error:
+            case Constants.SubSonicAPI.Results.Error.rawValue:
                 let dataDict = data as! [String: Any]
                 let errorCode = dataDict["code"] as! Int
                 let errorMsg = dataDict["message"] as! String
@@ -111,7 +116,5 @@ class JSONRequestParser: RequestParser {
                 print(dataKey)
             }
         }
-        
     }
-
 }

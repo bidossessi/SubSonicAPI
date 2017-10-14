@@ -19,7 +19,7 @@ class GenreParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let genres = results?["genres"] as? [Genre] else {
+            guard let genres = results?[.Genre] as? [Genre] else {
                 XCTFail("Genres not found")
                 return
             }
@@ -40,7 +40,7 @@ class GenreParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
@@ -63,7 +63,7 @@ class GenreParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let genres = results?["genres"] as? [Genre] else {
+            guard let genres = results?[.Genre] as? [Genre] else {
                 XCTFail("Genres not found")
                 return
             }
@@ -85,7 +85,7 @@ class GenreParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }

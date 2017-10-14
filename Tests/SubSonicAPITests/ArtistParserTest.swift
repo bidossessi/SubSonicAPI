@@ -19,7 +19,7 @@ class ArtistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let indexes = results?["artistIndexes"] as? [ArtistIndex] else {
+            guard let indexes = results?[.Index] as? [ArtistIndex] else {
                 XCTFail("ArtistIndexes not found")
                 return
             }
@@ -40,7 +40,7 @@ class ArtistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
@@ -69,7 +69,7 @@ class ArtistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let indexes = results?["artistIndexes"] as? [ArtistIndex] else {
+            guard let indexes = results?[.Index] as? [ArtistIndex] else {
                 XCTFail("ArtistIndexs not found")
                 return
             }
@@ -91,7 +91,7 @@ class ArtistParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }

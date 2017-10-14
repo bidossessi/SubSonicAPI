@@ -19,7 +19,7 @@ class AlbumParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -40,7 +40,7 @@ class AlbumParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
 
         parser.onComplete = { (results, error) in
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -70,7 +70,7 @@ class AlbumParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
@@ -92,7 +92,7 @@ class AlbumParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }

@@ -5,16 +5,16 @@ class XMLRequestParser: NSObject, RequestParser {
     var currentString, lastTag, requestName: String?
     var processIndex: Int = 0
     var currentError: ParsingError?
-    var results: [String: [SubItem]] = [
-        "artistIndexes": [ArtistIndex](),
-        "artists": [Artist](),
-        "albums": [Album](),
-        "genres": [Genre](),
-        "playlists": [Playlist](),
-        "tracks": [Track]()
+    var results: [Constants.SubSonicAPI.Results: [SubItem]] = [
+        .Index: [ArtistIndex](),
+        .Artist: [Artist](),
+        .Album: [Album](),
+        .Genre: [Genre](),
+        .Playlist: [Playlist](),
+        .Track: [Track]()
     ]
-    var onComplete: ((_ result: [String: [SubItem]]?, _ error: ParsingError?) ->())?
-    
+    var onComplete: ((_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: ParsingError?) ->())?
+
     override init() {
         super.init()
         print("XMLRequestParser started")
@@ -58,27 +58,26 @@ extension XMLRequestParser: XMLParserDelegate {
                 parser.abortParsing()
             }
         
-        case Constants.SubSonicAPI.Results.Error:
+        case Constants.SubSonicAPI.Results.Error.rawValue:
             let errorCode = Int(attributeDict["code"]!)!
             let errorMsg = attributeDict["message"]!
             self.currentError = ParsingError.Status(code: errorCode, message: errorMsg)
             parser.abortParsing()
-
-        case Constants.SubSonicAPI.Results.Track:
-            self.results["tracks"]?.append(Track.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Album:
-            self.results["albums"]?.append(Album.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Artist:
-            self.results["artists"]?.append(Artist.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Playlist:
-            self.results["playlists"]?.append(Playlist.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Index:
-            self.results["artistIndexes"]?.append(ArtistIndex.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Entry:
-            self.results["tracks"]?.append(Track.populate(attributeDict))
-        case Constants.SubSonicAPI.Results.Genre:
+        case Constants.SubSonicAPI.Results.Track.rawValue:
+            self.results[.Track]?.append(Track.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Album.rawValue:
+            self.results[.Album]?.append(Album.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Artist.rawValue:
+            self.results[.Artist]?.append(Artist.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Playlist.rawValue:
+            self.results[.Playlist]?.append(Playlist.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Index.rawValue:
+            self.results[.Index]?.append(ArtistIndex.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Entry.rawValue:
+            self.results[.Track]?.append(Track.populate(attributeDict))
+        case Constants.SubSonicAPI.Results.Genre.rawValue:
             self.currentString = ""
-            self.results["genres"]?.append(Genre.populate(attributeDict))
+            self.results[.Genre]?.append(Genre.populate(attributeDict))
         default:
             print("idx: \(self.processIndex), \(elementName)")
         }
@@ -96,28 +95,28 @@ extension XMLRequestParser: XMLParserDelegate {
                 namespaceURI: String?,
                 qualifiedName qName: String?) {
         switch elementName {
-        case Constants.SubSonicAPI.Results.Index:
-            let index = self.results["artistIndexes"]?.last as! ArtistIndex
-            index.artists = self.results["artists"] as? [Artist]
-            self.results["artists"] = []
-        case Constants.SubSonicAPI.Results.Playlist:
-            let index = self.results["playlists"]?.last as! Playlist
-            index.tracks = self.results["tracks"] as? [Track]
-            self.results["tracks"] = []
-        case Constants.SubSonicAPI.Results.Genre:
-            let genre = self.results["genres"]?.last as! Genre
+        case Constants.SubSonicAPI.Results.Index.rawValue:
+            let index = self.results[.Index]?.last as! ArtistIndex
+            index.artists = self.results[.Artist] as? [Artist]
+            self.results[.Artist] = []
+        case Constants.SubSonicAPI.Results.Playlist.rawValue:
+            let index = self.results[.Playlist]?.last as! Playlist
+            index.tracks = self.results[.Track] as? [Track]
+            self.results[.Track] = []
+        case Constants.SubSonicAPI.Results.Genre.rawValue:
+            let genre = self.results[.Genre]?.last as! Genre
             genre.name = self.currentString!
-        case Constants.SubSonicAPI.Results.Album:
+        case Constants.SubSonicAPI.Results.Album.rawValue:
             if self.requestName == elementName {
-                let index = self.results["albums"]?.last as! Album
-                index.tracks = self.results["tracks"] as? [Track]
-                self.results["tracks"] = []
+                let index = self.results[.Album]?.last as! Album
+                index.tracks = self.results[.Track] as? [Track]
+                self.results[.Track] = []
             }
-        case Constants.SubSonicAPI.Results.Artist:
+        case Constants.SubSonicAPI.Results.Artist.rawValue:
             if self.requestName == elementName {
-                let index = self.results["artists"]?.last as! Artist
-                index.albums = self.results["albums"] as? [Album]
-                self.results["albums"] = []
+                let index = self.results[.Artist]?.last as! Artist
+                index.albums = self.results[.Album] as? [Album]
+                self.results[.Album] = []
             }
         default:
             break

@@ -15,7 +15,7 @@ class ArtistIndex: Hashable, SubItem {
     class func populate(_ data: [String: Any]) -> ArtistIndex {
         let name = data["name"] as! String
         let mo = ArtistIndex(name: name)
-        if let artists = data[Constants.SubSonicAPI.Results.Artist] as? [[String: Any]] {
+        if let artists = data[Constants.SubSonicAPI.Results.Artist.rawValue] as? [[String: Any]] {
             mo.artists = Artist.populate(artists)
         }
         return mo

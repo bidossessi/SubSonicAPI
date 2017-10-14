@@ -19,7 +19,7 @@ class TrackParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
@@ -37,12 +37,12 @@ class TrackParserTest: XCTestCase {
 
     func testXMLList() {
         let parser = XMLRequestParser()
-        // Given a list of tracks query
+        // Given [.Track] list of tracks query
         let xml = self.helper.getDataFromFile(fileName: "randomsongs", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }

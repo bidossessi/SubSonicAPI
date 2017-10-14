@@ -19,21 +19,21 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 20)
             
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
             print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
@@ -55,21 +55,21 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 97)
             
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
             print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
@@ -93,21 +93,21 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 20)
             
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
             print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
@@ -130,21 +130,21 @@ class MixedParserTest: XCTestCase {
         let expect = expectation(description: "Parsing complete")
         
         parser.onComplete = { (results, error) in
-            guard let tracks = results?["tracks"] as? [Track] else {
+            guard let tracks = results?[.Track] as? [Track] else {
                 XCTFail("Tracks not found")
                 return
             }
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 97)
             
-            guard let albums = results?["albums"] as? [Album] else {
+            guard let albums = results?[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
             print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?["artists"] as? [Artist] else {
+            guard let artists = results?[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }

@@ -35,7 +35,7 @@ class Album: Hashable, SubItem {
         mo.genre = data["genre"] as? String
         mo.coverArt = data["coverArt"] as? String
         mo.title = data["title"] as? String
-        if let tracks = data[Constants.SubSonicAPI.Results.Track] as? [[String: Any]] {
+        if let tracks = data[Constants.SubSonicAPI.Results.Track.rawValue] as? [[String: Any]] {
             mo.tracks = Track.populate(tracks)
         }
         return mo

@@ -18,7 +18,7 @@ class Artist: Hashable, SubItem {
         let mo = Artist(id: id, name: name)
         mo.albumCount = makeInt(data["albumCount"])
         mo.coverArt = data["coverArt"] as? String
-        if let albums = data[Constants.SubSonicAPI.Results.Album] as? [[String: Any]] {
+        if let albums = data[Constants.SubSonicAPI.Results.Album.rawValue] as? [[String: Any]] {
             mo.albums = Album.populate(albums)
         }
         return mo
