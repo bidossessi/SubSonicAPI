@@ -34,18 +34,18 @@ class DownloadQueueTest: XCTestCase {
 
         let s = Song.generate()
         api.download(song: s)
-        XCTAssertEqual(queue.count, 1)
+        XCTAssertEqual(queue.remains, 1)
         guard let download: Download = queue.next(), let found = download.item as? Song else {
             XCTFail("Couldn't get song back from queue")
             return
         }
         XCTAssertEqual(download.state, .Pending)
         XCTAssertEqual(s, found)
-        XCTAssertEqual(queue.count, 1)
+        XCTAssertEqual(queue.remains, 1)
         
         download.state = .Completed
         let _ = queue.next()
-        XCTAssertEqual(queue.count, 0)
+        XCTAssertEqual(queue.remains, 0)
 
     }
 
@@ -86,33 +86,33 @@ class DownloadQueueTest: XCTestCase {
         let arr = 1...5
         let s = arr.map{ i in Song.generate() }
         api.download(songs: s)
-        XCTAssertEqual(queue.count, 5)
+        XCTAssertEqual(queue.remains, 5)
         let next1 = queue.next()
         XCTAssertNotNil(next1)
         next1?.state = .Completed
         
         let next2 = queue.next()
         XCTAssertNotNil(next2)
-        XCTAssertEqual(queue.count, 4)
+        XCTAssertEqual(queue.remains, 4)
         next2?.state = .Completed
         
         let next3 = queue.next()
         XCTAssertNotNil(next3)
-        XCTAssertEqual(queue.count, 3)
+        XCTAssertEqual(queue.remains, 3)
         next3?.state = .Downloading
         
         let next4 = queue.next()
         XCTAssertNil(next4)
-        XCTAssertEqual(queue.count, 3)
+        XCTAssertEqual(queue.remains, 3)
         
         let next5 = queue.next()
         XCTAssertNil(next5)
-        XCTAssertEqual(queue.count, 3)
+        XCTAssertEqual(queue.remains, 3)
         next3?.state = .Completed
         
         let next6 = queue.next()
         XCTAssertNotNil(next6)
-        XCTAssertEqual(queue.count, 2)
+        XCTAssertEqual(queue.remains, 2)
     }
 
 }

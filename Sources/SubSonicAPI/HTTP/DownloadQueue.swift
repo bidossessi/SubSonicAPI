@@ -1,108 +1,89 @@
-//
-//  QueueMaestro.swift
-//  SubMaestro
-//
-//  Created by Stanislas Sodonon on 6/22/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
+import Foundation
 
-import Cocoa
+extension Collection {
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    subscript (safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
 
 protocol DownloadQueueProtocol {
     // TODO: Make it reusable!!!
     static var shared: DownloadQueueProtocol { get }
     var store: NSMutableArray { get }
     var count: Int { get }
+    var remains: Int { get }
     var isEmpty: Bool { get }
     subscript(_ index: Int) -> Download? { get }
-    func enqueue(aDownload: Download)
     func enqueue(someDownloads: [Download])
     func next() -> Download?
-    func reprocess()
     func clean()
 }
 
 class DownloadQueue: DownloadQueueProtocol {
     static let shared: DownloadQueueProtocol = DownloadQueue()
-    private var unprocessed: [Download] = []
-    private var processed: [Download] = []
-    
+    private var _store: [Download] = []
+
+    // MARK: - Public facing Store
     var store: NSMutableArray {
         get {
-            return NSMutableArray(array: self.unprocessed + self.processed)
+            return NSMutableArray(array: self._store)
         }
     }
     var count: Int {
         get {
-            return self.unprocessed.count
+            return self._store.count
         }
     }
-    
     var isEmpty: Bool {
-        return self.unprocessed.isEmpty
+        return self._store.isEmpty
     }
     
     subscript(_ index: Int) -> Download? {
-        return self.store.object(at: index) as? Download
+        return self._store[safe: index]
+    }
+
+    // MARK: - Queue Management
+    var remains: Int {
+        get {
+            return self.pending.count
+        }
+    }
+    private var computeCount: Int = 1
+    private var pending: [Download] {
+        get {
+            print("recomputed pending: \(computeCount)")
+            computeCount += 1
+            return _store.filter{ [.Pending, .Downloading].contains($0.state) }
+        }
     }
     
-
     private init() {
         print("DownloadQueue started")
     }
     
-    func enqueue(aDownload: Download) {
-        // Any preprocessing?
-        if self.unprocessed.contains(aDownload) {
-            return
-        }
-        if self.processed.contains(aDownload) {
-            return
-        }
-        self.unprocessed.append(aDownload)
-        print("\(self) enqueued: \(aDownload.item), count: \(self.count)")
+    private func shouldAdd(_ d: Download) -> Bool {
+        return !_store.contains(d)
     }
     
     func enqueue(someDownloads: [Download]) {
-        for download in someDownloads {
-            self.enqueue(aDownload: download)
-        }
+        let valid = someDownloads.filter{ shouldAdd($0) }
+        self._store += valid
     }
     
-    func reprocess() {
-        self.unprocessed = self.processed.map{ d in
-            d.state = .Pending
-            return d
-        }
-        self.processed = []
-    }
     
     func clean() {
-        self.unprocessed = []
-        self.processed = []
+        self._store = []
+        self.computeCount = 0
     }
     
-    // MRK: - return next pending item
     func next() -> Download? {
-        if self.unprocessed.isEmpty {
-            print("\(self) has no unprocessed items")
+        guard let next = self.pending[safe: 0] else {
             return nil
         }
-        print("Checking for next pending")
-        print("unprocessed: \(self.unprocessed.count)")
-        print("processed: \(self.processed.count)")
-        let candidate = self.unprocessed[0]
-        switch candidate.state {
-        case .Completed, .Cancelled:
-            print("This one is done; Trying again")
-            let move = self.unprocessed.removeFirst()
-            self.processed.append(move)
-            return self.next()
-        case .Downloading:
-            print("Busy; come back later")
+        if next.state == .Downloading {
             return nil
-        default:
-            return candidate
         }
+        return next
     }
 }

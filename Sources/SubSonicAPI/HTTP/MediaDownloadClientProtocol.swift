@@ -11,7 +11,7 @@ import Foundation
 protocol MediaDownloadClientProtocol: class {
     var downloadQueue: DownloadQueueProtocol { get }
     var activeQueueMap: [URL: Download] { get set }
-    func enqueue(url: URL, forItem item: SubItem)
+    func enqueue(set: [(URL, Song)])
     var session: URLSessionProtocol { get }
     func startNext()
     var onComplete: ((_ result: Download?, _ error: NetworkError?) ->())? { get set }

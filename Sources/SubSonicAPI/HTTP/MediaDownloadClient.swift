@@ -36,14 +36,16 @@ class MediaDownloadClient: NSObject, MediaDownloadClientProtocol {
         self.session = session
     }
     
-    func makeDownload(url: URL, item: SubItem) -> Download {
-        let task = self.session.downloadTask(with: url)
-        return Download(item: item, url: url, task: task)
+    func makeDownload(from set: [(URL, Song)]) -> [Download] {
+        return set.map{ (k: URL, v: Song) -> Download in
+            let task = self.session.downloadTask(with: k)
+            return Download(item: v, url: k, task: task)
+        }
     }
     
-    func enqueue(url: URL, forItem item: SubItem) {
-        let download = self.makeDownload(url: url, item: item)
-        self.downloadQueue.enqueue(aDownload: download)
+    func enqueue(set: [(URL, Song)]) {
+        let downloads = self.makeDownload(from: set)
+        self.downloadQueue.enqueue(someDownloads: downloads)
     }
     
     func startNext() {

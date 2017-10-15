@@ -7,9 +7,9 @@ import Foundation
 
 extension SubSonicDownloadProtocol {
     
-    func enqueueSong(config: SubSonicConfig, song: Song) {
+    func makeSet(config: SubSonicConfig, song: Song) -> (URL, Song) {
         let url = self.url(config: config, urlForMedia: String(song.id))
-        client.enqueue(url: url, forItem: song)
+        return (url, song)
     }
     
     func download(song: Song) {
@@ -17,7 +17,8 @@ extension SubSonicDownloadProtocol {
             return
         }
         let config = delegate.config(self)
-        enqueueSong(config: config, song: song)
+        let songTuple = makeSet(config: config, song: song)
+        client.enqueue(set: [songTuple])
     }
 
     
@@ -26,9 +27,10 @@ extension SubSonicDownloadProtocol {
             return
         }
         let config = delegate.config(self)
-        songs.forEach { (song) in
-            enqueueSong(config: config, song: song)
+        let songSet = songs.map { (s) -> (URL, Song) in
+            makeSet(config: config, song: s)
         }
+        client.enqueue(set: songSet)
     }
     
     func download(album: Album) {}
