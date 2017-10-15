@@ -26,22 +26,22 @@ protocol Downloadable {
 }
 
 
-class Download: Downloadable {
-    let item: SubItem
-    let url: URL
-    let task: URLSessionDownloadTask
-    var state: DownloadState = .Pending
-    var resumeData: Data?
-    var progress: Progress {
-        get {
-            return task.progress
-        }
-    }
-    
-    init(item: SubItem, url: URL, task: URLSessionDownloadTask) {
-        self.item = item
-        self.url = url
-        self.task = task
-    }
-}
+//class Download: Downloadable {
+//    let item: SubItem
+//    let url: URL
+//    let task: URLSessionDownloadTask
+//    var state: DownloadState = .Pending
+//    var resumeData: Data?
+//    var progress: Progress {
+//        get {
+//            return task.progress
+//        }
+//    }
+//    
+//    init(item: SubItem, url: URL, task: URLSessionDownloadTask) {
+//        self.item = item
+//        self.url = url
+//        self.task = task
+//    }
+//}
 
