@@ -6,42 +6,53 @@
 //  Copyright © 2017 Stanislas Sodonon. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 
 enum DownloadState: String {
     case Downloading = "Downloading"
-    case Cancel = "Cancelled"
-    case Complete = "Complete"
+    case Cancelled = "Cancelled"
+    case Completed = "Completed"
+    case Paused = "Paused"
     case Pending = "Pending"
 }
 
-protocol Downloadable {
+protocol Downloadable: Hashable {
     var item: SubItem { get }
-    var task: URLSessionDownloadTask { get }
+    var task: URLSessionDownloadTaskProtocol? { get }
     var state: DownloadState { get set }
     var resumeData: Data? { get set }
-    var progress: Progress { get }
+    var progress: Double { get }
     var url: URL { get }
+    var tmpFile: URL? {get set}
+    
 }
 
 
-//class Download: Downloadable {
-//    let item: SubItem
-//    let url: URL
-//    let task: URLSessionDownloadTask
-//    var state: DownloadState = .Pending
-//    var resumeData: Data?
-//    var progress: Progress {
-//        get {
-//            return task.progress
-//        }
-//    }
-//    
-//    init(item: SubItem, url: URL, task: URLSessionDownloadTask) {
-//        self.item = item
-//        self.url = url
-//        self.task = task
-//    }
-//}
+class Download: Downloadable {
+    
+    let item: SubItem
+    let url: URL
+    var task: URLSessionDownloadTaskProtocol?
+    var state: DownloadState = .Pending
+    var resumeData: Data?
+    var progress: Double = 0
+    var tmpFile: URL?
+    
+    init(item: SubItem, url: URL, task: URLSessionDownloadTaskProtocol) {
+        self.item = item
+        self.url = url
+        self.task = task
+    }
+    
+
+    // MARK: - Hashable
+    var hashValue: Int {
+        return url.absoluteString.hashValue
+    }
+    static func ==(lhs: Download, rhs: Download) -> Bool {
+        return lhs.url.absoluteString == rhs.url.absoluteString
+    }
+}
+
 

@@ -3,7 +3,7 @@ import XCTest
 
 class HandlerRequestTest: XCTestCase {
 
-    var subject: HTTPRequestClient!
+    var subject: HTTPRequestCLientProtocol!
     var api: SubSonicProtocol!
     var config: SubSonicConfig!
     let session = MockRequestSession()

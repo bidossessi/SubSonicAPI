@@ -1,45 +1,5 @@
 import Foundation
 
-enum NetworkError: Error, Equatable {
-    case Query
-    case Response(code: Int)
-}
-
-func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
-    switch (lhs, rhs) {
-    case (.Query, .Query):
-        return true
-    case (.Response(code: let lcode), .Response(code: let rcode)):
-        return lcode == rcode
-    default:
-        return false
-    }
-}
-
-protocol HTTPRequestCLientProtocol: class {
-    var taskDataMap: [URLSessionTask: Data] { get set }
-    var onComplete: ((_ result: Data?, _ error: NetworkError?) ->())? { get set }
-    func query(_ url: URL)
-}
-
-protocol URLSessionDataTaskProtocol {
-    func resume()
-}
-
-extension URLSessionDataTask: URLSessionDataTaskProtocol { }
-
-typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
-
-protocol URLSessionProtocol {
-    func dataTask(with url: URL, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
-}
-
-extension URLSession: URLSessionProtocol {
-    func dataTask(with url: URL, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
-        return (dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
-    }
-}
-
 
 
 class HTTPRequestClient: NSObject, HTTPRequestCLientProtocol {

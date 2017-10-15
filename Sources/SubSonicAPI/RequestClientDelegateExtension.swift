@@ -11,7 +11,7 @@ extension SubSonicProtocol {
         guard let delegate: SubSonicDelegate = self.delegate else {
             return
         }
-        let config = delegate.sub(self, endpoint: endpoint)
+        let config = delegate.config(self)
         let url = self.url(config: config, endpoint: endpoint, params: params)
         let parser = self.getParser(from: config)
 

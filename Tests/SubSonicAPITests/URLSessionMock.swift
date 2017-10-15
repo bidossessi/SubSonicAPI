@@ -5,7 +5,7 @@
 //  Created by Stanislas Sodonon on 10/5/17.
 //
 
-import Foundation
+import XCTest
 @testable import SubSonicAPI
 
 class MockURLSessionDataTask: URLSessionDataTaskProtocol {
@@ -17,6 +17,10 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
 }
 
 class MockRequestSession: URLSessionProtocol {
+    func downloadTask(with url: URL) -> URLSessionDownloadTaskProtocol {
+        return URLSessionDownloadTask()
+    }
+    
     var nextDataTask: URLSessionDataTaskProtocol = MockURLSessionDataTask()
     var nextError: Error?
     var nextResponse: URLResponse?

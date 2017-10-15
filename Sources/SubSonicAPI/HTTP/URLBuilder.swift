@@ -4,6 +4,8 @@ protocol URLBuilder {
     func url(config: SubSonicConfig,
              endpoint: Constants.SubSonicAPI.Views,
              params: [String: String]) -> URL
+    func url(config: SubSonicConfig, urlForMedia id: String) -> URL
+    func url(config: SubSonicConfig, urlForCover id: String) -> URL
 }
 
 
@@ -31,5 +33,13 @@ extension URLBuilder {
         let parameterString = queryParams.stringFromHttpParameters()
         let finalString = "\(baseUrl)?\(parameterString)"
         return URL(string: finalString)!
+    }
+    
+    func url(config: SubSonicConfig, urlForMedia id: String) -> URL {
+        return url(config: config, endpoint: .Download, params: ["id": id])
+    }
+    
+    func url(config: SubSonicConfig, urlForCover id: String) -> URL {
+        return url(config: config, endpoint: .CoverArt, params: ["id": id])
     }
 }

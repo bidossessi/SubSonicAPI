@@ -10,7 +10,7 @@ import XCTest
 
 class HTTPRequestTest: XCTestCase {
 
-    var subject: HTTPRequestClient!
+    var subject: HTTPRequestCLientProtocol!
     let session = MockRequestSession()
 
     

@@ -27,7 +27,7 @@ class DelegateRequestTest: XCTestCase {
             XCTAssert(tracks.count == 10)
         }
         
-        let spyDelegate = SpyDelegate(expectation: expect, handler: handle)
+        let spyDelegate = RequestDelegate(expectation: expect, handler: handle)
         api.delegate = spyDelegate
         
         api.randomSongs()
@@ -47,7 +47,7 @@ class DelegateRequestTest: XCTestCase {
             XCTAssert(indexes.count == 25)
         }
         
-        let spyDelegate = SpyDelegate(expectation: expect, handler: handle)
+        let spyDelegate = RequestDelegate(expectation: expect, handler: handle)
         api.delegate = spyDelegate
         
         api.artists()
@@ -74,7 +74,7 @@ class DelegateRequestTest: XCTestCase {
             XCTAssert(albums.count == 8)
         }
         
-        let spyDelegate = SpyDelegate(expectation: expect, handler: handle)
+        let spyDelegate = RequestDelegate(expectation: expect, handler: handle)
         api.delegate = spyDelegate
         
         api.artist(id: 100000578)

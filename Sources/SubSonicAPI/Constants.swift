@@ -18,6 +18,7 @@ struct Constants {
             case Song = "getSong"
             case Bookmarks = "getBookmarks"
             case Download = "download"
+            case CoverArt = "getCoverArt"
             case Stream = "stream"
             case Star = "star"
             case Unstar = "unstar"

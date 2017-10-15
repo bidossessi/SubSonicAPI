@@ -1,17 +1,5 @@
 import Foundation
 
-enum RequestFormat: String {
-    case Json = "json"
-    case Xml = "xml"
-}
-// MARK: Config
-protocol SubSonicConfig {
-    var serverUrl: String { get }
-    var username: String { get }
-    var password: String { get }
-    var format: RequestFormat { get }
-}
-
 typealias QueryResult = (_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) -> Void
 
 // MARK: - Protocol
@@ -20,7 +8,7 @@ protocol SubSonicProtocol: URLBuilder {
     weak var delegate: SubSonicDelegate? { get set }
     func getParser(from config: SubSonicConfig) -> RequestParser
     
-    // MARK: - API Methods
+    // MARK: - Query API Methods
     func randomSongs()
     func randomSongs(config: SubSonicConfig, resultHandler handler: @escaping QueryResult)
     
@@ -62,9 +50,7 @@ protocol SubSonicProtocol: URLBuilder {
 
     func search(query: String)
     func search(query: String, config: SubSonicConfig, resultHandler handler: @escaping QueryResult)
-
 }
-
 
 // MARK: - implement getParser
 extension SubSonicProtocol {
