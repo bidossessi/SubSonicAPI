@@ -39,6 +39,7 @@ extension SubSonicProtocol {
     func starred() {
         self.queryWithDelegate(endpoint: .Starred, params: [:])
     }
+    
     func artists() {
         self.queryWithDelegate(endpoint: .Artists, params: [:])
     }

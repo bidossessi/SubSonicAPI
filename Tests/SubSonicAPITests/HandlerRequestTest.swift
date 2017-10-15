@@ -20,17 +20,10 @@ class HandlerRequestTest: XCTestCase {
                            format: .Json)
     }
     
-    func test_APIFunctionalQuery() {
-        let expectedData = self.helper.getDataFromFile(fileName: "randomsongs", fileExt: "json")
-        let url = URL(string: config.serverUrl)!
-        session.nextResponse = HTTPURLResponse(url: url,
-                                               statusCode: 200,
-                                               httpVersion: nil,
-                                               headerFields: nil)
-        session.nextData = expectedData
+    func test_APIRandomSongQuery() {
         let expect = expectation(description: "Got Data")
         
-        func handler(_ results: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) {
+        func handle(_ results: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) {
             guard let tracks = results?[.Song] as? [Song] else {
                 XCTFail("Songs not found")
                 return
@@ -39,10 +32,59 @@ class HandlerRequestTest: XCTestCase {
             XCTAssert(tracks.count == 10)
             expect.fulfill()
         }
-
-        api.randomSongs(config: config, resultHandler: handler)
+        api.randomSongs(config: config, resultHandler: handle)
         
         waitForExpectations(timeout: 3, handler: nil)
 
     }
+
+    func test_APIKizombaQuery() {
+        let expect = expectation(description: "Got Data")
+        
+        func handle(_ results: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) {
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
+                return
+            }
+            print("tracks count: \(tracks.count)")
+            XCTAssert(tracks.count == 98)
+            expect.fulfill()
+        }
+        api.genre(name: "kizomba", config: config, resultHandler: handle)
+        
+        waitForExpectations(timeout: 3, handler: nil)
+        
+    }
+
+    func test_APIStarredQuery() {
+        let expect = expectation(description: "Got Data")
+        
+        func handle(_ results: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) {
+            guard let tracks = results?[.Song] as? [Song] else {
+                XCTFail("Songs not found")
+                return
+            }
+            print("tracks count: \(tracks.count)")
+            XCTAssert(tracks.count == 97)
+            
+            guard let albums = results?[.Album] as? [Album] else {
+                XCTFail("Albums not found")
+                return
+            }
+            print("albums count: \(albums.count)")
+            XCTAssert(albums.count == 2)
+            
+            guard let artists = results?[.Artist] as? [Artist] else {
+                XCTFail("Artists not found")
+                return
+            }
+            print("artists count: \(artists.count)")
+            XCTAssert(artists.count == 2)
+            expect.fulfill()
+        }
+        api.starred(config: config, resultHandler: handle)
+        
+        waitForExpectations(timeout: 3, handler: nil)
+    }
+
 }

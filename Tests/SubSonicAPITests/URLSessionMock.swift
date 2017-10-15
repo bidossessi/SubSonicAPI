@@ -22,13 +22,67 @@ class MockRequestSession: URLSessionProtocol {
     var nextResponse: URLResponse?
     var nextData: Data?
     private (set) var lastURL: URL?
+    let helper = TestHelper()
     
     func dataTask(with url: URL, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol {
         lastURL = url
-        completionHandler(nextData, nextResponse, nextError)
-        return nextDataTask
+        let data = getData(url)
+        let response = getResponse(url)
+        completionHandler(data, response, nextError)
+        return self.nextDataTask
     }
     
+    // Fake API response
+    private func findFormat(_ url: URL) -> String {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false), let queryItems = components.queryItems else { return "xml" }
+        let formatArray = queryItems.filter({ $0.name == "f" })
+        guard let format = formatArray.first else {
+            return "xml"
+        }
+        return format.value!
+    }
+    
+    // find view in URL and return data accordingly
+    private func getData(_ url: URL) -> Data {
+        if nextData != nil {
+            return nextData!
+        }
+        // Match the url with
+        let viewString: String = url.lastPathComponent.components(separatedBy: ".")[0]
+        guard let view: Constants.SubSonicAPI.Views = Constants.SubSonicAPI.Views(rawValue: viewString) else {
+            return "{}".data(using: .utf8)!
+        }
+        let ext = findFormat(url)
+        switch view {
+        case .RandomSongs:
+            return self.helper.getDataFromFile(fileName: "randomsongs", fileExt: ext)
+        case .Artists:
+            return self.helper.getDataFromFile(fileName: "artists", fileExt: ext)
+        case .Artist:
+            return self.helper.getDataFromFile(fileName: "artist-gackt", fileExt: ext)
+        case .Albums:
+            return self.helper.getDataFromFile(fileName: "albumlist", fileExt: ext)
+        case .Genres:
+            return self.helper.getDataFromFile(fileName: "genres", fileExt: ext)
+        case .Genre:
+            return self.helper.getDataFromFile(fileName: "genre-kizomba", fileExt: ext)
+        case .Playlists:
+            return self.helper.getDataFromFile(fileName: "playlists", fileExt: ext)
+        case .Starred:
+            return self.helper.getDataFromFile(fileName: "starred", fileExt: ext)
+        default:
+            return "{}".data(using: .utf8)!
+        }
+    }
+    
+    private func getResponse(_ url: URL) -> URLResponse {
+        if nextResponse != nil {
+            return nextResponse!
+        }
+        return HTTPURLResponse(url: url, statusCode: 200,
+                               httpVersion: nil, headerFields: nil)!
+    }
+
 }
 
 
