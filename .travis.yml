@@ -5,6 +5,7 @@ sudo: required
 dist: trusty
 osx_image: xcode9.1
 script:
-  - xcodebuild clean test -project SubSonicAPI.xcodeproj -scheme SubSonicAPI-Package CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet
+  - xcodebuild clean build -project SubSonicAPI.xcodeproj -scheme SubSonicAPI-Package -sdk macosx -quiet
+  - xcodebuild clean test -project SubSonicAPI.xcodeproj -scheme SubSonicAPI-Package -sdk macosx -quiet
 after_success:
   - bash <(curl -s https://codecov.io/bash)
