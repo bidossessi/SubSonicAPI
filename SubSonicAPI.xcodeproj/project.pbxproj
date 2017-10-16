@@ -317,9 +317,24 @@
 			path = /Users/stanislas/Documents/Projects/ColourCog/SubSonicAPI/Sources/SubSonicAPI/Models;
 			sourceTree = "<absolute>";
 		};
+		823DF56A1F946C0B00A855F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82EE0D0C1F92A3B900FD3364 /* RequestClientHandlerExtension.swift */,
+				82A3EC3F1F93911800690B5E /* DelegateDownloadExtension.swift */,
+				82EE0D0E1F92A63D00FD3364 /* RequestClientDelegateExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = SOURCE_ROOT;
+		};
 		82B3E0441F94268B0026FE8B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				82EE0D111F92ADA500FD3364 /* SubSonicDataProtocol.swift */,
+				82B3E0381F93ADF50026FE8B /* SubSonicDownloadProtocol.swift */,
+				82B3E0361F93ADD40026FE8B /* SubConfigProtocol.swift */,
+				82025E301F8D634C00312A7A /* URLBuilderProtocol.swift */,
+				827AAA151F84F76D0030D2C9 /* SubSonicDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = SOURCE_ROOT;
@@ -443,15 +458,8 @@
 				OBJ_9 /* DataRequestAPI.swift */,
 				827876BA1F94349A00D80AE5 /* URLBuilder.swift */,
 				82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */,
-				82025E301F8D634C00312A7A /* URLBuilderProtocol.swift */,
-				82EE0D111F92ADA500FD3364 /* SubSonicDataProtocol.swift */,
-				82B3E0381F93ADF50026FE8B /* SubSonicDownloadProtocol.swift */,
-				82B3E0361F93ADD40026FE8B /* SubConfigProtocol.swift */,
 				82B3E0441F94268B0026FE8B /* Protocols */,
-				82EE0D0C1F92A3B900FD3364 /* RequestClientHandlerExtension.swift */,
-				82A3EC3F1F93911800690B5E /* DelegateDownloadExtension.swift */,
-				82EE0D0E1F92A63D00FD3364 /* RequestClientDelegateExtension.swift */,
-				827AAA151F84F76D0030D2C9 /* SubSonicDelegate.swift */,
+				823DF56A1F946C0B00A855F1 /* Extensions */,
 			);
 			name = SubSonicAPI;
 			path = Sources/SubSonicAPI;
