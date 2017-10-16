@@ -5,12 +5,12 @@
 
 import Foundation
 
-extension SubSonicProtocol {
+extension SubSonicDataProtocol {
     func query(config: SubSonicConfig,
              endpoint: Constants.SubSonicAPI.Views,
              params: [String: String],
              handler: @escaping QueryResult) {
-        let url = self.url(config: config, endpoint: endpoint, params: params)
+        let url = self.urlBuilder.url(config: config, endpoint: endpoint, params: params)
         
         let parser = self.getParser(from: config)
         // MARK: Prepare parser

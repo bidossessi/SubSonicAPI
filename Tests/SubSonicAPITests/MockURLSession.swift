@@ -8,6 +8,15 @@
 import XCTest
 @testable import SubSonicAPI
 
+class MockURLSessionDownloadTask: URLSessionDownloadTaskProtocol {
+    private (set) var resumeWasCalled = false
+    
+    func resume() {
+        self.resumeWasCalled = true
+    }
+}
+
+
 class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     private (set) var resumeWasCalled = false
     
@@ -18,7 +27,7 @@ class MockURLSessionDataTask: URLSessionDataTaskProtocol {
 
 class MockRequestSession: URLSessionProtocol {
     func downloadTask(with url: URL) -> URLSessionDownloadTaskProtocol {
-        return URLSessionDownloadTask()
+        return MockURLSessionDownloadTask()
     }
     
     var nextDataTask: URLSessionDataTaskProtocol = MockURLSessionDataTask()

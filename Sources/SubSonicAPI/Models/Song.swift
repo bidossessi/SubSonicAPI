@@ -54,10 +54,6 @@ class Song: Hashable, SubItem {
         return lhs.id == rhs.id && lhs.path == rhs.path
     }
 
-    class func generate() -> Song {
-        let uuid = UUID()
-        return Song(id: uuid.hashValue, title: uuid.uuidString, path: uuid.uuidString)
-    }
 }
 
 

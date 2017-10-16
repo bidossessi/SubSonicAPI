@@ -15,5 +15,6 @@ protocol MediaDownloadClientProtocol: class {
     var session: URLSessionProtocol { get }
     func startNext()
     var onComplete: ((_ result: Download?, _ error: NetworkError?) ->())? { get set }
+    var onEmpty: (()->())? { get set }
 }
 

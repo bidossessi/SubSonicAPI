@@ -7,18 +7,26 @@ import Foundation
 
 extension SubSonicDownloadProtocol {
     
-    func makeSet(config: SubSonicConfig, song: Song) -> (URL, Song) {
-        let url = self.url(config: config, urlForMedia: String(song.id))
-        return (url, song)
+    func enqueue(config: SubSonicConfig, songs: [Song]) {
+        let songSet = songs.map { (s) -> (URL, Song) in
+                let url = self.urlBuilder.url(config: config, urlForMedia: String(s.id))
+                return (url, s)
+        }
+        client.enqueue(set: songSet)
     }
     
     func download(song: Song) {
         guard let delegate: SubSonicDownloadDelegate = self.delegate else {
             return
         }
+        self.client.onComplete = { (data, error) in
+            delegate.sub(self, saveMedia: data, error: error)
+        }
+        self.client.onEmpty = { () in
+            delegate.queueEmpty(self)
+        }
         let config = delegate.config(self)
-        let songTuple = makeSet(config: config, song: song)
-        client.enqueue(set: [songTuple])
+        enqueue(config: config, songs: [song])
     }
 
     
@@ -26,11 +34,14 @@ extension SubSonicDownloadProtocol {
         guard let delegate: SubSonicDownloadDelegate = self.delegate else {
             return
         }
-        let config = delegate.config(self)
-        let songSet = songs.map { (s) -> (URL, Song) in
-            makeSet(config: config, song: s)
+        self.client.onComplete = { (data, error) in
+            delegate.sub(self, saveMedia: data, error: error)
         }
-        client.enqueue(set: songSet)
+        self.client.onEmpty = { () in
+            delegate.queueEmpty(self)
+        }
+        let config = delegate.config(self)
+        enqueue(config: config, songs: songs)
     }
     
     func download(album: Album) {}

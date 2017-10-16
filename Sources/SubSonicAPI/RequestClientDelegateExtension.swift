@@ -5,14 +5,14 @@
 
 import Foundation
 
-extension SubSonicProtocol {
+extension SubSonicDataProtocol {
     func queryWithDelegate(endpoint: Constants.SubSonicAPI.Views,
              params: [String: String]) {
-        guard let delegate: SubSonicDelegate = self.delegate else {
+        guard let delegate: SubSonicDataDelegate = self.delegate else {
             return
         }
         let config = delegate.config(self)
-        let url = self.url(config: config, endpoint: endpoint, params: params)
+        let url = self.urlBuilder.url(config: config, endpoint: endpoint, params: params)
         let parser = self.getParser(from: config)
 
         // MARK: Prepare parser

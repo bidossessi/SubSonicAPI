@@ -2,7 +2,7 @@ import Foundation
 
 typealias DownloadResult = (_ result: Download?, _ error: Error?) -> Void
 
-protocol SubSonicDownloadProtocol: URLBuilder {
+protocol SubSonicDownloadProtocol: SubSonicProtocol {
     var client: MediaDownloadClientProtocol { get }
     var downloadQueue: DownloadQueueProtocol { get }
     weak var delegate: SubSonicDownloadDelegate? { get set }

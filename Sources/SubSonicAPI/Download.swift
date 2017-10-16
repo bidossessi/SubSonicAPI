@@ -1,12 +1,4 @@
-//
-//  Download.swift
-//  SubMaestro
-//
-//  Created by Stanislas Sodonon on 6/20/17.
-//  Copyright © 2017 Stanislas Sodonon. All rights reserved.
-//
-
-import Cocoa
+import Foundation
 
 
 enum DownloadState: String {
@@ -18,7 +10,7 @@ enum DownloadState: String {
 }
 
 protocol Downloadable: Hashable {
-    var item: SubItem { get }
+    var item: Song { get }
     var task: URLSessionDownloadTaskProtocol? { get }
     var state: DownloadState { get set }
     var resumeData: Data? { get set }
@@ -31,7 +23,7 @@ protocol Downloadable: Hashable {
 
 class Download: Downloadable {
     
-    let item: SubItem
+    let item: Song
     let url: URL
     var task: URLSessionDownloadTaskProtocol?
     var state: DownloadState = .Pending
@@ -39,7 +31,7 @@ class Download: Downloadable {
     var progress: Double = 0
     var tmpFile: URL?
     
-    init(item: SubItem, url: URL, task: URLSessionDownloadTaskProtocol) {
+    init(item: Song, url: URL, task: URLSessionDownloadTaskProtocol) {
         self.item = item
         self.url = url
         self.task = task
@@ -51,7 +43,7 @@ class Download: Downloadable {
         return url.absoluteString.hashValue
     }
     static func ==(lhs: Download, rhs: Download) -> Bool {
-        return lhs.url.absoluteString == rhs.url.absoluteString
+        return lhs.url.absoluteString == rhs.url.absoluteString 
     }
 }
 

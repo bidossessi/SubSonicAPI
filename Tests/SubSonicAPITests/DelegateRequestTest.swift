@@ -4,7 +4,7 @@ import XCTest
 class DelegateRequestTest: XCTestCase {
 
     var subject: HTTPRequestClient!
-    var api: SubSonicProtocol!
+    var api: SubSonicDataProtocol!
     var config: SubSonicConfig!
     let session = MockRequestSession()
     let helper = TestHelper()

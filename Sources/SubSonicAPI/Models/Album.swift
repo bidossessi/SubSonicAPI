@@ -45,6 +45,7 @@ class Album: Hashable, SubItem {
         return array.map { Album.populate($0) }
     }
     
+    
     // MARK: - Hashable
     var hashValue: Int {
         return id

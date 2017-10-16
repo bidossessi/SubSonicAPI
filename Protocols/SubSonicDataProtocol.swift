@@ -3,9 +3,9 @@ import Foundation
 typealias QueryResult = (_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: Error?) -> Void
 
 // MARK: - Protocol
-protocol SubSonicProtocol: URLBuilder {
+protocol SubSonicDataProtocol: SubSonicProtocol {
     var client: HTTPRequestCLientProtocol { get }
-    weak var delegate: SubSonicDelegate? { get set }
+    weak var delegate: SubSonicDataDelegate? { get set }
     func getParser(from config: SubSonicConfig) -> RequestParser
     
     // MARK: - Query API Methods
@@ -53,7 +53,7 @@ protocol SubSonicProtocol: URLBuilder {
 }
 
 // MARK: - implement getParser
-extension SubSonicProtocol {
+extension SubSonicDataProtocol {
     func getParser(from config: SubSonicConfig) -> RequestParser {
         if config.format == .Json {
             return JSONRequestParser()

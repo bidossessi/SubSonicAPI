@@ -49,11 +49,8 @@ class DownloadQueue: DownloadQueueProtocol {
             return self.pending.count
         }
     }
-    private var computeCount: Int = 1
     private var pending: [Download] {
         get {
-            print("recomputed pending: \(computeCount)")
-            computeCount += 1
             return _store.filter{ [.Pending, .Downloading].contains($0.state) }
         }
     }
@@ -62,25 +59,25 @@ class DownloadQueue: DownloadQueueProtocol {
         print("DownloadQueue started")
     }
     
-    private func shouldAdd(_ d: Download) -> Bool {
-        return !_store.contains(d)
-    }
-    
     func enqueue(someDownloads: [Download]) {
-        let valid = someDownloads.filter{ shouldAdd($0) }
-        self._store += valid
+        print("before filter: \(someDownloads.count)")
+        let existing = self._store.map{ $0.url.absoluteString }
+        let valid = uniq(source: someDownloads)
+        let notInStore = valid.filter{ !existing.contains($0.url.absoluteString) }
+        print("after filter: \(notInStore.count)")
+        self._store += notInStore
     }
     
     
     func clean() {
         self._store = []
-        self.computeCount = 0
     }
     
     func next() -> Download? {
         guard let next = self.pending[safe: 0] else {
             return nil
         }
+//        print("found state: \(next.state.rawValue)")
         if next.state == .Downloading {
             return nil
         }

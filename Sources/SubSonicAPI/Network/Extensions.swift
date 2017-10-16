@@ -24,6 +24,10 @@ extension Dictionary {
     
 }
 
+func uniq<S: Sequence, E: Hashable>(source: S) -> [E] where E == S.Iterator.Element {
+    var seen = [E: Bool]()
+    return source.filter { seen.updateValue(true, forKey: $0) == nil }
+}
 
 enum NetworkError: Error, Equatable {
     case Query
