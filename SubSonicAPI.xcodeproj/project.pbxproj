@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"SubSonicAPI::SubSonicAPIPackageTests::ProductTarget" /* SubSonicAPIPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_39 /* Build configuration list for PBXAggregateTarget "SubSonicAPIPackageTests" */;
+			buildPhases = (
+				82A3EBC01F937C2D00690B5E /* CopyFiles */,
+			);
+			dependencies = (
+				OBJ_42 /* PBXTargetDependency */,
+			);
+			name = SubSonicAPIPackageTests;
+			productName = SubSonicAPIPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		82025E311F8D634C00312A7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82025E2E1F8D634C00312A7A /* Extensions.swift */; };
+		82025E321F8D634C00312A7A /* HTTPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */; };
+		82025E331F8D634C00312A7A /* URLBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82025E301F8D634C00312A7A /* URLBuilderProtocol.swift */; };
+		82242BEB1F8569F3002DD053 /* JSONRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DC1F8569D400F1020B /* JSONRequestParser.swift */; };
+		82242BEC1F8569F6002DD053 /* RequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DD1F8569D400F1020B /* RequestParser.swift */; };
+		82242BEE1F8569FE002DD053 /* XMLRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DF1F8569D400F1020B /* XMLRequestParser.swift */; };
+		8260BD9E1F85C9B100E96CBB /* AlbumParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8260BD9C1F85C8E200E96CBB /* AlbumParserTest.swift */; };
+		827779061F85EA7A00F740D7 /* GenreParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827779051F85EA7900F740D7 /* GenreParserTest.swift */; };
+		827876BB1F94349A00D80AE5 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827876BA1F94349A00D80AE5 /* URLBuilder.swift */; };
+		827876BD1F9439B800D80AE5 /* MockURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */; };
+		827AAA171F84F77E0030D2C9 /* SubSonicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827AAA151F84F76D0030D2C9 /* SubSonicDelegate.swift */; };
+		827AAA1C1F84FA6C0030D2C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827AAA1B1F84FA6C0030D2C9 /* Constants.swift */; };
+		828FF7D51F85E5380040A611 /* PlaylistParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828FF7D41F85E5380040A611 /* PlaylistParserTest.swift */; };
+		828FF7D71F85E7D30040A611 /* ArtistParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828FF7D61F85E7D30040A611 /* ArtistParserTest.swift */; };
+		82A3EBBE1F935CB700690B5E /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D191F93586700FD3364 /* Download.swift */; };
+		82A3EBC11F937C4300690B5E /* album-chitose.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC591F85F039003E74AC /* album-chitose.json */; };
+		82A3EBC21F937C4300690B5E /* invalid.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82A436491F89C28A000D07FA /* invalid.txt */; };
+		82A3EBC31F937C4300690B5E /* album-chitose.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5A1F85F039003E74AC /* album-chitose.xml */; };
+		82A3EBC41F937C4300690B5E /* albumlist.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5B1F85F039003E74AC /* albumlist.json */; };
+		82A3EBC51F937C4300690B5E /* albumlist.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5C1F85F039003E74AC /* albumlist.xml */; };
+		82A3EBC61F937C4300690B5E /* artist-gackt.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5D1F85F039003E74AC /* artist-gackt.json */; };
+		82A3EBC71F937C4300690B5E /* artist-gackt.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5E1F85F039003E74AC /* artist-gackt.xml */; };
+		82A3EBC81F937C4300690B5E /* artists.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5F1F85F039003E74AC /* artists.json */; };
+		82A3EBC91F937C4300690B5E /* artists.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC601F85F039003E74AC /* artists.xml */; };
+		82A3EBCA1F937C4300690B5E /* genre-kizomba.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC611F85F039003E74AC /* genre-kizomba.json */; };
+		82A3EBCB1F937C4300690B5E /* genre-kizomba.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC621F85F039003E74AC /* genre-kizomba.xml */; };
+		82A3EBCC1F937C4300690B5E /* failed.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82C76E721F89B1E300914FA4 /* failed.json */; };
+		82A3EBCD1F937C4300690B5E /* failed.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82C76E741F89B1E300914FA4 /* failed.xml */; };
+		82A3EBCE1F937C4300690B5E /* version-error.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82C76E731F89B1E300914FA4 /* version-error.json */; };
+		82A3EBCF1F937C4300690B5E /* version-error.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82C76E751F89B1E300914FA4 /* version-error.xml */; };
+		82A3EBD01F937C4300690B5E /* envelop-error.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82A4364B1F89D10A000D07FA /* envelop-error.xml */; };
+		82A3EBD11F937C4300690B5E /* envelop-error.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82A4364D1F89D197000D07FA /* envelop-error.json */; };
+		82A3EBD21F937C4300690B5E /* genres.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC631F85F039003E74AC /* genres.json */; };
+		82A3EBD31F937C4300690B5E /* genres.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC641F85F039003E74AC /* genres.xml */; };
+		82A3EBD41F937C4300690B5E /* playlist-epic.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC651F85F039003E74AC /* playlist-epic.json */; };
+		82A3EBD51F937C4300690B5E /* playlist-epic.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC661F85F039003E74AC /* playlist-epic.xml */; };
+		82A3EBD61F937C4300690B5E /* playlists.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC671F85F039003E74AC /* playlists.json */; };
+		82A3EBD71F937C4300690B5E /* playlists.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC681F85F039003E74AC /* playlists.xml */; };
+		82A3EBD81F937C4300690B5E /* randomsongs.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC691F85F039003E74AC /* randomsongs.json */; };
+		82A3EBD91F937C4300690B5E /* randomsongs.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC6A1F85F039003E74AC /* randomsongs.xml */; };
+		82A3EBDA1F937C4300690B5E /* search-fire.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC6B1F85F039003E74AC /* search-fire.json */; };
+		82A3EBDB1F937C4300690B5E /* search-fire.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC6C1F85F039003E74AC /* search-fire.xml */; };
+		82A3EBDC1F937C4300690B5E /* starred.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC6D1F85F039003E74AC /* starred.json */; };
+		82A3EBDD1F937C4300690B5E /* starred.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC6E1F85F039003E74AC /* starred.xml */; };
+		82A3EBFE1F937DB400690B5E /* album-chitose.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC591F85F039003E74AC /* album-chitose.json */; };
+		82A3EBFF1F937DB400690B5E /* invalid.txt in Resources */ = {isa = PBXBuildFile; fileRef = 82A436491F89C28A000D07FA /* invalid.txt */; };
+		82A3EC001F937DB400690B5E /* album-chitose.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5A1F85F039003E74AC /* album-chitose.xml */; };
+		82A3EC011F937DB400690B5E /* albumlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5B1F85F039003E74AC /* albumlist.json */; };
+		82A3EC021F937DB400690B5E /* albumlist.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5C1F85F039003E74AC /* albumlist.xml */; };
+		82A3EC031F937DB400690B5E /* artist-gackt.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5D1F85F039003E74AC /* artist-gackt.json */; };
+		82A3EC041F937DB400690B5E /* artist-gackt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5E1F85F039003E74AC /* artist-gackt.xml */; };
+		82A3EC051F937DB400690B5E /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC5F1F85F039003E74AC /* artists.json */; };
+		82A3EC061F937DB400690B5E /* artists.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC601F85F039003E74AC /* artists.xml */; };
+		82A3EC071F937DB400690B5E /* genre-kizomba.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC611F85F039003E74AC /* genre-kizomba.json */; };
+		82A3EC081F937DB400690B5E /* genre-kizomba.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC621F85F039003E74AC /* genre-kizomba.xml */; };
+		82A3EC091F937DB400690B5E /* failed.json in Resources */ = {isa = PBXBuildFile; fileRef = 82C76E721F89B1E300914FA4 /* failed.json */; };
+		82A3EC0A1F937DB400690B5E /* failed.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82C76E741F89B1E300914FA4 /* failed.xml */; };
+		82A3EC0B1F937DB400690B5E /* version-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 82C76E731F89B1E300914FA4 /* version-error.json */; };
+		82A3EC0C1F937DB400690B5E /* version-error.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82C76E751F89B1E300914FA4 /* version-error.xml */; };
+		82A3EC0D1F937DB400690B5E /* envelop-error.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82A4364B1F89D10A000D07FA /* envelop-error.xml */; };
+		82A3EC0E1F937DB400690B5E /* envelop-error.json in Resources */ = {isa = PBXBuildFile; fileRef = 82A4364D1F89D197000D07FA /* envelop-error.json */; };
+		82A3EC0F1F937DB400690B5E /* genres.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC631F85F039003E74AC /* genres.json */; };
+		82A3EC101F937DB400690B5E /* genres.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC641F85F039003E74AC /* genres.xml */; };
+		82A3EC111F937DB400690B5E /* playlist-epic.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC651F85F039003E74AC /* playlist-epic.json */; };
+		82A3EC121F937DB400690B5E /* playlist-epic.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC661F85F039003E74AC /* playlist-epic.xml */; };
+		82A3EC131F937DB400690B5E /* playlists.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC671F85F039003E74AC /* playlists.json */; };
+		82A3EC141F937DB400690B5E /* playlists.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC681F85F039003E74AC /* playlists.xml */; };
+		82A3EC151F937DB400690B5E /* randomsongs.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC691F85F039003E74AC /* randomsongs.json */; };
+		82A3EC161F937DB400690B5E /* randomsongs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6A1F85F039003E74AC /* randomsongs.xml */; };
+		82A3EC171F937DB400690B5E /* search-fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6B1F85F039003E74AC /* search-fire.json */; };
+		82A3EC181F937DB400690B5E /* search-fire.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6C1F85F039003E74AC /* search-fire.xml */; };
+		82A3EC191F937DB400690B5E /* starred.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6D1F85F039003E74AC /* starred.json */; };
+		82A3EC1A1F937DB400690B5E /* starred.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6E1F85F039003E74AC /* starred.xml */; };
+		82A3EC3D1F93884B00690B5E /* MediaDownloadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */; };
+		82A3EC3E1F93884B00690B5E /* MediaDownloadClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */; };
+		82A3EC401F93911800690B5E /* DelegateDownloadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC3F1F93911800690B5E /* DelegateDownloadExtension.swift */; };
+		82A3EC421F9398E300690B5E /* DownloadQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC411F9398E300690B5E /* DownloadQueue.swift */; };
+		82A4251F1F859F7200C28787 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820745A11F859F54003BA92F /* Song.swift */; };
+		82A425201F859F7500C28787 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820745A01F859F54003BA92F /* Playlist.swift */; };
+		82A425221F859F7B00C28787 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459E1F859F54003BA92F /* Genre.swift */; };
+		82A425231F859F7E00C28787 /* ArtistIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459D1F859F54003BA92F /* ArtistIndex.swift */; };
+		82A425241F859F8100C28787 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459C1F859F54003BA92F /* Artist.swift */; };
+		82A425251F859F8400C28787 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459B1F859F54003BA92F /* Album.swift */; };
+		82A4253C1F85A78500C28787 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4253B1F85A78500C28787 /* TestHelper.swift */; };
+		82A4253E1F85C24900C28787 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4253D1F85C24900C28787 /* SubItem.swift */; };
+		82B3E0351F93A9F20026FE8B /* DownloadQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */; };
+		82B3E0371F93ADD40026FE8B /* SubConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0361F93ADD40026FE8B /* SubConfigProtocol.swift */; };
+		82B3E0391F93ADF50026FE8B /* SubSonicDownloadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0381F93ADF50026FE8B /* SubSonicDownloadProtocol.swift */; };
+		82B3E03B1F93AF3E0026FE8B /* DownloadRequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */; };
+		82B3E03D1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */; };
+		82B3E0411F9424870026FE8B /* FileDownloadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0401F9424870026FE8B /* FileDownloadTest.swift */; };
+		82B3E0431F9425F90026FE8B /* SubSonicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */; };
+		82C76E6F1F89A2DB00914FA4 /* TrackParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */; };
+		82C76E711F89A42400914FA4 /* MixedParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E701F89A42400914FA4 /* MixedParserTest.swift */; };
+		82C76E7D1F89BECC00914FA4 /* InvalidParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E7C1F89BECC00914FA4 /* InvalidParserTest.swift */; };
+		82E216451F9249E9007696DE /* HTTPRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E216441F9249E9007696DE /* HTTPRequestTest.swift */; };
+		82E216471F924DDD007696DE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E216461F924DDD007696DE /* MockURLSession.swift */; };
+		82EE0D0F1F92A63D00FD3364 /* RequestClientDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D0E1F92A63D00FD3364 /* RequestClientDelegateExtension.swift */; };
+		82EE0D101F92A64D00FD3364 /* RequestClientHandlerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D0C1F92A3B900FD3364 /* RequestClientHandlerExtension.swift */; };
+		82EE0D121F92ADA500FD3364 /* SubSonicDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D111F92ADA500FD3364 /* SubSonicDataProtocol.swift */; };
+		82EE0D141F92B1D800FD3364 /* HandlerRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */; };
+		82EE0D161F92D96500FD3364 /* DelegateRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */; };
+		82EE0D181F92E38E00FD3364 /* MockSubSonicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */; };
+		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_29 /* SubSonicAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */; };
+		OBJ_36 /* DataRequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DataRequestAPI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82F90FDB1F84F5B4008FF642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SubSonicAPI::SubSonicAPI";
+			remoteInfo = SubSonicAPI;
+		};
+		82F90FDC1F84F5B5008FF642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SubSonicAPI::SubSonicAPITests";
+			remoteInfo = SubSonicAPITests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82A3EBC01F937C2D00690B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				82A3EBC11F937C4300690B5E /* album-chitose.json in CopyFiles */,
+				82A3EBC21F937C4300690B5E /* invalid.txt in CopyFiles */,
+				82A3EBC31F937C4300690B5E /* album-chitose.xml in CopyFiles */,
+				82A3EBC41F937C4300690B5E /* albumlist.json in CopyFiles */,
+				82A3EBC51F937C4300690B5E /* albumlist.xml in CopyFiles */,
+				82A3EBC61F937C4300690B5E /* artist-gackt.json in CopyFiles */,
+				82A3EBC71F937C4300690B5E /* artist-gackt.xml in CopyFiles */,
+				82A3EBC81F937C4300690B5E /* artists.json in CopyFiles */,
+				82A3EBC91F937C4300690B5E /* artists.xml in CopyFiles */,
+				82A3EBCA1F937C4300690B5E /* genre-kizomba.json in CopyFiles */,
+				82A3EBCB1F937C4300690B5E /* genre-kizomba.xml in CopyFiles */,
+				82A3EBCC1F937C4300690B5E /* failed.json in CopyFiles */,
+				82A3EBCD1F937C4300690B5E /* failed.xml in CopyFiles */,
+				82A3EBCE1F937C4300690B5E /* version-error.json in CopyFiles */,
+				82A3EBCF1F937C4300690B5E /* version-error.xml in CopyFiles */,
+				82A3EBD01F937C4300690B5E /* envelop-error.xml in CopyFiles */,
+				82A3EBD11F937C4300690B5E /* envelop-error.json in CopyFiles */,
+				82A3EBD21F937C4300690B5E /* genres.json in CopyFiles */,
+				82A3EBD31F937C4300690B5E /* genres.xml in CopyFiles */,
+				82A3EBD41F937C4300690B5E /* playlist-epic.json in CopyFiles */,
+				82A3EBD51F937C4300690B5E /* playlist-epic.xml in CopyFiles */,
+				82A3EBD61F937C4300690B5E /* playlists.json in CopyFiles */,
+				82A3EBD71F937C4300690B5E /* playlists.xml in CopyFiles */,
+				82A3EBD81F937C4300690B5E /* randomsongs.json in CopyFiles */,
+				82A3EBD91F937C4300690B5E /* randomsongs.xml in CopyFiles */,
+				82A3EBDA1F937C4300690B5E /* search-fire.json in CopyFiles */,
+				82A3EBDB1F937C4300690B5E /* search-fire.xml in CopyFiles */,
+				82A3EBDC1F937C4300690B5E /* starred.json in CopyFiles */,
+				82A3EBDD1F937C4300690B5E /* starred.xml in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		82025E2E1F8D634C00312A7A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestClient.swift; sourceTree = "<group>"; };
+		82025E301F8D634C00312A7A /* URLBuilderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilderProtocol.swift; sourceTree = "<group>"; };
+		8207459B1F859F54003BA92F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		8207459C1F859F54003BA92F /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		8207459D1F859F54003BA92F /* ArtistIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistIndex.swift; sourceTree = "<group>"; };
+		8207459E1F859F54003BA92F /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		820745A01F859F54003BA92F /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		820745A11F859F54003BA92F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		8260BD9C1F85C8E200E96CBB /* AlbumParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumParserTest.swift; sourceTree = "<group>"; };
+		827779051F85EA7900F740D7 /* GenreParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreParserTest.swift; sourceTree = "<group>"; };
+		827876BA1F94349A00D80AE5 /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
+		827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLBuilder.swift; sourceTree = "<group>"; };
+		827AAA151F84F76D0030D2C9 /* SubSonicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSonicDelegate.swift; sourceTree = "<group>"; };
+		827AAA1B1F84FA6C0030D2C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		828FF7D41F85E5380040A611 /* PlaylistParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistParserTest.swift; sourceTree = "<group>"; };
+		828FF7D61F85E7D30040A611 /* ArtistParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistParserTest.swift; sourceTree = "<group>"; };
+		82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDownloadClientProtocol.swift; sourceTree = "<group>"; };
+		82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDownloadClient.swift; sourceTree = "<group>"; };
+		82A3EC3F1F93911800690B5E /* DelegateDownloadExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateDownloadExtension.swift; sourceTree = "<group>"; };
+		82A3EC411F9398E300690B5E /* DownloadQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadQueue.swift; sourceTree = "<group>"; };
+		82A4253B1F85A78500C28787 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		82A4253D1F85C24900C28787 /* SubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
+		82A436491F89C28A000D07FA /* invalid.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalid.txt; sourceTree = "<group>"; };
+		82A4364B1F89D10A000D07FA /* envelop-error.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "envelop-error.xml"; sourceTree = "<group>"; };
+		82A4364D1F89D197000D07FA /* envelop-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "envelop-error.json"; sourceTree = "<group>"; };
+		82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadQueueTest.swift; sourceTree = "<group>"; };
+		82B3E0361F93ADD40026FE8B /* SubConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubConfigProtocol.swift; sourceTree = "<group>"; };
+		82B3E0381F93ADF50026FE8B /* SubSonicDownloadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicDownloadProtocol.swift; sourceTree = "<group>"; };
+		82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequestAPI.swift; sourceTree = "<group>"; };
+		82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestClientProtocol.swift; sourceTree = "<group>"; };
+		82B3E0401F9424870026FE8B /* FileDownloadTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadTest.swift; sourceTree = "<group>"; };
+		82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicExtensions.swift; sourceTree = "<group>"; };
+		82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackParserTest.swift; sourceTree = "<group>"; };
+		82C76E701F89A42400914FA4 /* MixedParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixedParserTest.swift; sourceTree = "<group>"; };
+		82C76E721F89B1E300914FA4 /* failed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failed.json; sourceTree = "<group>"; };
+		82C76E731F89B1E300914FA4 /* version-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "version-error.json"; sourceTree = "<group>"; };
+		82C76E741F89B1E300914FA4 /* failed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = failed.xml; sourceTree = "<group>"; };
+		82C76E751F89B1E300914FA4 /* version-error.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "version-error.xml"; sourceTree = "<group>"; };
+		82C76E7C1F89BECC00914FA4 /* InvalidParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidParserTest.swift; sourceTree = "<group>"; };
+		82E216441F9249E9007696DE /* HTTPRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestTest.swift; sourceTree = "<group>"; };
+		82E216461F924DDD007696DE /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		82E3AC591F85F039003E74AC /* album-chitose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "album-chitose.json"; sourceTree = "<group>"; };
+		82E3AC5A1F85F039003E74AC /* album-chitose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "album-chitose.xml"; sourceTree = "<group>"; };
+		82E3AC5B1F85F039003E74AC /* albumlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albumlist.json; sourceTree = "<group>"; };
+		82E3AC5C1F85F039003E74AC /* albumlist.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = albumlist.xml; sourceTree = "<group>"; };
+		82E3AC5D1F85F039003E74AC /* artist-gackt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "artist-gackt.json"; sourceTree = "<group>"; };
+		82E3AC5E1F85F039003E74AC /* artist-gackt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "artist-gackt.xml"; sourceTree = "<group>"; };
+		82E3AC5F1F85F039003E74AC /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
+		82E3AC601F85F039003E74AC /* artists.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = artists.xml; sourceTree = "<group>"; };
+		82E3AC611F85F039003E74AC /* genre-kizomba.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "genre-kizomba.json"; sourceTree = "<group>"; };
+		82E3AC621F85F039003E74AC /* genre-kizomba.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "genre-kizomba.xml"; sourceTree = "<group>"; };
+		82E3AC631F85F039003E74AC /* genres.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genres.json; sourceTree = "<group>"; };
+		82E3AC641F85F039003E74AC /* genres.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = genres.xml; sourceTree = "<group>"; };
+		82E3AC651F85F039003E74AC /* playlist-epic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "playlist-epic.json"; sourceTree = "<group>"; };
+		82E3AC661F85F039003E74AC /* playlist-epic.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "playlist-epic.xml"; sourceTree = "<group>"; };
+		82E3AC671F85F039003E74AC /* playlists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = playlists.json; sourceTree = "<group>"; };
+		82E3AC681F85F039003E74AC /* playlists.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = playlists.xml; sourceTree = "<group>"; };
+		82E3AC691F85F039003E74AC /* randomsongs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = randomsongs.json; sourceTree = "<group>"; };
+		82E3AC6A1F85F039003E74AC /* randomsongs.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = randomsongs.xml; sourceTree = "<group>"; };
+		82E3AC6B1F85F039003E74AC /* search-fire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-fire.json"; sourceTree = "<group>"; };
+		82E3AC6C1F85F039003E74AC /* search-fire.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "search-fire.xml"; sourceTree = "<group>"; };
+		82E3AC6D1F85F039003E74AC /* starred.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = starred.json; sourceTree = "<group>"; };
+		82E3AC6E1F85F039003E74AC /* starred.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = starred.xml; sourceTree = "<group>"; };
+		82EE0D0C1F92A3B900FD3364 /* RequestClientHandlerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientHandlerExtension.swift; sourceTree = "<group>"; };
+		82EE0D0E1F92A63D00FD3364 /* RequestClientDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClientDelegateExtension.swift; sourceTree = "<group>"; };
+		82EE0D111F92ADA500FD3364 /* SubSonicDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicDataProtocol.swift; sourceTree = "<group>"; };
+		82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerRequestTest.swift; sourceTree = "<group>"; };
+		82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateRequestTest.swift; sourceTree = "<group>"; };
+		82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSubSonicDelegate.swift; sourceTree = "<group>"; };
+		82EE0D191F93586700FD3364 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		82EFC7DC1F8569D400F1020B /* JSONRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestParser.swift; sourceTree = "<group>"; };
+		82EFC7DD1F8569D400F1020B /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
+		82EFC7DF1F8569D400F1020B /* XMLRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLRequestParser.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* DataRequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestAPI.swift; sourceTree = "<group>"; };
+		"SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubSonicAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"SubSonicAPI::SubSonicAPITests::Product" /* SubSonicAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SubSonicAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_29 /* SubSonicAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82025E2D1F8D634C00312A7A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				82025E2E1F8D634C00312A7A /* Extensions.swift */,
+				82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */,
+				82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */,
+				82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */,
+				82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */,
+				82A3EC411F9398E300690B5E /* DownloadQueue.swift */,
+			);
+			name = Network;
+			path = Sources/SubSonicAPI/Network;
+			sourceTree = SOURCE_ROOT;
+		};
+		820745A21F859F54003BA92F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8207459B1F859F54003BA92F /* Album.swift */,
+				82A4253D1F85C24900C28787 /* SubItem.swift */,
+				8207459C1F859F54003BA92F /* Artist.swift */,
+				8207459D1F859F54003BA92F /* ArtistIndex.swift */,
+				8207459E1F859F54003BA92F /* Genre.swift */,
+				820745A01F859F54003BA92F /* Playlist.swift */,
+				820745A11F859F54003BA92F /* Song.swift */,
+			);
+			name = Models;
+			path = /Users/stanislas/Documents/Projects/ColourCog/SubSonicAPI/Sources/SubSonicAPI/Models;
+			sourceTree = "<absolute>";
+		};
+		82B3E0441F94268B0026FE8B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = SOURCE_ROOT;
+		};
+		82E3AC581F85F039003E74AC /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				82E3AC591F85F039003E74AC /* album-chitose.json */,
+				82A436491F89C28A000D07FA /* invalid.txt */,
+				82E3AC5A1F85F039003E74AC /* album-chitose.xml */,
+				82E3AC5B1F85F039003E74AC /* albumlist.json */,
+				82E3AC5C1F85F039003E74AC /* albumlist.xml */,
+				82E3AC5D1F85F039003E74AC /* artist-gackt.json */,
+				82E3AC5E1F85F039003E74AC /* artist-gackt.xml */,
+				82E3AC5F1F85F039003E74AC /* artists.json */,
+				82E3AC601F85F039003E74AC /* artists.xml */,
+				82E3AC611F85F039003E74AC /* genre-kizomba.json */,
+				82E3AC621F85F039003E74AC /* genre-kizomba.xml */,
+				82C76E721F89B1E300914FA4 /* failed.json */,
+				82C76E741F89B1E300914FA4 /* failed.xml */,
+				82C76E731F89B1E300914FA4 /* version-error.json */,
+				82C76E751F89B1E300914FA4 /* version-error.xml */,
+				82A4364B1F89D10A000D07FA /* envelop-error.xml */,
+				82A4364D1F89D197000D07FA /* envelop-error.json */,
+				82E3AC631F85F039003E74AC /* genres.json */,
+				82E3AC641F85F039003E74AC /* genres.xml */,
+				82E3AC651F85F039003E74AC /* playlist-epic.json */,
+				82E3AC661F85F039003E74AC /* playlist-epic.xml */,
+				82E3AC671F85F039003E74AC /* playlists.json */,
+				82E3AC681F85F039003E74AC /* playlists.xml */,
+				82E3AC691F85F039003E74AC /* randomsongs.json */,
+				82E3AC6A1F85F039003E74AC /* randomsongs.xml */,
+				82E3AC6B1F85F039003E74AC /* search-fire.json */,
+				82E3AC6C1F85F039003E74AC /* search-fire.xml */,
+				82E3AC6D1F85F039003E74AC /* starred.json */,
+				82E3AC6E1F85F039003E74AC /* starred.xml */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		82EFC7E01F8569D400F1020B /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				82EFC7DC1F8569D400F1020B /* JSONRequestParser.swift */,
+				82EFC7DD1F8569D400F1020B /* RequestParser.swift */,
+				82EFC7DF1F8569D400F1020B /* XMLRequestParser.swift */,
+			);
+			name = Parsers;
+			path = /Users/stanislas/Documents/Projects/ColourCog/SubSonicAPI/Sources/SubSonicAPI/Parsers;
+			sourceTree = "<absolute>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* SubSonicAPITests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_11 /* SubSonicAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				82E3AC581F85F039003E74AC /* TestData */,
+				8260BD9C1F85C8E200E96CBB /* AlbumParserTest.swift */,
+				828FF7D41F85E5380040A611 /* PlaylistParserTest.swift */,
+				82C76E7C1F89BECC00914FA4 /* InvalidParserTest.swift */,
+				828FF7D61F85E7D30040A611 /* ArtistParserTest.swift */,
+				827779051F85EA7900F740D7 /* GenreParserTest.swift */,
+				82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */,
+				82C76E701F89A42400914FA4 /* MixedParserTest.swift */,
+				82A4253B1F85A78500C28787 /* TestHelper.swift */,
+				82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */,
+				827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */,
+				82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */,
+				82E216461F924DDD007696DE /* MockURLSession.swift */,
+				82E216441F9249E9007696DE /* HTTPRequestTest.swift */,
+				82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */,
+				82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */,
+				82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */,
+				82B3E0401F9424870026FE8B /* FileDownloadTest.swift */,
+			);
+			name = SubSonicAPITests;
+			path = Tests/SubSonicAPITests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"SubSonicAPI::SubSonicAPITests::Product" /* SubSonicAPITests.xctest */,
+				"SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_13 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* SubSonicAPI */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* SubSonicAPI */ = {
+			isa = PBXGroup;
+			children = (
+				82025E2D1F8D634C00312A7A /* Network */,
+				820745A21F859F54003BA92F /* Models */,
+				82EFC7E01F8569D400F1020B /* Parsers */,
+				827AAA1B1F84FA6C0030D2C9 /* Constants.swift */,
+				82EE0D191F93586700FD3364 /* Download.swift */,
+				OBJ_9 /* DataRequestAPI.swift */,
+				827876BA1F94349A00D80AE5 /* URLBuilder.swift */,
+				82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */,
+				82025E301F8D634C00312A7A /* URLBuilderProtocol.swift */,
+				82EE0D111F92ADA500FD3364 /* SubSonicDataProtocol.swift */,
+				82B3E0381F93ADF50026FE8B /* SubSonicDownloadProtocol.swift */,
+				82B3E0361F93ADD40026FE8B /* SubConfigProtocol.swift */,
+				82B3E0441F94268B0026FE8B /* Protocols */,
+				82EE0D0C1F92A3B900FD3364 /* RequestClientHandlerExtension.swift */,
+				82A3EC3F1F93911800690B5E /* DelegateDownloadExtension.swift */,
+				82EE0D0E1F92A63D00FD3364 /* RequestClientDelegateExtension.swift */,
+				827AAA151F84F76D0030D2C9 /* SubSonicDelegate.swift */,
+			);
+			name = SubSonicAPI;
+			path = Sources/SubSonicAPI;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"SubSonicAPI::SubSonicAPI" /* SubSonicAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_32 /* Build configuration list for PBXNativeTarget "SubSonicAPI" */;
+			buildPhases = (
+				OBJ_35 /* Sources */,
+				OBJ_37 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SubSonicAPI;
+			productName = SubSonicAPI;
+			productReference = "SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"SubSonicAPI::SubSonicAPITests" /* SubSonicAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "SubSonicAPITests" */;
+			buildPhases = (
+				OBJ_26 /* Sources */,
+				OBJ_28 /* Frameworks */,
+				82A3EBFD1F937D9100690B5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_30 /* PBXTargetDependency */,
+			);
+			name = SubSonicAPITests;
+			productName = SubSonicAPITests;
+			productReference = "SubSonicAPI::SubSonicAPITests::Product" /* SubSonicAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"SubSonicAPI::SwiftPMPackageDescription" /* SubSonicAPIPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "SubSonicAPIPackageDescription" */;
+			buildPhases = (
+				OBJ_20 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SubSonicAPIPackageDescription;
+			productName = SubSonicAPIPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "SubSonicAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"SubSonicAPI::SwiftPMPackageDescription" /* SubSonicAPIPackageDescription */,
+				"SubSonicAPI::SubSonicAPITests" /* SubSonicAPITests */,
+				"SubSonicAPI::SubSonicAPI" /* SubSonicAPI */,
+				"SubSonicAPI::SubSonicAPIPackageTests::ProductTarget" /* SubSonicAPIPackageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82A3EBFD1F937D9100690B5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82A3EBFE1F937DB400690B5E /* album-chitose.json in Resources */,
+				82A3EBFF1F937DB400690B5E /* invalid.txt in Resources */,
+				82A3EC001F937DB400690B5E /* album-chitose.xml in Resources */,
+				82A3EC011F937DB400690B5E /* albumlist.json in Resources */,
+				82A3EC021F937DB400690B5E /* albumlist.xml in Resources */,
+				82A3EC031F937DB400690B5E /* artist-gackt.json in Resources */,
+				82A3EC041F937DB400690B5E /* artist-gackt.xml in Resources */,
+				82A3EC051F937DB400690B5E /* artists.json in Resources */,
+				82A3EC061F937DB400690B5E /* artists.xml in Resources */,
+				82A3EC071F937DB400690B5E /* genre-kizomba.json in Resources */,
+				82A3EC081F937DB400690B5E /* genre-kizomba.xml in Resources */,
+				82A3EC091F937DB400690B5E /* failed.json in Resources */,
+				82A3EC0A1F937DB400690B5E /* failed.xml in Resources */,
+				82A3EC0B1F937DB400690B5E /* version-error.json in Resources */,
+				82A3EC0C1F937DB400690B5E /* version-error.xml in Resources */,
+				82A3EC0D1F937DB400690B5E /* envelop-error.xml in Resources */,
+				82A3EC0E1F937DB400690B5E /* envelop-error.json in Resources */,
+				82A3EC0F1F937DB400690B5E /* genres.json in Resources */,
+				82A3EC101F937DB400690B5E /* genres.xml in Resources */,
+				82A3EC111F937DB400690B5E /* playlist-epic.json in Resources */,
+				82A3EC121F937DB400690B5E /* playlist-epic.xml in Resources */,
+				82A3EC131F937DB400690B5E /* playlists.json in Resources */,
+				82A3EC141F937DB400690B5E /* playlists.xml in Resources */,
+				82A3EC151F937DB400690B5E /* randomsongs.json in Resources */,
+				82A3EC161F937DB400690B5E /* randomsongs.xml in Resources */,
+				82A3EC171F937DB400690B5E /* search-fire.json in Resources */,
+				82A3EC181F937DB400690B5E /* search-fire.xml in Resources */,
+				82A3EC191F937DB400690B5E /* starred.json in Resources */,
+				82A3EC1A1F937DB400690B5E /* starred.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_21 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				82E216471F924DDD007696DE /* MockURLSession.swift in Sources */,
+				82C76E6F1F89A2DB00914FA4 /* TrackParserTest.swift in Sources */,
+				827779061F85EA7A00F740D7 /* GenreParserTest.swift in Sources */,
+				82EE0D181F92E38E00FD3364 /* MockSubSonicDelegate.swift in Sources */,
+				82C76E711F89A42400914FA4 /* MixedParserTest.swift in Sources */,
+				827876BD1F9439B800D80AE5 /* MockURLBuilder.swift in Sources */,
+				82EE0D141F92B1D800FD3364 /* HandlerRequestTest.swift in Sources */,
+				828FF7D51F85E5380040A611 /* PlaylistParserTest.swift in Sources */,
+				828FF7D71F85E7D30040A611 /* ArtistParserTest.swift in Sources */,
+				8260BD9E1F85C9B100E96CBB /* AlbumParserTest.swift in Sources */,
+				82B3E0431F9425F90026FE8B /* SubSonicExtensions.swift in Sources */,
+				82B3E0351F93A9F20026FE8B /* DownloadQueueTest.swift in Sources */,
+				82EE0D161F92D96500FD3364 /* DelegateRequestTest.swift in Sources */,
+				82E216451F9249E9007696DE /* HTTPRequestTest.swift in Sources */,
+				82B3E0411F9424870026FE8B /* FileDownloadTest.swift in Sources */,
+				82C76E7D1F89BECC00914FA4 /* InvalidParserTest.swift in Sources */,
+				82A4253C1F85A78500C28787 /* TestHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				82B3E03D1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift in Sources */,
+				827876BB1F94349A00D80AE5 /* URLBuilder.swift in Sources */,
+				827AAA171F84F77E0030D2C9 /* SubSonicDelegate.swift in Sources */,
+				82EE0D101F92A64D00FD3364 /* RequestClientHandlerExtension.swift in Sources */,
+				82025E311F8D634C00312A7A /* Extensions.swift in Sources */,
+				82A3EC3E1F93884B00690B5E /* MediaDownloadClientProtocol.swift in Sources */,
+				82A4251F1F859F7200C28787 /* Song.swift in Sources */,
+				82B3E0371F93ADD40026FE8B /* SubConfigProtocol.swift in Sources */,
+				82242BEC1F8569F6002DD053 /* RequestParser.swift in Sources */,
+				82A425241F859F8100C28787 /* Artist.swift in Sources */,
+				82025E331F8D634C00312A7A /* URLBuilderProtocol.swift in Sources */,
+				82B3E0391F93ADF50026FE8B /* SubSonicDownloadProtocol.swift in Sources */,
+				82242BEB1F8569F3002DD053 /* JSONRequestParser.swift in Sources */,
+				82EE0D121F92ADA500FD3364 /* SubSonicDataProtocol.swift in Sources */,
+				82A3EBBE1F935CB700690B5E /* Download.swift in Sources */,
+				82A4253E1F85C24900C28787 /* SubItem.swift in Sources */,
+				82A425251F859F8400C28787 /* Album.swift in Sources */,
+				82A3EC421F9398E300690B5E /* DownloadQueue.swift in Sources */,
+				82242BEE1F8569FE002DD053 /* XMLRequestParser.swift in Sources */,
+				82A3EC3D1F93884B00690B5E /* MediaDownloadClient.swift in Sources */,
+				82A425231F859F7E00C28787 /* ArtistIndex.swift in Sources */,
+				OBJ_36 /* DataRequestAPI.swift in Sources */,
+				82A425201F859F7500C28787 /* Playlist.swift in Sources */,
+				82A425221F859F7B00C28787 /* Genre.swift in Sources */,
+				82A3EC401F93911800690B5E /* DelegateDownloadExtension.swift in Sources */,
+				82B3E03B1F93AF3E0026FE8B /* DownloadRequestAPI.swift in Sources */,
+				827AAA1C1F84FA6C0030D2C9 /* Constants.swift in Sources */,
+				82025E321F8D634C00312A7A /* HTTPRequestClient.swift in Sources */,
+				82EE0D0F1F92A63D00FD3364 /* RequestClientDelegateExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SubSonicAPI::SubSonicAPI" /* SubSonicAPI */;
+			targetProxy = 82F90FDB1F84F5B4008FF642 /* PBXContainerItemProxy */;
+		};
+		OBJ_42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SubSonicAPI::SubSonicAPITests" /* SubSonicAPITests */;
+			targetProxy = 82F90FDC1F84F5B5008FF642 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPITests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SubSonicAPITests;
+			};
+			name = Debug;
+		};
+		OBJ_25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPITests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SubSonicAPITests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPI_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SubSonicAPI;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SubSonicAPI;
+			};
+			name = Debug;
+		};
+		OBJ_34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = 9VBBXWY954;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPI_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SubSonicAPI;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SubSonicAPI;
+			};
+			name = Release;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.13;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_17 /* Build configuration list for PBXNativeTarget "SubSonicAPIPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_18 /* Debug */,
+				OBJ_19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "SubSonicAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_23 /* Build configuration list for PBXNativeTarget "SubSonicAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_24 /* Debug */,
+				OBJ_25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_32 /* Build configuration list for PBXNativeTarget "SubSonicAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_33 /* Debug */,
+				OBJ_34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_39 /* Build configuration list for PBXAggregateTarget "SubSonicAPIPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_40 /* Debug */,
+				OBJ_41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
