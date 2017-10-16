@@ -7,7 +7,7 @@ import Foundation
 
 extension SubSonicDownloadProtocol {
     
-    func enqueue(config: SubSonicConfig, songs: [Song]) {
+    func enqueue(songs: [Song]) {
         guard let delegate: SubSonicDownloadDelegate = self.delegate else {
             return
         }
@@ -27,22 +27,12 @@ extension SubSonicDownloadProtocol {
     }
     
     func download(song: Song) {
-        self.enqueue(config: config, songs: [song])
+        self.enqueue(songs: [song])
     }
 
     
     func download(songs: [Song]) {
-        guard let delegate: SubSonicDownloadDelegate = self.delegate else {
-            return
-        }
-        self.client.onComplete = { (data, error) in
-            delegate.sub(self, saveMedia: data, error: error)
-        }
-        self.client.onEmpty = { () in
-            delegate.queueEmpty(self)
-        }
-        let config = delegate.config(self)
-        self.enqueue(config: config, songs: songs)
+        self.enqueue(songs: songs)
     }
     
     func download(album: Album) {
