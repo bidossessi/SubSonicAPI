@@ -1,8 +1,9 @@
 os:
-- osx
+  - osx
 language: generic
 sudo: required
 dist: trusty
 osx_image: xcode9.1
 script:
-  - swift build -Xswiftc "-target" -Xswiftc "x86_64-apple-macosx10.12"
+  - swift build
+  - xcodebuild clean test -scheme SubSonicAPI-Package CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet

@@ -26,7 +26,7 @@ extension SubSonicDownloadProtocol {
             delegate.queueEmpty(self)
         }
         let config = delegate.config(self)
-        enqueue(config: config, songs: [song])
+        self.enqueue(config: config, songs: [song])
     }
 
     
@@ -41,7 +41,7 @@ extension SubSonicDownloadProtocol {
             delegate.queueEmpty(self)
         }
         let config = delegate.config(self)
-        enqueue(config: config, songs: songs)
+        self.enqueue(config: config, songs: songs)
     }
     
     func download(album: Album) {}
