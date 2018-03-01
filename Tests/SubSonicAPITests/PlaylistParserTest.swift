@@ -48,10 +48,7 @@ class PlaylistParserTest: XCTestCase {
             XCTAssert(playlists.count == 1)
             
     
-            guard let tracks = playlists[0].tracks else {
-                XCTFail("Tracks not found")
-                return
-            }
+            let tracks = playlists[0].songs
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 224)
             expect.fulfill()
@@ -99,10 +96,7 @@ class PlaylistParserTest: XCTestCase {
             print("playlists count: \(playlists.count)")
             XCTAssert(playlists.count == 1)
             
-            guard let tracks = playlists[0].tracks else {
-                XCTFail("Tracks not found")
-                return
-            }
+            let tracks = playlists[0].songs
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 224)
             expect.fulfill()

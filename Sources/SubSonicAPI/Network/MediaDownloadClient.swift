@@ -38,7 +38,7 @@ class MediaDownloadClient: NSObject, MediaDownloadClientProtocol {
         self.session = session
     }
     
-    func makeDownload(from set: [(URL, Song)]) -> [Download] {
+    func makeDownloads(from set: [(URL, Song)]) -> [Download] {
         return set.map{ (k: URL, v: Song) -> Download in
             let task = self.session.downloadTask(with: k)
             return Download(item: v, url: k, task: task)
@@ -46,20 +46,23 @@ class MediaDownloadClient: NSObject, MediaDownloadClientProtocol {
     }
     
     func enqueue(set: [(URL, Song)]) {
-        let downloads = self.makeDownload(from: set)
+        let downloads = self.makeDownloads(from: set)
         self.downloadQueue.enqueue(someDownloads: downloads)
         self.startNext()
     }
     
     func startNext() {
+        if self.downloadQueue.isEmpty {
+            self.onEmpty?()
+            return
+        }
         guard let nextDownload: Download = self.downloadQueue.next() else {
 //            print("nothing found in queue")
-            self.onEmpty?()
             return
         }
 //        print("startNext called: \(nextDownload.item.id)")
         self.activeQueueMap.updateValue(nextDownload, forKey: nextDownload.url)
-        nextDownload.task?.resume()
+        nextDownload.task.resume()
     }
 }
 

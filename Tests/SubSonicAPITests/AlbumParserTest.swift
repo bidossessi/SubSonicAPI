@@ -48,10 +48,7 @@ class AlbumParserTest: XCTestCase {
             XCTAssert(albums.count == 1)
             
     
-            guard let tracks = albums[0].tracks else {
-                XCTFail("Tracks not found")
-                return
-            }
+            let tracks = albums[0].songs
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 11)
             expect.fulfill()
@@ -99,10 +96,7 @@ class AlbumParserTest: XCTestCase {
             print("albums count: \(albums.count)")
             XCTAssert(albums.count == 1)
             
-            guard let tracks = albums[0].tracks else {
-                XCTFail("Tracks not found")
-                return
-            }
+            let tracks = albums[0].songs
             print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 11)
             expect.fulfill()

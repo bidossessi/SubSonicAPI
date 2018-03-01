@@ -11,7 +11,7 @@ enum DownloadState: String {
 
 protocol Downloadable: Hashable {
     var item: Song { get }
-    var task: URLSessionDownloadTaskProtocol? { get }
+    var task: URLSessionDownloadTaskProtocol { get }
     var state: DownloadState { get set }
     var resumeData: Data? { get set }
     var progress: Double { get }
@@ -25,7 +25,7 @@ class Download: Downloadable {
     
     let item: Song
     let url: URL
-    var task: URLSessionDownloadTaskProtocol?
+    var task: URLSessionDownloadTaskProtocol
     var state: DownloadState = .Pending
     var resumeData: Data?
     var progress: Double = 0

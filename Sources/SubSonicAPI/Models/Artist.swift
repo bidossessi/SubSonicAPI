@@ -5,7 +5,7 @@ class Artist: Hashable, SubItem {
     var name: String
     var coverArt: String?
     var albumCount: Int?
-    var albums: [Album]?
+    var albums = [Album]()
     
     init(id: Int, name: String) {
         self.id = id

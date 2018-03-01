@@ -1,16 +1,8 @@
 import Foundation
 
-extension Collection {
-    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}
-
 protocol DownloadQueueProtocol {
     // TODO: Make it reusable!!!
     static var shared: DownloadQueueProtocol { get }
-    var store: NSMutableArray { get }
     var count: Int { get }
     var remains: Int { get }
     var isEmpty: Bool { get }
@@ -24,19 +16,13 @@ class DownloadQueue: DownloadQueueProtocol {
     static let shared: DownloadQueueProtocol = DownloadQueue()
     private var _store: [Download] = []
 
-    // MARK: - Public facing Store
-    var store: NSMutableArray {
-        get {
-            return NSMutableArray(array: self._store)
-        }
-    }
     var count: Int {
         get {
             return self._store.count
         }
     }
     var isEmpty: Bool {
-        return self._store.isEmpty
+        return self.pending.isEmpty
     }
     
     subscript(_ index: Int) -> Download? {

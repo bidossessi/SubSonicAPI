@@ -192,7 +192,7 @@
 		8200516B1F946D5700E4F378 /* DelegateDownloadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateDownloadExtension.swift; sourceTree = "<group>"; };
 		8200516C1F946D5700E4F378 /* RequestClientDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestClientDelegateExtension.swift; sourceTree = "<group>"; };
 		8200516D1F946D5700E4F378 /* RequestClientHandlerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestClientHandlerExtension.swift; sourceTree = "<group>"; };
-		82025E2E1F8D634C00312A7A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		82025E2E1F8D634C00312A7A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Network/Extensions.swift; sourceTree = "<group>"; };
 		82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestClient.swift; sourceTree = "<group>"; };
 		8207459B1F859F54003BA92F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		8207459C1F859F54003BA92F /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 		82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDownloadClient.swift; sourceTree = "<group>"; };
 		82A3EC411F9398E300690B5E /* DownloadQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadQueue.swift; sourceTree = "<group>"; };
 		82A4253B1F85A78500C28787 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
-		82A4253D1F85C24900C28787 /* SubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubItem.swift; sourceTree = "<group>"; };
+		82A4253D1F85C24900C28787 /* SubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubItem.swift; path = ../Models/SubItem.swift; sourceTree = "<group>"; };
 		82A436491F89C28A000D07FA /* invalid.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalid.txt; sourceTree = "<group>"; };
 		82A4364B1F89D10A000D07FA /* envelop-error.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "envelop-error.xml"; sourceTree = "<group>"; };
 		82A4364D1F89D197000D07FA /* envelop-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "envelop-error.json"; sourceTree = "<group>"; };
@@ -291,6 +291,7 @@
 		8200516E1F946D5700E4F378 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				82025E2E1F8D634C00312A7A /* Extensions.swift */,
 				8200516B1F946D5700E4F378 /* DelegateDownloadExtension.swift */,
 				8200516C1F946D5700E4F378 /* RequestClientDelegateExtension.swift */,
 				8200516D1F946D5700E4F378 /* RequestClientHandlerExtension.swift */,
@@ -302,10 +303,7 @@
 		82025E2D1F8D634C00312A7A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				82025E2E1F8D634C00312A7A /* Extensions.swift */,
-				82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */,
 				82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */,
-				82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */,
 				82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */,
 				82A3EC411F9398E300690B5E /* DownloadQueue.swift */,
 			);
@@ -317,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				8207459B1F859F54003BA92F /* Album.swift */,
-				82A4253D1F85C24900C28787 /* SubItem.swift */,
 				8207459C1F859F54003BA92F /* Artist.swift */,
 				8207459D1F859F54003BA92F /* ArtistIndex.swift */,
 				8207459E1F859F54003BA92F /* Genre.swift */,
@@ -331,6 +328,9 @@
 		823E82551F946D7100A3000E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				82A4253D1F85C24900C28787 /* SubItem.swift */,
+				82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */,
+				82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */,
 				823E82561F946D7100A3000E /* SubConfigProtocol.swift */,
 				823E82571F946D7100A3000E /* SubSonicDataProtocol.swift */,
 				823E82581F946D7100A3000E /* SubSonicDelegate.swift */,

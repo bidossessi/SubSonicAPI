@@ -6,7 +6,7 @@ class Album: Hashable, SubItem {
     var name: String
     var artist, title, album, genre, coverArt: String?
     var parent, songCount, duration, artistId, year: Int?
-    var tracks: [Song]?
+    var songs = [Song]()
     
     var decription: String {
         return "\(id): \(name)"
@@ -35,8 +35,8 @@ class Album: Hashable, SubItem {
         mo.genre = data["genre"] as? String
         mo.coverArt = data["coverArt"] as? String
         mo.title = data["title"] as? String
-        if let tracks = data[Constants.SubSonicAPI.Results.Song.rawValue] as? [[String: Any]] {
-            mo.tracks = Song.populate(tracks)
+        if let songs = data[Constants.SubSonicAPI.Results.Song.rawValue] as? [[String: Any]] {
+            mo.songs = Song.populate(songs)
         }
         return mo
     }

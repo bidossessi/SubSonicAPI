@@ -101,7 +101,7 @@ extension XMLRequestParser: XMLParserDelegate {
             self.results[.Artist] = []
         case Constants.SubSonicAPI.Results.Playlist.rawValue:
             let index = self.results[.Playlist]?.last as! Playlist
-            index.tracks = self.results[.Song] as? [Song]
+            index.songs = self.results[.Song] as! [Song]
             self.results[.Song] = []
         case Constants.SubSonicAPI.Results.Genre.rawValue:
             let genre = self.results[.Genre]?.last as! Genre
@@ -109,13 +109,13 @@ extension XMLRequestParser: XMLParserDelegate {
         case Constants.SubSonicAPI.Results.Album.rawValue:
             if self.requestName == elementName {
                 let index = self.results[.Album]?.last as! Album
-                index.tracks = self.results[.Song] as? [Song]
+                index.songs = self.results[.Song] as! [Song]
                 self.results[.Song] = []
             }
         case Constants.SubSonicAPI.Results.Artist.rawValue:
             if self.requestName == elementName {
                 let index = self.results[.Artist]?.last as! Artist
-                index.albums = self.results[.Album] as? [Album]
+                index.albums = self.results[.Album] as! [Album]
                 self.results[.Album] = []
             }
         default:
