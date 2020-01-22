@@ -1,6 +1,7 @@
 import XCTest
-@testable import SubSonicAPITests
 
-XCTMain([
-    testCase(SubSonicAPITests.allTests),
-])
+import SubSonicAPITests
+
+var tests = [XCTestCaseEntry]()
+tests += SubSonicAPITests.allTests()
+XCTMain(tests)
