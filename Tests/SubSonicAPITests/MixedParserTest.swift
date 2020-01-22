@@ -18,29 +18,31 @@ class MixedParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "search-fire", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
+        parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let tracks = results[.Song] as? [Song] else {
                 XCTFail("Songs not found")
                 return
             }
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 20)
             
-            guard let albums = results?[.Album] as? [Album] else {
+            guard let albums = results[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
-            print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?[.Artist] as? [Artist] else {
+            guard let artists = results[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
-            print("artists count: \(artists.count)")
             XCTAssert(artists.count == 1)
             
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
 
         // Parse
@@ -54,29 +56,31 @@ class MixedParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "starred", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
+        parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let tracks = results[.Song] as? [Song] else {
                 XCTFail("Songs not found")
                 return
             }
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 97)
             
-            guard let albums = results?[.Album] as? [Album] else {
+            guard let albums = results[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
-            print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?[.Artist] as? [Artist] else {
+            guard let artists = results[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
-            print("artists count: \(artists.count)")
             XCTAssert(artists.count == 2)
             
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
 
         // Parse
@@ -92,29 +96,31 @@ class MixedParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "search-fire", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
+        parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let tracks = results[.Song] as? [Song] else {
                 XCTFail("Songs not found")
                 return
             }
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 20)
             
-            guard let albums = results?[.Album] as? [Album] else {
+            guard let albums = results[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
-            print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?[.Artist] as? [Artist] else {
+            guard let artists = results[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
-            print("artists count: \(artists.count)")
             XCTAssert(artists.count == 1)
             
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
 
         // Parse
@@ -129,29 +135,31 @@ class MixedParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "starred", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
+        parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let tracks = results[.Song] as? [Song] else {
                 XCTFail("Songs not found")
                 return
             }
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 97)
             
-            guard let albums = results?[.Album] as? [Album] else {
+            guard let albums = results[.Album] as? [Album] else {
                 XCTFail("Albums not found")
                 return
             }
-            print("albums count: \(albums.count)")
             XCTAssert(albums.count == 2)
             
-            guard let artists = results?[.Artist] as? [Artist] else {
+            guard let artists = results[.Artist] as? [Artist] else {
                 XCTFail("Artists not found")
                 return
             }
-            print("artists count: \(artists.count)")
             XCTAssert(artists.count == 2)
             
             expect.fulfill()
+            default:
+                           XCTFail("Not supposed to fail")
+                       }
         }
         
         // Parse

@@ -18,14 +18,18 @@ class SongParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "randomsongs", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
-                XCTFail("Songs not found")
-                return
+        parser.onComplete = { (res) in
+            switch res {
+            case .success(let results):
+                guard let tracks = results[.Song] as? [Song] else {
+                    XCTFail("Songs not found")
+                    return
+                }
+                XCTAssert(tracks.count == 10)
+                expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
             }
-            print("tracks count: \(tracks.count)")
-            XCTAssert(tracks.count == 10)
-            expect.fulfill()
         }
         
         // Parse
@@ -33,22 +37,26 @@ class SongParserTest: XCTestCase {
         
         waitForExpectations(timeout: 3, handler: nil)
     }
-
-
+    
+    
     func testXMLList() {
         let parser = XMLRequestParser()
         // Given [.Song] list of tracks query
         let xml = self.helper.getDataFromFile(fileName: "randomsongs", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let tracks = results?[.Song] as? [Song] else {
-                XCTFail("Songs not found")
-                return
+        parser.onComplete = { (res) in
+            switch res {
+            case .success(let results):
+                guard let tracks = results[.Song] as? [Song] else {
+                    XCTFail("Songs not found")
+                    return
+                }
+                XCTAssert(tracks.count == 10 )
+                expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
             }
-            print("tracks count: \(tracks.count)")
-            XCTAssert(tracks.count == 10 )
-            expect.fulfill()
         }
         
         // Parse

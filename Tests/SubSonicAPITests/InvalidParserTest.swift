@@ -18,11 +18,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "invalid", fileExt: "txt")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Serialization)
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Envelop)
             expect.fulfill()
+        default:
+            XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -36,11 +39,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "envelop-error", fileExt: "json")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Envelop)
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Envelop)
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -50,15 +56,18 @@ class InvalidParserTest: XCTestCase {
     }
 
     func testJSONVersionError() {
-        let parser = JSONRequestParser()
+      let parser = JSONRequestParser()
         let json = self.helper.getDataFromFile(fileName: "version-error", fileExt: "json")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Version(found: "a", minimum: "b"))
+       parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Version(found: "a", minimum: "b"))
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -72,11 +81,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "failed", fileExt: "json")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Status(code: 40, message: "a"))
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Status(code: 40, message: "a"))
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -90,11 +102,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "invalid", fileExt: "txt")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Serialization)
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Serialization)
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -108,11 +123,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "envelop-error", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Envelop)
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Envelop)
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -126,11 +144,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "version-error", fileExt: "xml")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Version(found: "a", minimum: "b"))
+        parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Version(found: "a", minimum: "b"))
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse
@@ -144,11 +165,14 @@ class InvalidParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "failed", fileExt: "xml")
         let expect = expectation(description: "Error found")
         
-        parser.onComplete = { (results, error) in
-            XCTAssertNil(results)
-            XCTAssertNotNil(error)
-            XCTAssertEqual(error!, ParsingError.Status(code: 40, message: "a"))
+       parser.onComplete = { (res) in
+        switch res {
+        case .failure(let error):
+            XCTAssertEqual(error, ParsingError.Status(code: 40, message: "a"))
             expect.fulfill()
+            default:
+                XCTFail("Supposed to fail")
+            }
         }
         
         // Parse

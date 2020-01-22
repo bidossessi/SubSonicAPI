@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -22,27 +22,15 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		82025E311F8D634C00312A7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82025E2E1F8D634C00312A7A /* Extensions.swift */; };
-		82025E321F8D634C00312A7A /* HTTPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */; };
 		82242BEB1F8569F3002DD053 /* JSONRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DC1F8569D400F1020B /* JSONRequestParser.swift */; };
 		82242BEC1F8569F6002DD053 /* RequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DD1F8569D400F1020B /* RequestParser.swift */; };
 		82242BEE1F8569FE002DD053 /* XMLRequestParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EFC7DF1F8569D400F1020B /* XMLRequestParser.swift */; };
-		823E82601F946DC700A3000E /* SubConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E82561F946D7100A3000E /* SubConfigProtocol.swift */; };
 		823E82611F946DCB00A3000E /* SubSonicDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E82571F946D7100A3000E /* SubSonicDataProtocol.swift */; };
-		823E82621F946DCE00A3000E /* SubSonicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E82581F946D7100A3000E /* SubSonicDelegate.swift */; };
-		823E82631F946DD300A3000E /* SubSonicDownloadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E82591F946D7100A3000E /* SubSonicDownloadProtocol.swift */; };
-		823E82641F946DD800A3000E /* URLBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823E825A1F946D7100A3000E /* URLBuilderProtocol.swift */; };
-		823E82651F946DDC00A3000E /* DelegateDownloadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200516B1F946D5700E4F378 /* DelegateDownloadExtension.swift */; };
-		823E82661F946DDF00A3000E /* RequestClientDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200516C1F946D5700E4F378 /* RequestClientDelegateExtension.swift */; };
-		823E82671F946DE200A3000E /* RequestClientHandlerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200516D1F946D5700E4F378 /* RequestClientHandlerExtension.swift */; };
 		8260BD9E1F85C9B100E96CBB /* AlbumParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8260BD9C1F85C8E200E96CBB /* AlbumParserTest.swift */; };
 		827779061F85EA7A00F740D7 /* GenreParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827779051F85EA7900F740D7 /* GenreParserTest.swift */; };
-		827876BB1F94349A00D80AE5 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827876BA1F94349A00D80AE5 /* URLBuilder.swift */; };
-		827876BD1F9439B800D80AE5 /* MockURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */; };
 		827AAA1C1F84FA6C0030D2C9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827AAA1B1F84FA6C0030D2C9 /* Constants.swift */; };
 		828FF7D51F85E5380040A611 /* PlaylistParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828FF7D41F85E5380040A611 /* PlaylistParserTest.swift */; };
 		828FF7D71F85E7D30040A611 /* ArtistParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828FF7D61F85E7D30040A611 /* ArtistParserTest.swift */; };
-		82A3EBBE1F935CB700690B5E /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D191F93586700FD3364 /* Download.swift */; };
 		82A3EBC11F937C4300690B5E /* album-chitose.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC591F85F039003E74AC /* album-chitose.json */; };
 		82A3EBC21F937C4300690B5E /* invalid.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82A436491F89C28A000D07FA /* invalid.txt */; };
 		82A3EBC31F937C4300690B5E /* album-chitose.xml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82E3AC5A1F85F039003E74AC /* album-chitose.xml */; };
@@ -101,9 +89,6 @@
 		82A3EC181F937DB400690B5E /* search-fire.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6C1F85F039003E74AC /* search-fire.xml */; };
 		82A3EC191F937DB400690B5E /* starred.json in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6D1F85F039003E74AC /* starred.json */; };
 		82A3EC1A1F937DB400690B5E /* starred.xml in Resources */ = {isa = PBXBuildFile; fileRef = 82E3AC6E1F85F039003E74AC /* starred.xml */; };
-		82A3EC3D1F93884B00690B5E /* MediaDownloadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */; };
-		82A3EC3E1F93884B00690B5E /* MediaDownloadClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */; };
-		82A3EC421F9398E300690B5E /* DownloadQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3EC411F9398E300690B5E /* DownloadQueue.swift */; };
 		82A4251F1F859F7200C28787 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820745A11F859F54003BA92F /* Song.swift */; };
 		82A425201F859F7500C28787 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820745A01F859F54003BA92F /* Playlist.swift */; };
 		82A425221F859F7B00C28787 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459E1F859F54003BA92F /* Genre.swift */; };
@@ -112,22 +97,11 @@
 		82A425251F859F8400C28787 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207459B1F859F54003BA92F /* Album.swift */; };
 		82A4253C1F85A78500C28787 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4253B1F85A78500C28787 /* TestHelper.swift */; };
 		82A4253E1F85C24900C28787 /* SubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4253D1F85C24900C28787 /* SubItem.swift */; };
-		82B3E0351F93A9F20026FE8B /* DownloadQueueTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */; };
-		82B3E03B1F93AF3E0026FE8B /* DownloadRequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */; };
-		82B3E03D1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */; };
-		82B3E0411F9424870026FE8B /* FileDownloadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0401F9424870026FE8B /* FileDownloadTest.swift */; };
-		82B3E0431F9425F90026FE8B /* SubSonicExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */; };
 		82C76E6F1F89A2DB00914FA4 /* TrackParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */; };
 		82C76E711F89A42400914FA4 /* MixedParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E701F89A42400914FA4 /* MixedParserTest.swift */; };
 		82C76E7D1F89BECC00914FA4 /* InvalidParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C76E7C1F89BECC00914FA4 /* InvalidParserTest.swift */; };
-		82E216451F9249E9007696DE /* HTTPRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E216441F9249E9007696DE /* HTTPRequestTest.swift */; };
-		82E216471F924DDD007696DE /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E216461F924DDD007696DE /* MockURLSession.swift */; };
-		82EE0D141F92B1D800FD3364 /* HandlerRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */; };
-		82EE0D161F92D96500FD3364 /* DelegateRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */; };
-		82EE0D181F92E38E00FD3364 /* MockSubSonicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */; };
 		OBJ_21 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_29 /* SubSonicAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */; };
-		OBJ_36 /* DataRequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DataRequestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,42 +163,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8200516B1F946D5700E4F378 /* DelegateDownloadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateDownloadExtension.swift; sourceTree = "<group>"; };
-		8200516C1F946D5700E4F378 /* RequestClientDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestClientDelegateExtension.swift; sourceTree = "<group>"; };
-		8200516D1F946D5700E4F378 /* RequestClientHandlerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestClientHandlerExtension.swift; sourceTree = "<group>"; };
-		82025E2E1F8D634C00312A7A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Network/Extensions.swift; sourceTree = "<group>"; };
-		82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestClient.swift; sourceTree = "<group>"; };
 		8207459B1F859F54003BA92F /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		8207459C1F859F54003BA92F /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		8207459D1F859F54003BA92F /* ArtistIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistIndex.swift; sourceTree = "<group>"; };
 		8207459E1F859F54003BA92F /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		820745A01F859F54003BA92F /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		820745A11F859F54003BA92F /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		823E82561F946D7100A3000E /* SubConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubConfigProtocol.swift; sourceTree = "<group>"; };
 		823E82571F946D7100A3000E /* SubSonicDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicDataProtocol.swift; sourceTree = "<group>"; };
-		823E82581F946D7100A3000E /* SubSonicDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicDelegate.swift; sourceTree = "<group>"; };
-		823E82591F946D7100A3000E /* SubSonicDownloadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicDownloadProtocol.swift; sourceTree = "<group>"; };
-		823E825A1F946D7100A3000E /* URLBuilderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilderProtocol.swift; sourceTree = "<group>"; };
 		8260BD9C1F85C8E200E96CBB /* AlbumParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumParserTest.swift; sourceTree = "<group>"; };
 		827779051F85EA7900F740D7 /* GenreParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreParserTest.swift; sourceTree = "<group>"; };
-		827876BA1F94349A00D80AE5 /* URLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
-		827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLBuilder.swift; sourceTree = "<group>"; };
 		827AAA1B1F84FA6C0030D2C9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828FF7D41F85E5380040A611 /* PlaylistParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistParserTest.swift; sourceTree = "<group>"; };
 		828FF7D61F85E7D30040A611 /* ArtistParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistParserTest.swift; sourceTree = "<group>"; };
-		82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDownloadClientProtocol.swift; sourceTree = "<group>"; };
-		82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDownloadClient.swift; sourceTree = "<group>"; };
-		82A3EC411F9398E300690B5E /* DownloadQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadQueue.swift; sourceTree = "<group>"; };
 		82A4253B1F85A78500C28787 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		82A4253D1F85C24900C28787 /* SubItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubItem.swift; path = ../Models/SubItem.swift; sourceTree = "<group>"; };
 		82A436491F89C28A000D07FA /* invalid.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = invalid.txt; sourceTree = "<group>"; };
 		82A4364B1F89D10A000D07FA /* envelop-error.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "envelop-error.xml"; sourceTree = "<group>"; };
 		82A4364D1F89D197000D07FA /* envelop-error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "envelop-error.json"; sourceTree = "<group>"; };
-		82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadQueueTest.swift; sourceTree = "<group>"; };
-		82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequestAPI.swift; sourceTree = "<group>"; };
-		82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestClientProtocol.swift; sourceTree = "<group>"; };
-		82B3E0401F9424870026FE8B /* FileDownloadTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloadTest.swift; sourceTree = "<group>"; };
-		82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubSonicExtensions.swift; sourceTree = "<group>"; };
 		82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackParserTest.swift; sourceTree = "<group>"; };
 		82C76E701F89A42400914FA4 /* MixedParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixedParserTest.swift; sourceTree = "<group>"; };
 		82C76E721F89B1E300914FA4 /* failed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failed.json; sourceTree = "<group>"; };
@@ -232,8 +187,6 @@
 		82C76E741F89B1E300914FA4 /* failed.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = failed.xml; sourceTree = "<group>"; };
 		82C76E751F89B1E300914FA4 /* version-error.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "version-error.xml"; sourceTree = "<group>"; };
 		82C76E7C1F89BECC00914FA4 /* InvalidParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidParserTest.swift; sourceTree = "<group>"; };
-		82E216441F9249E9007696DE /* HTTPRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestTest.swift; sourceTree = "<group>"; };
-		82E216461F924DDD007696DE /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		82E3AC591F85F039003E74AC /* album-chitose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "album-chitose.json"; sourceTree = "<group>"; };
 		82E3AC5A1F85F039003E74AC /* album-chitose.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "album-chitose.xml"; sourceTree = "<group>"; };
 		82E3AC5B1F85F039003E74AC /* albumlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albumlist.json; sourceTree = "<group>"; };
@@ -256,15 +209,10 @@
 		82E3AC6C1F85F039003E74AC /* search-fire.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "search-fire.xml"; sourceTree = "<group>"; };
 		82E3AC6D1F85F039003E74AC /* starred.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = starred.json; sourceTree = "<group>"; };
 		82E3AC6E1F85F039003E74AC /* starred.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = starred.xml; sourceTree = "<group>"; };
-		82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerRequestTest.swift; sourceTree = "<group>"; };
-		82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateRequestTest.swift; sourceTree = "<group>"; };
-		82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSubSonicDelegate.swift; sourceTree = "<group>"; };
-		82EE0D191F93586700FD3364 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		82EFC7DC1F8569D400F1020B /* JSONRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRequestParser.swift; sourceTree = "<group>"; };
 		82EFC7DD1F8569D400F1020B /* RequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParser.swift; sourceTree = "<group>"; };
 		82EFC7DF1F8569D400F1020B /* XMLRequestParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLRequestParser.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* DataRequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestAPI.swift; sourceTree = "<group>"; };
 		"SubSonicAPI::SubSonicAPI::Product" /* SubSonicAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SubSonicAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SubSonicAPI::SubSonicAPITests::Product" /* SubSonicAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = SubSonicAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -288,29 +236,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8200516E1F946D5700E4F378 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				82025E2E1F8D634C00312A7A /* Extensions.swift */,
-				8200516B1F946D5700E4F378 /* DelegateDownloadExtension.swift */,
-				8200516C1F946D5700E4F378 /* RequestClientDelegateExtension.swift */,
-				8200516D1F946D5700E4F378 /* RequestClientHandlerExtension.swift */,
-			);
-			name = Extensions;
-			path = /Users/stanislas/Documents/Projects/ColourCog/SubSonicAPI/Sources/SubSonicAPI/Extensions;
-			sourceTree = "<absolute>";
-		};
-		82025E2D1F8D634C00312A7A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				82025E2F1F8D634C00312A7A /* HTTPRequestClient.swift */,
-				82A3EC3A1F93873B00690B5E /* MediaDownloadClient.swift */,
-				82A3EC411F9398E300690B5E /* DownloadQueue.swift */,
-			);
-			name = Network;
-			path = Sources/SubSonicAPI/Network;
-			sourceTree = SOURCE_ROOT;
-		};
 		820745A21F859F54003BA92F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,13 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				82A4253D1F85C24900C28787 /* SubItem.swift */,
-				82B3E03C1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift */,
-				82A3EC391F93873B00690B5E /* MediaDownloadClientProtocol.swift */,
-				823E82561F946D7100A3000E /* SubConfigProtocol.swift */,
 				823E82571F946D7100A3000E /* SubSonicDataProtocol.swift */,
-				823E82581F946D7100A3000E /* SubSonicDelegate.swift */,
-				823E82591F946D7100A3000E /* SubSonicDownloadProtocol.swift */,
-				823E825A1F946D7100A3000E /* URLBuilderProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -407,15 +326,6 @@
 				82C76E6E1F89A2DB00914FA4 /* TrackParserTest.swift */,
 				82C76E701F89A42400914FA4 /* MixedParserTest.swift */,
 				82A4253B1F85A78500C28787 /* TestHelper.swift */,
-				82B3E0421F9425F90026FE8B /* SubSonicExtensions.swift */,
-				827876BC1F9439B800D80AE5 /* MockURLBuilder.swift */,
-				82EE0D171F92E38E00FD3364 /* MockSubSonicDelegate.swift */,
-				82E216461F924DDD007696DE /* MockURLSession.swift */,
-				82E216441F9249E9007696DE /* HTTPRequestTest.swift */,
-				82EE0D131F92B1D800FD3364 /* HandlerRequestTest.swift */,
-				82EE0D151F92D96500FD3364 /* DelegateRequestTest.swift */,
-				82B3E0341F93A9F20026FE8B /* DownloadQueueTest.swift */,
-				82B3E0401F9424870026FE8B /* FileDownloadTest.swift */,
 			);
 			name = SubSonicAPITests;
 			path = Tests/SubSonicAPITests;
@@ -452,15 +362,9 @@
 			isa = PBXGroup;
 			children = (
 				823E82551F946D7100A3000E /* Protocols */,
-				8200516E1F946D5700E4F378 /* Extensions */,
-				82025E2D1F8D634C00312A7A /* Network */,
 				820745A21F859F54003BA92F /* Models */,
 				82EFC7E01F8569D400F1020B /* Parsers */,
 				827AAA1B1F84FA6C0030D2C9 /* Constants.swift */,
-				82EE0D191F93586700FD3364 /* Download.swift */,
-				OBJ_9 /* DataRequestAPI.swift */,
-				827876BA1F94349A00D80AE5 /* URLBuilder.swift */,
-				82B3E03A1F93AF3E0026FE8B /* DownloadRequestAPI.swift */,
 			);
 			name = SubSonicAPI;
 			path = Sources/SubSonicAPI;
@@ -524,12 +428,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"SubSonicAPI::SubSonicAPI" = {
+						LastSwiftMigration = 1110;
+					};
+					"SubSonicAPI::SubSonicAPITests" = {
+						LastSwiftMigration = 1110;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "SubSonicAPI" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
@@ -597,21 +510,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				82E216471F924DDD007696DE /* MockURLSession.swift in Sources */,
 				82C76E6F1F89A2DB00914FA4 /* TrackParserTest.swift in Sources */,
 				827779061F85EA7A00F740D7 /* GenreParserTest.swift in Sources */,
-				82EE0D181F92E38E00FD3364 /* MockSubSonicDelegate.swift in Sources */,
 				82C76E711F89A42400914FA4 /* MixedParserTest.swift in Sources */,
-				827876BD1F9439B800D80AE5 /* MockURLBuilder.swift in Sources */,
-				82EE0D141F92B1D800FD3364 /* HandlerRequestTest.swift in Sources */,
 				828FF7D51F85E5380040A611 /* PlaylistParserTest.swift in Sources */,
 				828FF7D71F85E7D30040A611 /* ArtistParserTest.swift in Sources */,
 				8260BD9E1F85C9B100E96CBB /* AlbumParserTest.swift in Sources */,
-				82B3E0431F9425F90026FE8B /* SubSonicExtensions.swift in Sources */,
-				82B3E0351F93A9F20026FE8B /* DownloadQueueTest.swift in Sources */,
-				82EE0D161F92D96500FD3364 /* DelegateRequestTest.swift in Sources */,
-				82E216451F9249E9007696DE /* HTTPRequestTest.swift in Sources */,
-				82B3E0411F9424870026FE8B /* FileDownloadTest.swift in Sources */,
 				82C76E7D1F89BECC00914FA4 /* InvalidParserTest.swift in Sources */,
 				82A4253C1F85A78500C28787 /* TestHelper.swift in Sources */,
 			);
@@ -621,35 +525,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				82B3E03D1F93BD4D0026FE8B /* HTTPRequestClientProtocol.swift in Sources */,
-				827876BB1F94349A00D80AE5 /* URLBuilder.swift in Sources */,
-				82025E311F8D634C00312A7A /* Extensions.swift in Sources */,
-				82A3EC3E1F93884B00690B5E /* MediaDownloadClientProtocol.swift in Sources */,
-				823E82651F946DDC00A3000E /* DelegateDownloadExtension.swift in Sources */,
 				82A4251F1F859F7200C28787 /* Song.swift in Sources */,
 				82242BEC1F8569F6002DD053 /* RequestParser.swift in Sources */,
 				82A425241F859F8100C28787 /* Artist.swift in Sources */,
 				82242BEB1F8569F3002DD053 /* JSONRequestParser.swift in Sources */,
-				823E82671F946DE200A3000E /* RequestClientHandlerExtension.swift in Sources */,
-				82A3EBBE1F935CB700690B5E /* Download.swift in Sources */,
 				82A4253E1F85C24900C28787 /* SubItem.swift in Sources */,
-				823E82601F946DC700A3000E /* SubConfigProtocol.swift in Sources */,
 				82A425251F859F8400C28787 /* Album.swift in Sources */,
 				823E82611F946DCB00A3000E /* SubSonicDataProtocol.swift in Sources */,
-				82A3EC421F9398E300690B5E /* DownloadQueue.swift in Sources */,
-				823E82631F946DD300A3000E /* SubSonicDownloadProtocol.swift in Sources */,
 				82242BEE1F8569FE002DD053 /* XMLRequestParser.swift in Sources */,
-				82A3EC3D1F93884B00690B5E /* MediaDownloadClient.swift in Sources */,
-				823E82641F946DD800A3000E /* URLBuilderProtocol.swift in Sources */,
 				82A425231F859F7E00C28787 /* ArtistIndex.swift in Sources */,
-				OBJ_36 /* DataRequestAPI.swift in Sources */,
-				823E82621F946DCE00A3000E /* SubSonicDelegate.swift in Sources */,
 				82A425201F859F7500C28787 /* Playlist.swift in Sources */,
 				82A425221F859F7B00C28787 /* Genre.swift in Sources */,
-				82B3E03B1F93AF3E0026FE8B /* DownloadRequestAPI.swift in Sources */,
 				827AAA1C1F84FA6C0030D2C9 /* Constants.swift in Sources */,
-				82025E321F8D634C00312A7A /* HTTPRequestClient.swift in Sources */,
-				823E82661F946DDF00A3000E /* RequestClientDelegateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,8 +560,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -682,9 +570,12 @@
 		OBJ_19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = "";
 				LD = /usr/bin/true;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -699,10 +590,14 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPITests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = SubSonicAPITests;
 			};
 			name = Debug;
@@ -717,10 +612,14 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SubSonicAPI.xcodeproj/SubSonicAPITests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = SubSonicAPITests;
 			};
 			name = Release;
@@ -767,8 +666,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SubSonicAPI;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = SubSonicAPI;
 			};
 			name = Debug;
@@ -793,8 +693,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SubSonicAPI;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = SubSonicAPI;
 			};
 			name = Release;
@@ -814,7 +715,8 @@
 				SDKROOT = macosx10.13;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
@@ -822,12 +724,14 @@
 		OBJ_40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		OBJ_41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};

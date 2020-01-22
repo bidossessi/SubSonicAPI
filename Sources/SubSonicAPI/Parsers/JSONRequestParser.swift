@@ -2,20 +2,21 @@ import Foundation
 
 
 class JSONRequestParser: RequestParser {
-    var onComplete: ((_ result: [Constants.SubSonicAPI.Results: [SubItem]]?, _ error: ParsingError?) ->())?
+    var onComplete: ((Result<[Constants.SubSonicAPI.Results : [SubItem]], ParsingError>) -> ())?
+    
 
     init() {
         print("JSONRequestParser started")
     }
 
     func parse(data: Data) {
-        guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-            self.onComplete?(nil, ParsingError.Serialization)
+        guard let json = ((try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) as [String : Any]??) else {
+            self.onComplete?(.failure(ParsingError.Serialization))
             return
         }
         
         guard let response = json?[Constants.SubSonicInfo.apiResponse] as? [String: Any] else {
-            self.onComplete?(nil, ParsingError.Envelop)
+            self.onComplete?(.failure(ParsingError.Envelop))
             return
         }
         // handle response
@@ -27,10 +28,10 @@ class JSONRequestParser: RequestParser {
                 JSONRequestParser.extract(key: Constants.SubSonicAPI.Results(rawValue: k)!, data: v)
             }.flatMap{ $0 }
             let results = Dictionary(uniqueKeysWithValues: dups)
-            self.onComplete?(results, nil)
+            self.onComplete?(.success(results))
         } catch {
             let found = error as! ParsingError
-            self.onComplete?(nil, found)
+            self.onComplete?(.failure(found))
         }
             
     }
@@ -39,32 +40,32 @@ class JSONRequestParser: RequestParser {
         switch key {
         case .Song:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, Song.populate(items))]
+                return [(key, JSONRequestParser.populate(songs: items))]
             }
 
         case .Album:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, Album.populate(items))]
+                return [(key, JSONRequestParser.populate(albums: items))]
             }
 
         case .Artist:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, Artist.populate(items))]
+                return [(key, JSONRequestParser.populate(artists: items))]
             }
 
         case .Index:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, ArtistIndex.populate(items))]
+                return [(key, JSONRequestParser.populate(artistIndices: items))]
             }
 
         case .Playlist:
             if let items = JSONRequestParser.getAsList(data) {
-                return [(key, Playlist.populate(items))]
+                return [(key, JSONRequestParser.populate(playlists: items))]
             }
 
         case .Genre:
             if let items = self.getAsList(data) {
-                return [(key, Genre.populate(items))]
+                return [(key, JSONRequestParser.populate(genres: items))]
             }
 
         case .SongsByGenre, .RandomSongs:

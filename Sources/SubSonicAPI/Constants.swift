@@ -1,8 +1,12 @@
 import Foundation
+enum ApiFormat: String {
+    case JSON = "json"
+    case XML = "xml"
+}
 
 struct Constants {
     struct SubSonicAPI {
-        enum Views: String {
+        enum Queries: String {
             case Ping = "ping"
             case RandomSongs = "getRandomSongs"
             case Search = "search3"

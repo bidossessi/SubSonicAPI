@@ -18,14 +18,18 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlists", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let playlists = results?[.Playlist] as? [Playlist] else {
+       parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let playlists = results[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
-            print("playlists count: \(playlists.count)")
             XCTAssert(playlists.count == 15)
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
         
         // Parse
@@ -39,19 +43,22 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "json")
         let expect = expectation(description: "Parsing complete")
 
-        parser.onComplete = { (results, error) in
-            guard let playlists = results?[.Playlist] as? [Playlist] else {
+        parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let playlists = results[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
-            print("playlists count: \(playlists.count)")
             XCTAssert(playlists.count == 1)
             
     
             let tracks = playlists[0].songs
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 224)
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
 
         // Parse
@@ -66,21 +73,25 @@ class PlaylistParserTest: XCTestCase {
         let xml = self.helper.getDataFromFile(fileName: "playlists", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let playlists = results?[.Playlist] as? [Playlist] else {
+       parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let playlists = results[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
-            print("playlists count: \(playlists.count)")
             XCTAssert(playlists.count == 15)
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
+            
         }
         
         // Parse
         parser.parse(data: xml)
         
         waitForExpectations(timeout: 10, handler: nil)
-        print("Done waiting")
     }
     
     func testXMLSingle() {
@@ -88,18 +99,21 @@ class PlaylistParserTest: XCTestCase {
         let json = self.helper.getDataFromFile(fileName: "playlist-epic", fileExt: "xml")
         let expect = expectation(description: "Parsing complete")
         
-        parser.onComplete = { (results, error) in
-            guard let playlists = results?[.Playlist] as? [Playlist] else {
+       parser.onComplete = { (res) in
+        switch res {
+        case .success(let results):
+            guard let playlists = results[.Playlist] as? [Playlist] else {
                 XCTFail("Playlists not found")
                 return
             }
-            print("playlists count: \(playlists.count)")
             XCTAssert(playlists.count == 1)
             
             let tracks = playlists[0].songs
-            print("tracks count: \(tracks.count)")
             XCTAssert(tracks.count == 224)
             expect.fulfill()
+            default:
+                XCTFail("Not supposed to fail")
+            }
         }
         
         // Parse
