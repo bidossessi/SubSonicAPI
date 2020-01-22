@@ -2,8 +2,7 @@ os: osx
 language: swift
 sudo: required
 osx_image: xcode11.3
-script:
-  - xcodebuild clean build -project SubSonicAPI.xcodeproj -destination 'platform=OS X,arch=x86_64' -scheme SubSonicAPI-Package -sdk macosx -quiet
-  - xcodebuild clean test -project SubSonicAPI.xcodeproj -scheme SubSonicAPI-Package -destination 'platform=OS X,arch=x86_64' -sdk macosx -quiet
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+xcode_project: SubSonicAPI.xcodeproj
+xcode_scheme: SubSonicAPI-Package
+xcode_destination: platform=OS X,arch=x86_64
+script: xcodebuild clean build test -project SubSonicAPI.xcodeproj -destination 'platform=OS X,arch=x86_64' -scheme SubSonicAPI-Package -sdk macosx -quiet
