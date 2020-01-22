@@ -5,10 +5,7 @@ class JSONRequestParser: RequestParser {
     var onComplete: ((Result<[Constants.SubSonicAPI.Results : [SubItem]], ParsingError>) -> ())?
     
 
-    init() {
-        print("JSONRequestParser started")
-    }
-
+ 
     func parse(data: Data) {
         guard let json = ((try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]) as [String : Any]??) else {
             self.onComplete?(.failure(ParsingError.Serialization))
@@ -114,7 +111,7 @@ class JSONRequestParser: RequestParser {
                 let errorMsg = dataDict["message"] as! String
                 throw ParsingError.Status(code: errorCode, message: errorMsg)
             default:
-                print(dataKey)
+                break
             }
         }
     }

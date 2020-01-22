@@ -1,9 +1,7 @@
-os:
-  - osx
+os: osx
 language: swift
 sudo: required
-dist: trusty
-osx_image: xcode9.1
+osx_image: xcode11.3
 script:
   - xcodebuild clean build -project SubSonicAPI.xcodeproj -destination 'platform=OS X,arch=x86_64' -scheme SubSonicAPI-Package -sdk macosx -quiet
   - xcodebuild clean test -project SubSonicAPI.xcodeproj -scheme SubSonicAPI-Package -destination 'platform=OS X,arch=x86_64' -sdk macosx -quiet

@@ -90,7 +90,6 @@ class ArtistParserTest: XCTestCase {
         parser.parse(data: xml)
         
         waitForExpectations(timeout: 10, handler: nil)
-        print("Done waiting")
     }
     
     func testXMLSingle() {

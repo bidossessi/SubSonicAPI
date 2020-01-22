@@ -24,11 +24,7 @@ class XMLRequestParser: NSObject, RequestParser {
 }
 
 extension XMLRequestParser: XMLParserDelegate {
-    // Document start
-    func parserDidStartDocument(_ parser: XMLParser) {
-        print("started document")
-    }
-    
+
     //tag Attributes
     func parser(_ parser: XMLParser,
                 didStartElement elementName: String,
@@ -75,7 +71,7 @@ extension XMLRequestParser: XMLParserDelegate {
             self.currentString = ""
             self.results[.Genre]?.append(XMLRequestParser.populate(genre: attributeDict))
         default:
-            print("idx: \(self.processIndex), \(elementName)")
+            break
         }
         self.processIndex += 1
     }

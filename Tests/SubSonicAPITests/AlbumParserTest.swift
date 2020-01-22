@@ -79,7 +79,6 @@ class AlbumParserTest: XCTestCase {
                     XCTFail("Albums not found")
                     return
                 }
-                print("albums count: \(albums.count)")
                 XCTAssert(albums.count == 10)
                 expect.fulfill()
             default:
