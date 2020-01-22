@@ -1,6 +1,7 @@
 import XCTest
 @testable import SubSonicAPI
 
+// https://stackoverflow.com/questions/57693818/copying-resource-files-for-xcode-spm-tests
 fileprivate let _resources: URL = {
     func packageRoot(of file: String) -> URL? {
         func isPackageRoot(_ url: URL) -> Bool {
@@ -42,11 +43,6 @@ class TestHelper {
             fatalError("\(url.absoluteURL) not found")
         }
         return data
-    }
-
-    func generateRandomNumber(min: Int = 1, max: Int) -> Int {
-        let randomNum = Int(arc4random_uniform(UInt32(max) - UInt32(min)) + UInt32(min))
-        return randomNum
     }
 }
 
